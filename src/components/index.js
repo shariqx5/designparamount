@@ -18,7 +18,7 @@ import StandardDesigner from './addDesigner/standardDesigner';
 import UltimateDesigner from './addDesigner/ultimateDesigner';
 import ProDesigner from './addDesigner/proDesigner';
 import ProJumbotron from './jumbotron/proJumbotron';
-
+import StandardJumbotron from './jumbotron/standardJumbotron';
 
 export {
     Layout,
@@ -40,5 +40,6 @@ export {
     StandardDesigner,
     UltimateDesigner,
     ProDesigner,
-    ProJumbotron
+    ProJumbotron,
+    StandardJumbotron
 }

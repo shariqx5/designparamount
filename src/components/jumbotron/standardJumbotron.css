@@ -1,0 +1,51 @@
+.bannerbtnwhitediv .pricing.purple-link {
+    background: #5e42d3;
+    color: #fff;
+}
+
+.bannerbtnwhitediv .a-link:hover {
+    background: #5e42d3;
+    color: #fff;
+    border: 2px solid #5e42d3;
+}
+
+.standardpagemainbannerimg>img {
+    width: 100%;
+    max-width: 596px;
+}
+
+.testmain, .propricediv>div>button {
+    background: #7d759c;
+}
+
+.propricediv>div>h4 {
+    color: #7d759c;
+}
+
+.testmainwhite {
+    background: #fff;
+}
+
+
+@media (min-width: 1800px) {
+    .howitworkdiv1::before, .howitworkdiv2::before {
+        top: 12%;
+        left: 440px;
+        font-size: 110px;
+    }
+    .howitworkdiv>h5 {
+        font-size: 24px;
+    }
+    
+    .standardpagemainbannerimg>img {
+        max-width: 710px;
+    }
+    
+}
+
+@media (min-width: 600px) {
+    .standardpagemainbannerimg>img {
+        min-width: 596px;
+    }
+    
+}
