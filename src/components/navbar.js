@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import {Link} from 'react-router-dom';
 
 class Navbar extends Component{
     
@@ -23,12 +24,12 @@ class Navbar extends Component{
                                     <div className="dropdown-content">
                                         <div className="proheaderdiv headerdropdowndiv1">
                                             <div>
-                                                <a href="ultimate.html" className="position-rel">
+                                                <a href="#" className="position-rel">
                                                     <img src="images/pricing/service/3.png" alt="Design-Paramount" className="position-absolute" style={{width:"100%",top:"18px",left:"24px",maxWidth:"45px"}}/>
                                                     <h6>Design Pickle Ultimate</h6>
                                                     <h6>The recipe to ingenious brand building</h6>
                                                     <p>All ingredients needed for single-handed startups</p>
-                                                    <p>Learn More &nbsp;<i className="fas fa-arrow-right"></i></p>
+                                                    <Link to="/ultimate"><p>Learn More &nbsp;<i className="fas fa-arrow-right"></i></p></Link>
                                                 </a>
                                             </div>
                                         </div>

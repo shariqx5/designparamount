@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import OwnCarousel from 'react-owl-carousel';
+import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 
@@ -19,20 +19,24 @@ const options = {
 };
 class Client extends Component{
     
+    constructor(props){
+        super(props);
+    }
+
     render(){
         return(
             <section className="white-section pb-0">
 			    <img src="/images/shapes/circle.png" alt="" className="position-absolute top-0 left-0 circle-top-left max-width-190" />
 			    <img src="/images/shapes/triangle.png" alt="" className="position-absolute top-0 right-0 triangle-top-right max-width-190" />
                 <div className="container">
-                    <div className="section-small-heading">
+                    <div className={this.props.showBlack?"propagecompanyheading text-center":"section-small-heading"}>
                         <h1>You will Be in Good Company</h1>
                     </div>
                     {/* <div className="companies-carousel owl-carousel">
                         
                     </div> */}
-                    <OwnCarousel
-                    className="owl-theme companies-carousel"
+                    <OwlCarousel
+                    className={this.props.showBlack?"owl-theme companies-carousel afterbannercarousel":"owl-theme companies-carousel"}
                     items={6}
                     loop={true}
                     autoplay={true}
@@ -57,7 +61,7 @@ class Client extends Component{
                         <div className="item">
                             <img src="/images/companies/6.png" alt="" />
                         </div>
-                    </OwnCarousel>
+                    </OwlCarousel>
                 </div>
 		</section>
         )

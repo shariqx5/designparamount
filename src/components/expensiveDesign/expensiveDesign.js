@@ -2,18 +2,22 @@ import React,{Component} from 'react';
 
 class ExpensiveDesign extends Component{
 
+	constructor(props){
+		super(props);
+	}
+
     render(){
         return(
-            <section className="fixed-scroll-sec">
+            <section className={this.props.showBlack?"fixed-scroll-sec position-rel":"fixed-scroll-sec"}>
 			<div className="container">
 				<div className="row">
 					<div className="col-lg-6 col-md-7">
 						<div className="fixed-scroll-area">
-							<div className="section-heading">
+							<div className={this.props.showBlack?"section-heading proservicediv":"section-heading"}>
 								<h1>Design is Expensive and Time Consuming. <span>It Doesn’t Have to Be.</span></h1>
 								        <p>The cost of getting a great design shouldn’t be as high as they say. And it most certainly shouldn’t be your peace of mind or brand image. Our designers make sure the designs they create for you to bring you more value than the price you pay for it.</p>
 							</div>
-							<div className="fixed-scroll-area-link">
+							<div className={this.props.showBlack?"fixed-scroll-area-link proserviceuldiv":"fixed-scroll-area-link"}>
 								<ul> 
 									<li><a href="#first-fixed" className="active"><span>01</span>A Dedicated, Professional Designer</a></li>
 									<li><a href="#second-fixed"><span>02</span>Unlimited Requests and Revisions</a></li>
@@ -24,7 +28,7 @@ class ExpensiveDesign extends Component{
 							</div>
 						</div>
 					</div>
-					<div className="col-lg-6 col-md-5">
+					<div className={this.props.showBlack?"col-lg-6 col-md-5 proservicecontentdiv":"col-lg-6 col-md-5"}>
 						<div className="fixed-right-item" id="first-fixed">
 							<img src="/images/home/fixed-section/1.png" alt="" />
 							<h5>A Dedicated, Professional Designer</h5>
