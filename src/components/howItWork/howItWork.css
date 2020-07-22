@@ -1,0 +1,44 @@
+/* .white>h1{
+    color:black;
+}
+
+.white>h1>span{
+    color: #5e42d3;
+}
+
+
+/* section.white .howitworkdiv>h5{
+    font-weight: 700;
+}
+section.white .howitworkdiv>img{
+    max-width: 250px;
+    padding-bottom: 15px;
+    width: 100%;
+}
+section.white .howitworkdiv>h5>span{
+    color: #5e42d3;
+}
+section.white .howitworkdiv2>img{
+    padding-top: 15px;
+    max-width: 280px;
+}
+section.white .howitworkdiv1::before {
+    content: '+';
+    position: absolute;
+    top: 15%;
+    left: 360px;
+    font-size: 87px;
+    font-weight: 300;
+    background-size: contain;
+    transform: translate(-50%);
+}
+section.white .howitworkdiv2::before {
+    content: '=';
+    position: absolute;
+    top: 15%;
+    left: 360px;
+    font-size: 87px;
+    font-weight: 300;
+    background-size: contain;
+    transform: translate(-50%);
+} */

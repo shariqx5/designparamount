@@ -21,6 +21,11 @@ const options = {
 
 class MeetDesigner extends Component{
 
+
+    constructor(props){
+        super(props);
+    }
+
     render(){
         return(
             <section className="meetdesignersec position-rel" style={{paddingTop:"80px",paddingBottom:"55px"}}>
@@ -28,7 +33,7 @@ class MeetDesigner extends Component{
                 <div className="container">
                     <div className="row position-rel">
                         <div className="col-md-5">
-                            <div className="banner-heading promeetsomeheadingdiv">
+                            <div className={this.props.showBlack?"banner-heading promeetsomeheadingdiv":"banner-heading"}>
                                 <h1>Meet Some of<br /> the Designers <br /><span>Behind the <br />Work.</span></h1>
                                 <p>Whether you’re just starting out or growing sales into the millions, learn from some of our most successful Design Pickle clients on how they grew their business through our unlimited graphic design support. learn from some of our most successful.</p>
                             </div>

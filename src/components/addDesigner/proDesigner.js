@@ -9,7 +9,7 @@ class ProDesigner extends Component{
             designerCategory={"Pro"}
             designerPrice={"990"}
             timePeriod={"Monthly"}
-            caregoryImage={"2.png"}
+            categoryImage={"2.png"}
             categoryClass={"pro_designer"}
             />
         )

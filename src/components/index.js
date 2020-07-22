@@ -17,6 +17,7 @@ import MeetDesigners from './meetDesigner/meetDesigner';
 import StandardDesigner from './addDesigner/standardDesigner';
 import UltimateDesigner from './addDesigner/ultimateDesigner';
 import ProDesigner from './addDesigner/proDesigner';
+import ProJumbotron from './jumbotron/proJumbotron';
 
 
 export {
@@ -38,5 +39,6 @@ export {
     MeetDesigners,
     StandardDesigner,
     UltimateDesigner,
-    ProDesigner
+    ProDesigner,
+    ProJumbotron
 }

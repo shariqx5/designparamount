@@ -34,12 +34,12 @@ class Navbar extends Component{
                                             </div>
                                         </div>
                                         <div className="proheaderdiv headerdropdowndiv2">
-                                            <div><a href="pro.html" className="position-rel">
+                                            <div><a href="#" className="position-rel">
                                                     <img src="/images/pricing/service/2.png" alt="Design-Paramount" className="position-absolute" style={{width:"100%",top:"18px",left:"24px",maxWidth:"45px"}}/>
                                                     <h6>Design Pickle Pro</h6>
                                                     <h6>The recipe to ingenious brand building</h6>
                                                     <p>All ingredients needed for single-handed startups</p>
-                                                    <p>Learn More &nbsp;<i className="fas fa-arrow-right"></i></p>
+                                                    <Link to="/pro"><p>Learn More &nbsp;<i className="fas fa-arrow-right"></i></p></Link>
                                                 </a>
                                             </div>
                                         </div>
