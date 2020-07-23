@@ -1,25 +1,22 @@
-.bannerbtnwhitediv .pricing.purple-link {
+#standard {
+    background: url('/images/standard2/bg.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+#standard .banner-center .row .col-md-5 .bannerbtnwhitediv .pricing.purple-link {
     background: #5e42d3;
     color: #fff;
 }
 
-.bannerbtnwhitediv .a-link:hover {
+#standard .banner-center .row .col-md-5 .bannerbtnwhitediv .a-link:hover {
     background: #5e42d3;
     color: #fff;
     border: 2px solid #5e42d3;
 }
 
-.standardpagemainbannerimg>img {
+#standard .banner-center .row .standardpagemainbannerimg>img {
     width: 100%;
     max-width: 596px;
-}
-
-.testmain, .propricediv>div>button {
-    background: #7d759c;
-}
-
-.propricediv>div>h4 {
-    color: #7d759c;
 }
 
 .testmainwhite {
@@ -37,14 +34,14 @@
         font-size: 24px;
     }
     
-    .standardpagemainbannerimg>img {
+    #standard .banner-center .row .standardpagemainbannerimg>img {
         max-width: 710px;
     }
     
 }
 
 @media (min-width: 600px) {
-    .standardpagemainbannerimg>img {
+    #standard .banner-center .row .standardpagemainbannerimg>img {
         min-width: 596px;
     }
     

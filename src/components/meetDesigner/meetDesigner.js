@@ -54,32 +54,32 @@ class MeetDesigner extends Component{
                                 
                                     <div className="item testimonialitem">
                                     <div className="row">
-                                            <TeamMemberBox />
+                                            <TeamMemberBox {...this.props}/>
                                         </div>
                                     </div>
                                     <div className="item testimonialitem">
                                         <div className="row">
-                                            <TeamMemberBox />
+                                            <TeamMemberBox {...this.props}/>
                                         </div>
                                     </div>
                                     <div className="item testimonialitem">
                                         <div className="row">
-                                            <TeamMemberBox />
+                                            <TeamMemberBox {...this.props}/>
                                         </div>
                                     </div>
                                     <div className="item testimonialitem">
                                         <div className="row">
-                                            <TeamMemberBox />
+                                            <TeamMemberBox {...this.props}/>
                                         </div>
                                     </div>
                                     <div className="item testimonialitem">
                                         <div className="row">
-                                            <TeamMemberBox />
+                                            <TeamMemberBox {...this.props}/>
                                         </div>
                                     </div>
                                     <div className="item testimonialitem">
                                         <div className="row">
-                                            <TeamMemberBox />
+                                            <TeamMemberBox {...this.props}/>
                                         </div>
                                     </div>
                             </OwlCarousel>

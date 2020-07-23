@@ -27,7 +27,7 @@ class Ultimate extends Component{
                 <ExpensiveDesign showBlack={true}/>
                 <HowItWork showBlack={true}/>
                 <Testimonial />
-                <MeetDesigners showBlack={true}/>
+                <MeetDesigners showBlack={true} style='ultimate'/>
                 <section className="purple-sec portfolio-before-sec mt-40" id="portfolio">
                     <img src="/images/shapes/triangle.png" alt="" className="position-absolute top-0 left-0 triangle-top-left max-width-190" />
                     <img src="/images/shapes/circle.png" alt="" className="position-absolute top-0 right-0 circle-top-right max-width-190" />

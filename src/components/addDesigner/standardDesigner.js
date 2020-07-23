@@ -10,6 +10,7 @@ class StandardDesigner extends Component{
             designerPrice={"550"}
             timePeriod={"Monthly"}
             categoryImage={"1.png"}
+            categoryClass={"standard_designer"}
             />
         )
     }
