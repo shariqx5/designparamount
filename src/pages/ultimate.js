@@ -19,6 +19,11 @@ class Ultimate extends Component{
         document.body.style.backgroundColor = "#353535";
     }
 
+
+    componentWillUnmount(){
+        document.body.style.backgroundColor = 'white';
+    }
+
     render(){
         return(
             <Layout>

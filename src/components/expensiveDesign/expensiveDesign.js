@@ -6,6 +6,14 @@ class ExpensiveDesign extends Component{
 		super(props);
 	}
 
+
+	componentDidMount(){
+		const script = document.createElement('script');
+		script.src = '/js/fixed-section.js';
+		script.async = true;
+		document.body.appendChild(script);
+	}
+
     render(){
         return(
             <section className={this.props.showBlack?"fixed-scroll-sec position-rel":"fixed-scroll-sec"}>

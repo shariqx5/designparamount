@@ -50,7 +50,7 @@ class Navbar extends Component{
                                                     <h6>Design Pickle Standard</h6>
                                                     <h6>The recipe to ingenious brand building</h6>
                                                     <p>All ingredients needed for single-handed startups</p>
-                                                    <p>Learn More &nbsp;<i className="fas fa-arrow-right"></i></p>
+                                                    <Link to="/standard"><p>Learn More &nbsp;<i className="fas fa-arrow-right"></i></p></Link>
                                                 </a>
                                             </div>
                                         </div>
