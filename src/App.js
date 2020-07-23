@@ -8,6 +8,7 @@ import Pro from './pages/pro';
 import Standard from './pages/standard';
 import Portfolio from './pages/portfolio';
 import Pricing from './pages/pricing/pricing';
+import About from './pages/about/about';
 
 class App extends React.Component{
    render(){
@@ -20,6 +21,7 @@ class App extends React.Component{
               <Route exact path="/standard" component={Standard}/>
               <Route exact path="/portfolio" component={Portfolio}/>
               <Route exact path="/pricing" component={Pricing}/>
+              <Route exact path="/about" component={About}/>
            </Switch>
         </Router>
      )

@@ -59,7 +59,7 @@ class Navbar extends Component{
                                 {/* <!--<li><a href="index.html">Home</a></li>--> */}
                                 <li><a href="#"><Link to="/portfolio">Our Work</Link></a></li>
                                 <li><a href="#"><Link to="/pricing">Pricing</Link></a></li>
-                                <li><a href="about.html">About</a></li>
+                                <li><a href="#"><Link to="/about">About</Link></a></li>
                                 <li><a href="contact.html">Contact</a></li>
                             </ul>
                         </div>

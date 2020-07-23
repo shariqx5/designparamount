@@ -20,6 +20,10 @@ import ProDesigner from './addDesigner/proDesigner';
 import ProJumbotron from './jumbotron/proJumbotron';
 import StandardJumbotron from './jumbotron/standardJumbotron';
 import PortfolioJumbotron from './jumbotron/portfolioJumbotron';
+import AboutJumbotron from './jumbotron/aboutJumbotron';
+import PortfolioCounter from './counters/portfolioCounter';
+import FactsCounter from './counters/factsCounter';
+import TeamMemberBox from './teamMemberBox/TeamMemberBox';
 
 export {
     Layout,
@@ -43,5 +47,9 @@ export {
     ProDesigner,
     ProJumbotron,
     StandardJumbotron,
-    PortfolioJumbotron
+    PortfolioJumbotron,
+    AboutJumbotron,
+    PortfolioCounter,
+    FactsCounter,
+    TeamMemberBox
 }
