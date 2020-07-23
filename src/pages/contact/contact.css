@@ -1,0 +1,191 @@
+.pricingtabcontent{
+    padding-top: 40px;
+}
+.pricingtab{
+    border: none;
+    justify-content: center;
+}
+.pricingtab>li>a{
+    color: white;
+    background: #464646;
+    text-decoration: none;
+    border: none !important;
+    border-radius: 0px !important;
+    padding: 15px 40px 15px 40px;
+    font-weight: 700;
+    transition: transform 0.25s ease;
+    margin-left: 2px;
+}
+.pricingtab>li>a.active, .pricingtab>li>a:focus{
+    color: white !important;
+    background: #6045d4 !important;
+    border-radius: 0px !important;
+    transform: scale(1.04);
+    
+}
+.pricingplaninfosec{
+    padding: 80px 0px 80px 0px;
+    background: #6045d4;
+    margin-bottom: 100px;
+}
+.faqsec{
+    margin-bottom: 100px;
+}
+.subscribeinput{
+        border-top-left-radius: 20px;
+        width: 300px;
+        margin-right: -5px;
+        border: none;
+        outline: none;
+        font-size: 13px;
+        background: #f2f2f2;
+        padding: 13px 20px 13px 35px;
+        border-bottom-left-radius: 20px;
+}
+.subscribebtn{
+    padding: 10px 35px 10px 35px;
+    background: #5e42d3;
+    font-weight: 600;
+    border: none;
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+    color: white;
+}
+.faqaccordion{
+    border-bottom: 1px solid;
+    border: none;
+}
+.faqaccordion .card-header{
+    background: transparent;
+}
+
+
+.faqaccordionbtn{
+    font-size: 20px;
+     width: 100%;
+    text-align: left;
+    color: #515151;
+    font-weight: 700;
+    text-decoration: none
+}
+.faqaccordionbtn:focus{
+    box-shadow: none;
+    color: #515151;
+}
+.faqaccordionbtn:hover{
+    color: #515151;
+}
+.plussign{
+    color: #5e42d3;
+}
+.pricingplanrow{
+    margin-bottom: 50px;
+}
+.addonplansec{
+    margin-bottom: 50px;
+}
+.pricingtabsec{
+    padding-top: 200px;
+    margin-bottom: 70px;
+}
+.pricingbannercolor{
+        position: absolute;
+        background: #f0f0f0;
+        width: 100%;
+        height: 43%;
+        top: 62px;
+}
+.chatwithuscard{
+   border: none;
+    border-bottom: 8px solid #474747;
+    box-shadow: 0 3px 6px 4px rgba(0, 0, 0, 0.07);
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+.chatwithuscard .card-body{
+    padding: 38px 20px 10px 25px;
+}
+.requestdemocard{
+     border: none;
+    border-bottom: 8px solid #5d41d2;
+    box-shadow: 0 3px 6px 4px rgba(0, 0, 0, 0.07);
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+.requestdemocard .card-body{
+    padding: 38px 20px 10px 25px;
+}
+.chatwithuscard .card-body .link-area>a, .requestdemocard .card-body .link-area>a{
+    padding: 6px 32px;
+}
+.chatwithuscard .card-body .link-area, .requestdemocard .card-body .link-area{
+    padding-bottom: 20px;
+   
+}
+.cardcommonforheading .card-body>h5{
+    color: #474747;
+    font-weight: 800;
+}
+.cardcommonforheading .card-body>h5>span{
+    color: #5d41d2;
+}
+.contacticon>i{
+    color: #5d41d2;
+    font-size: 20px;
+    margin-right: 18px;
+}
+.contacticon:nth-child(1)>i{
+    margin-right: 12px;
+}
+.contacticon>span{
+    color: #686a6e;
+}
+.contactmainbanner{
+    padding: 0px 320px 0px 320px;
+    z-index: 1;
+}
+.contactmainbanner>h1, .contactmainbanner>p{
+    color: white;
+}
+.contactbannercolor{
+     position: absolute;
+    background: url(/images/contactus/bg.jpg) no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    height: 85%;
+    top: 62px;
+}
+  
+@media (min-width: 1800px) {
+    .pricingtabsec {
+        padding-top: 250px;
+        margin-bottom: 100px;
+    }
+
+    .contactbannercolor {
+        top: 92px;
+    }
+}
+
+@media (max-width: 576px) {
+    .contactbannercolor {
+        height: 100%;
+    }
+
+    .contactmainbanner {
+        padding: 0;
+    }
+
+    .pricingtab>li>a {
+        padding: 10px 15px 10px 15px;
+        font-size: 14px;
+    }
+
+    .pricingtabcontent {
+        padding-top: 0;
+    }
+
+    .pricingtabcontent .chatwithuscard, .pricingtabcontent .requestdemocard {
+        margin-top: 40px;
+    }
+}

@@ -24,6 +24,7 @@ import AboutJumbotron from './jumbotron/aboutJumbotron';
 import PortfolioCounter from './counters/portfolioCounter';
 import FactsCounter from './counters/factsCounter';
 import TeamMemberBox from './teamMemberBox/TeamMemberBox';
+import ContactJumbotron from './jumbotron/contactJumbotron';
 
 export {
     Layout,
@@ -51,5 +52,6 @@ export {
     AboutJumbotron,
     PortfolioCounter,
     FactsCounter,
-    TeamMemberBox
+    TeamMemberBox,
+    ContactJumbotron
 }

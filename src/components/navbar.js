@@ -60,7 +60,7 @@ class Navbar extends Component{
                                 <li><a href="#"><Link to="/portfolio">Our Work</Link></a></li>
                                 <li><a href="#"><Link to="/pricing">Pricing</Link></a></li>
                                 <li><a href="#"><Link to="/about">About</Link></a></li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="#"><Link to="contact">Contact</Link></a></li>
                             </ul>
                         </div>
                         <div className="col-md-3 d-none d-lg-block">
