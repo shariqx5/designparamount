@@ -10,6 +10,7 @@ import Portfolio from './pages/portfolio';
 import Pricing from './pages/pricing/pricing';
 import About from './pages/about/about';
 import Contact from './pages/contact/contact';
+import HireDesigner from './pages/hireDesigner/hireDesigner';
 
 class App extends React.Component{
    render(){
@@ -24,6 +25,7 @@ class App extends React.Component{
               <Route exact path="/pricing" component={Pricing}/>
               <Route exact path="/about" component={About}/>
               <Route exact path="/contact" component={Contact}/>
+              <Route exact path="/hire-designer" component={HireDesigner}/>
            </Switch>
         </Router>
      )
