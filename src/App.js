@@ -6,6 +6,7 @@ import Home from './pages/home';
 import Ultimate from './pages/ultimate';
 import Pro from './pages/pro';
 import Standard from './pages/standard';
+import Portfolio from './pages/portfolio';
 
 class App extends React.Component{
    render(){
@@ -16,6 +17,7 @@ class App extends React.Component{
               <Route exact path="/ultimate" component={Ultimate} />
               <Route exact path="/pro" component={Pro}/>
               <Route exact path="/standard" component={Standard}/>
+              <Route exact path="/portfolio" component={Portfolio}/>
            </Switch>
         </Router>
      )
