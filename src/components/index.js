@@ -26,6 +26,9 @@ import FactsCounter from './counters/factsCounter';
 import TeamMemberBox from './teamMemberBox/TeamMemberBox';
 import ContactJumbotron from './jumbotron/contactJumbotron';
 import HireDesignerJumbotron from './jumbotron/hireDesignerJumbotron';
+import BlogJumbotron from './jumbotron/blogsJumbotron';
+import Search from './forms/search';
+import Categories from './categories';
 
 export {
     Layout,
@@ -56,4 +59,7 @@ export {
     TeamMemberBox,
     ContactJumbotron,
     HireDesignerJumbotron,
+    BlogJumbotron,
+    Search,
+    Categories
 }

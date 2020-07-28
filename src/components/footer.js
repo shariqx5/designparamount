@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import {Link} from 'react-router-dom';
 
 class Footer extends Component{
     
@@ -43,7 +44,7 @@ class Footer extends Component{
                             <div className="col-md-2 footer-content">
                                 <h6>RESOURCES</h6>
                                 
-                                <a href="blogs-list.html">Blog</a><br />
+                                <a href="#"><Link to="/blogs">Blog</Link></a><br />
                                 <a href="pricing.html">Pricing</a><br />
                                 <a href="signup.html">Sign Up</a><br />
                                 <a href="login.html">Log In</a>
