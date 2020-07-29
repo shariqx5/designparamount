@@ -12,6 +12,7 @@ import ProTable from './pricingTables/proTable';
 import UltimateTable from './pricingTables/ultimateTable';
 import HelpAction from './helpAction/helpAction';
 import BlogBox from './blogBox/blogBox';
+import LoadingBlogBox from './blogBox/loadingBlogBox';
 import HowItWork from './howItWork/howItWork';
 import MeetDesigners from './meetDesigner/meetDesigner';
 import StandardDesigner from './addDesigner/standardDesigner';
@@ -61,5 +62,6 @@ export {
     HireDesignerJumbotron,
     BlogJumbotron,
     Search,
-    Categories
+    Categories,
+    LoadingBlogBox
 }

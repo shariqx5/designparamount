@@ -5,7 +5,7 @@ const ShortBlogThumbnail = ()=>{
     return(
         <a href="">
 			<div className="blog-recent-img">
-				<img src="images/blog/1.jpg" alt="Blog" />
+				<img src="/images/blog/1.jpg" alt="Blog" />
 			</div>
 			<div className="blog-recent-detail">
 				<p>On 11 February, 2020</p>

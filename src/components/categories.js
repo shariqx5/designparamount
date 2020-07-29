@@ -1,14 +1,28 @@
 import React,{Component} from 'react';
+import {BlogAPI} from '../api';
+
+const blogAPI = new BlogAPI();
 
 class Categories extends Component{
 
+    state={
+        categories:[]
+    }
+
+    async componentDidMount(){
+        const data = await blogAPI.fetchAllCategories();
+        this.setState({
+            categories:data.data
+        })
+    }
+
     render(){
+        const {categories} = this.state;
         return(
             <ul className="blog-cat">
-				<li><a href="#">Logo Branding</a></li>
-				<li><a href="#">Logo Design</a></li> 
-				<li><a href="#">Web Design</a></li> 
-				<li><a href="#">Marketing</a></li>
+				{categories.map((category,i)=>(
+                    <li><a href="#" key={i}>{category.cat_name}</a></li>
+                ))}
 			</ul>
         )
     }

@@ -12,6 +12,7 @@ import About from './pages/about/about';
 import Contact from './pages/contact/contact';
 import HireDesigner from './pages/hireDesigner/hireDesigner';
 import Blogs from './pages/blogs/index';
+import SingleBlogPost from './pages/blogs/singleBlogPost';
 
 class App extends React.Component{
    render(){
@@ -28,6 +29,7 @@ class App extends React.Component{
               <Route exact path="/contact" component={Contact}/>
               <Route exact path="/hire-designer" component={HireDesigner}/>
               <Route exact path="/blogs" component={Blogs}/>
+              <Route exact path="/blogs/:id" component={SingleBlogPost}/>
            </Switch>
         </Router>
      )

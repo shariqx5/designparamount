@@ -5,13 +5,13 @@ class HelpAction extends Component{
     render(){
         return(
             <section className="light-grey-sec position-rel">
-			<img src="images/shapes/triangle.png" alt="" className="position-absolute top-0 left-0 triangle-top-left max-width-190" />
-			<img src="images/shapes/circle.png" alt="" className="position-absolute top-0 right-0 circle-top-right max-width-190" />
+			<img src="/images/shapes/triangle.png" alt="" className="position-absolute top-0 left-0 triangle-top-left max-width-190" />
+			<img src="/images/shapes/circle.png" alt="" className="position-absolute top-0 right-0 circle-top-right max-width-190" />
 
 			<div className="container position-absolute top-0 height-full horizontal-center">
 				<div className="row height-full">
 					<div className="col-lg-6 col-md-6 offset-md-6">
-						<img src="images/small-sections/1.png" alt="" className="panda-float-img" />
+						<img src="/images/small-sections/1.png" alt="" className="panda-float-img" />
 					</div>
 				</div>
 			</div>
