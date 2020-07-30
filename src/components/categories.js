@@ -21,7 +21,7 @@ class Categories extends Component{
         return(
             <ul className="blog-cat">
 				{categories.map((category,i)=>(
-                    <li><a href="#" key={i}>{category.cat_name}</a></li>
+                    <li key={i}><a href="#">{category.cat_name}</a></li>
                 ))}
 			</ul>
         )

@@ -1,10 +1,38 @@
 import React,{Component} from 'react';
-import {Layout,BlogJumbotron,HelpAction,Categories,Search} from '../../components';
+import {Layout,BlogJumbotron,HelpAction,Categories,Search,Sidebar} from '../../components';
 import ShortBlogThumbnail from './shortBlogThumbnail';
+import {BlogAPI} from '../../api';
+import {StringHelper} from '../../helpers';
+
+const blogAPI = new BlogAPI();
+const stringHelper = new StringHelper();
 
 class SingleBlogPost extends Component{
 
+	constructor(props){
+		super(props);
+		this.state={
+			blog:''
+		}
+	}
+
+	async componentDidMount(){
+		if(this.props.match.params!==""){
+			const title = this.props.match.params.title;
+			// console.log(this.props);
+			// console.log(this.props.match.params);
+			const data = await blogAPI.fetchSinglePostDetails(title);
+			this.setState({
+				blog:data.data[0]
+			})
+		}
+		else{
+			this.props.history.goBack();
+		}
+	}
+
     render(){
+		const {blog} = this.state;
         return(
             <Layout>
                 <BlogJumbotron />
@@ -18,26 +46,19 @@ class SingleBlogPost extends Component{
 					<div className="col-md-8">
                         <div class="single-blog">
 							<div class="blog-img">
-								<img src="/images/blog/1.jpg" alt="" />
+								<img src={blog!==""?blog.blog_image:''} alt="" />
 							</div>
 							<div class="blog-detail">
-								<p class="blog-date">January 29, 2020</p>
-								<h6>Web Design <span>is fun</span></h6>
-								<p class="blog-description">Weather you are just starting business through our design and support. Weather you are just starting business through our design and support. 
-								Weather you are just starting business through our design and support. Weather you are just starting business through our design and support. Weather you are just starting 
-								business through our design and support. Weather you are just starting business through our design and support. <br />Weather you are just starting business through our design and support. Weather you are just starting business through our design and support. 
-								Weather you are just starting business through our design and support. Weather you are just starting business through our design and support. Weather you are just starting 
-								business through our design and support. Weather you are just starting business through our design and support. <br />Weather you are just starting business through our design and support. Weather you are just starting business through our design and support. 
-								Weather you are just starting business through our design and support. Weather you are just starting business through our design and support. Weather you are just starting 
-								business through our design and support. Weather you are just starting business through our design and support. <br />Weather you are just starting business through our design and support. Weather you are just starting business through our design and support. 
-								Weather you are just starting business through our design and support. Weather you are just starting business through our design and support. Weather you are just starting 
-								business through our design and support. Weather you are just starting business through our design and support
+								<p class="blog-date">{blog!==""?blog.month+" "+blog.day+", "+blog.year:""}</p>
+								<h6>{blog!==""?blog.title:""}</h6>
+								<p class="blog-description">
+									{blog!==""?stringHelper.decodeHtmlEntities(blog.blog_desc):""}
 									{/* <!--<a href="#">Read More</a>--> */}
 								</p>
 								<div class="blog-uploader-like">
 									<div class="blog-uploader">
-										<img src="/images/blog/uploader/1.jpg" alt="" />
-										<p>Published by Admin</p>
+										<img src={blog!==""?blog.image:""} alt="" />
+										<p>Published by {blog!==""?blog.name:""}</p>
 									</div>
 									<div class="blog-like">
 										<a href="#"><i class="far fa-comment"></i> 12 Comments</a>
@@ -70,8 +91,8 @@ class SingleBlogPost extends Component{
                     </form>
                     </div>
 					</div>
-					<div className="col-md-4">
-						<div className="blog-fixed-bar">
+					<div className="col-md-4 margin-fixed-mob" style={{zIndex:2}}>
+						<Sidebar>
 							<div className="blog-right-detail">
 								<h3>Search</h3>
 								<div className="row">
@@ -119,7 +140,7 @@ class SingleBlogPost extends Component{
 									</div>
 								</div>
 							</div>
-						</div>
+						</Sidebar>
 					</div>
 				</div>
 			</div>

@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import {BlogBox,Search,Categories,LoadingBlogBox} from '../../components';
+import {BlogBox,Search,Categories,LoadingBlogBox,Sidebar} from '../../components';
 import ShortBlogThumbnail from './shortBlogThumbnail';
 
 
@@ -11,7 +11,6 @@ class BlogPost extends Component{
 
     render(){
 		const {blogs,limit} = this.props;
-		console.log(`length of blogs is ${blogs.length}`);
 		const LoadingBlogs = [];
 		if(blogs.length<=0){
 			for(let i = 0;i<limit;i++){
@@ -41,8 +40,8 @@ class BlogPost extends Component{
 							}
 						</div>
 					</div>
-					<div className="col-md-4">
-						<div className="blog-fixed-bar">
+					<div className="col-md-4 margin-fixed-mob" style={{zIndex:2}}>
+						<Sidebar>
 							<div className="blog-right-detail">
 								<h3>Search</h3>
 								<div className="row">
@@ -90,7 +89,7 @@ class BlogPost extends Component{
 									</div>
 								</div>
 							</div>
-						</div>
+						</Sidebar>
 					</div>
 				</div>
 			</div>

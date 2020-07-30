@@ -30,6 +30,7 @@ import HireDesignerJumbotron from './jumbotron/hireDesignerJumbotron';
 import BlogJumbotron from './jumbotron/blogsJumbotron';
 import Search from './forms/search';
 import Categories from './categories';
+import Sidebar from './sidebar';
 
 export {
     Layout,
@@ -63,5 +64,6 @@ export {
     BlogJumbotron,
     Search,
     Categories,
-    LoadingBlogBox
+    LoadingBlogBox,
+    Sidebar
 }

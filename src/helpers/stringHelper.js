@@ -1,22 +1,24 @@
 import {AllHtmlEntities} from 'html-entities';
-import utf8 from 'utf8';
-var decoder = new TextDecoder('utf-8');
-
+import {Parser} from 'html-to-react';
 
 const entities = new AllHtmlEntities();
-
+const htmlToReactParser = new Parser();
 class StringHelper {
 
     extractSubString(value){
-        value = this.decodeHtmlEntities(value);
+        //value = this.decodeHtmlEntities(value);
         return value.substring(0,100);
     }
 
 
     decodeHtmlEntities(value){
-        //value = decodeURI(value);
+       
+        value = value.replace("\\","");
         value = entities.decode(value);
-        return utf8.decode(value);
+        const textarea = document.createElement("textarea");
+        textarea.innerHTML = value;
+
+        return htmlToReactParser.parse(textarea.value);
     }
 
 

@@ -10,10 +10,10 @@ class BlogsJumbotron extends Component{
     render(){
         return(
             <section className="inner-banner small-inner-banner purple-banner position-rel" style={{backgroundImage:"images/blog/blogbaner.jpg",backgroundRepeat:"no-repeat",backgroundPositionX:"center",backgroundPositionY:"center",backgroundSize:"cover",minHeight:"480px"}}>
-            <img src="images/shapes/yellowsquare.png" alt="" className="position-absolute" style={{left:"240px",zIndex:"2",maxWidth:"80px",top:"145px"}}/>
-            <img src="images/shapes/orangetriangle.png" alt="" className="position-absolute" style={{width:"100%",zIndex:"2",right:"240px",maxWidth:"85px",top:"145px"}}/>
-            <img src="images/shapes/pinkcircle.png" alt="" className="position-absolute" style={{width:"100%",bottom:"-5px",transform:"rotate(45deg)",zIndex:"2",right:"-5px",maxWidth:"85px"}}/>
-            <img src="images/shapes/purple-zigzag.png" alt="" className="position-absolute" style={{width:"100%",bottom:"-60px",left:"18px",zIndex:"2",maxWidth:"130px"}}/>
+            <img src="/images/shapes/yellowsquare.png" alt="" className="position-absolute" style={{left:"240px",zIndex:"2",maxWidth:"80px",top:"145px"}}/>
+            <img src="/images/shapes/orangetriangle.png" alt="" className="position-absolute" style={{width:"100%",zIndex:"2",right:"240px",maxWidth:"85px",top:"145px"}}/>
+            <img src="/images/shapes/pinkcircle.png" alt="" className="position-absolute" style={{width:"100%",bottom:"-5px",transform:"rotate(45deg)",zIndex:"2",right:"-5px",maxWidth:"85px"}}/>
+            <img src="/images/shapes/purple-zigzag.png" alt="" className="position-absolute" style={{width:"100%",bottom:"-60px",left:"18px",zIndex:"2",maxWidth:"130px"}}/>
 			{/* <!--<div className="inner-banner-bg position-absolute header-distance">
 				<img src="images/home/banner-bg/1.png" alt="" id="home-banner-bg-1">
 				<img src="images/home/banner-bg/2.png" alt="" id="home-banner-bg-2">

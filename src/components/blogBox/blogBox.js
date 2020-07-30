@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
-import {SERVER_ADDRESS} from '../../config';
 import {StringHelper} from '../../helpers';
+import {Redirect} from 'react-router-dom';
 
 const stringHelper = new StringHelper();
 
@@ -8,17 +8,31 @@ class BlogBox extends Component{
 
 	constructor(props){
 		super(props);
+		this.state={
+			redirect:false,
+			url:''
+		}
 	}
 
 
 	onClick = (event)=>{
 		event.preventDefault();
 		const {url_title} = this.props;
-		
+		this.setState({
+			url:`/blogs/${url_title}`,
+			redirect:true
+		})
 	}
 
 
     render(){
+
+		const {redirect,url} = this.state;
+
+		if(redirect){
+			return <Redirect to={url}/>
+		}
+
         return(
             <div className="single-blog">
 						    <a href="blogs.html">
@@ -28,11 +42,11 @@ class BlogBox extends Component{
 							</a>
 							<div className="blog-detail">
 								<p className="blog-date">{this.props.month+" "+this.props.day+", "+this.props.year}</p>
-						        <a href="#">
+						        <a href="#" onClick={this.onClick}>
 									<h6>{this.props.title}</h6>
 								</a>
-								<p className="blog-description">{stringHelper.extractSubString(this.props.blog_desc)} 
-									<a href="#">... Read More</a>
+								<p className="blog-description">{this.props.small_desc} 
+									<a href="#" onClick={this.onClick}>... Read More</a>
 								</p>
 								<div className="blog-uploader">
 									<img src={this.props.image} alt="" />

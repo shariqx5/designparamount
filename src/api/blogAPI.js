@@ -28,7 +28,7 @@ class BlogAPI {
 
 
     fetchSinglePostDetails = async(postURL)=>{
-        const res = await fetch(SERVER_ADDRESS+"/get/fetch/"+postURL,{
+        const res = await fetch(SERVER_ADDRESS+"/blog/get/fetch/"+postURL,{
             method:"GET",
             headers:{
                 "Content-Type":"application/json"
@@ -36,6 +36,7 @@ class BlogAPI {
         });
 
         const data = await res.json();
+        console.log(data);
         return data;
     }
 }
