@@ -31,6 +31,7 @@ import BlogJumbotron from './jumbotron/blogsJumbotron';
 import Search from './forms/search';
 import Categories from './categories';
 import Sidebar from './sidebar';
+import CaseStudyJumbotron from './jumbotron/caseStudyJumbotron';
 
 export {
     Layout,
@@ -65,5 +66,6 @@ export {
     Search,
     Categories,
     LoadingBlogBox,
-    Sidebar
+    Sidebar,
+    CaseStudyJumbotron
 }

@@ -46,7 +46,7 @@ class BlogPost extends Component{
 								<h3>Search</h3>
 								<div className="row">
 									<div className="col-12">
-										<Search />
+										<Search handleSearch = {this.props.handleSearch}/>
 									</div>
 								</div>
 							</div>

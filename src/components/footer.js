@@ -37,7 +37,7 @@ class Footer extends Component{
                                 <h6>ABOUT</h6>
                                 
                                 <a href="about.html#team">Our Team</a><br />
-                                <a href="case-study-list.html">Case Studies</a><br />
+                                <a href="#"><Link to="/case-study">Case Studies</Link></a><br />
                                 <a href="designer.html">Hire A Designer</a><br />
                                 <a href="contact.html">Contact Us</a>
                             </div>

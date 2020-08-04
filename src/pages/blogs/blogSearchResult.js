@@ -2,54 +2,64 @@ import React,{Component} from 'react';
 import {Layout,BlogJumbotron,HelpAction} from '../../components';
 import {BlogAPI} from '../../api';
 import BlogPost from './blogPost';
-import {Redirect} from 'react-router-dom';
-
 
 const blogAPI = new BlogAPI();
 
-class Blogs extends Component{
+class BlogSearchResult extends Component{
 
     constructor(props){
         super(props);
         this.state={
+            queryparam:"",
             blogs : [],
             currentPage:0,
             offset:0,
             limit:10,
-            redirect : false,
-            url : ''
+            redirect:false,
+            url:''
         }
 
         this.handleSearch = this.handleSearch.bind(this);
     }
 
 
+
     async componentDidMount(){
-        const data = await blogAPI.fetchAllBlogs();
-        console.log(data);
+        const search = window.location.search;
+        const params = new URLSearchParams(search);
+        const query = params.get('query');
+        this.setState({
+            queryparam:encodeURI(query)
+        })
+
+        await this.searchData();
+    }
+
+
+
+    searchData = async()=>{
+        const {queryparam} = this.state;
+        console.log(`blog query in search page is ${queryparam}`);
+        const data = await blogAPI.searchBlogs(queryparam);
         this.setState({
             blogs:data.data
         })
     }
 
 
+
     handleSearch(searchText){
-        console.log(`Search value is ${searchText}`);
+        window.location = `/blogs/search?query=${searchText}`
         this.setState({
-            redirect : true,
-            url : `/blogs/search?query=${searchText}`,
             blogs : []
         })
     }
 
 
+
+
+
     render(){
-
-        const {redirect,url} = this.state;
-        if(redirect){
-            return <Redirect to={url}/>
-        }
-
         return(
             <Layout>
                 <BlogJumbotron />
@@ -64,4 +74,4 @@ class Blogs extends Component{
 }
 
 
-export default Blogs;
+export default BlogSearchResult;

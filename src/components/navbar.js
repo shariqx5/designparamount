@@ -25,7 +25,7 @@ class Navbar extends Component{
                                         <div className="proheaderdiv headerdropdowndiv1">
                                             <div>
                                                 <a href="#" className="position-rel">
-                                                    <img src="images/pricing/service/3.png" alt="Design-Paramount" className="position-absolute" style={{width:"100%",top:"18px",left:"24px",maxWidth:"45px"}}/>
+                                                    <img src="/images/pricing/service/3.png" alt="Design-Paramount" className="position-absolute" style={{width:"100%",top:"18px",left:"24px",maxWidth:"45px"}}/>
                                                     <h6>Design Pickle Ultimate</h6>
                                                     <h6>The recipe to ingenious brand building</h6>
                                                     <p>All ingredients needed for single-handed startups</p>
@@ -46,7 +46,7 @@ class Navbar extends Component{
                                         <div className="proheaderdiv headerdropdowndiv3">
                                             <div>
                                                 <a href="standard.html" className="position-rel">
-                                                    <img src="images/pricing/service/1.png" alt="Design-Paramount" className="position-absolute" style={{width:"100%",top:"18px",left:"24px",maxWidth:"45px"}}/>
+                                                    <img src="/images/pricing/service/1.png" alt="Design-Paramount" className="position-absolute" style={{width:"100%",top:"18px",left:"24px",maxWidth:"45px"}}/>
                                                     <h6>Design Pickle Standard</h6>
                                                     <h6>The recipe to ingenious brand building</h6>
                                                     <p>All ingredients needed for single-handed startups</p>

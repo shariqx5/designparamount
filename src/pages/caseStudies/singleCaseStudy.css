@@ -1,0 +1,107 @@
+.casestudybannericon>i{
+    color:white;
+    font-size:20px;
+    margin-right:10px;
+}
+ .testcasestudycontent{
+    padding-left:50px;   
+}
+.testcasestudycontent>h6{
+    font-weight: 600;
+    padding-left: 30px;
+    margin-bottom: 7px;
+}
+.testcasestudycontent>h6>span{
+    color:#5e42d3;
+}
+.testcasestudycontent>p{
+    margin: 0;
+    border-radius: 50px;
+    color: #696a6f;
+    padding: 6px 30px;
+    font-size: 14px;
+    background: #f9f9f9;
+}
+.testcasestudycontentpurple{
+    text-align:right;
+    color:#5e42d3;
+}
+.testcasestudycontentpurple>p{
+    border-radius: 50px;
+    color: #ffffff;
+    padding: 15px;
+    background: #5e42d3;
+}
+.testcasestudycontentpurple>h6{
+    font-weight: 600;
+    padding-right: 30px;
+    
+}
+.casestudyhrtag{
+    border: .5px solid #dee2e6;
+    width: 75%;
+    margin-top: 40px;
+    margin-bottom: 35px;
+}
+.purplesectest>img{
+    margin-bottom:15px;
+}
+.purplesectest>p, .purplesectest>h6{
+    color:white;
+}
+.purplesectest>h6>span{
+    color:black;
+}
+.cafebannerdiv{
+    height:75vh;
+    min-height:auto;
+}
+
+.padd-sec {
+    margin-top: 80px;
+}
+
+.standardpagemainbannerimg>img {
+    position: relative;
+    right: -10%;
+}
+
+.cafebannerdiv{
+    background-image: url("/img/cafe/bg.jpg");
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+}
+
+
+@media (max-width: 576px){
+   .cafebannerdiv{
+    height:auto;
+    min-height:600px;
+} 
+
+.padd-sec {
+    margin-top: 60px;
+}
+
+
+.margin-fixed-mob {
+    margin-top: 60px;
+}
+
+.tescasestudyimg{
+    text-align: center;
+    margin-bottom: 15px;
+}
+.testcasestudycontent{
+    padding:0px;
+}
+.testcasestudycontent>h6{
+    text-align: center;
+}
+
+.standardpagemainbannerimg>img {
+    right: 0;
+}
+
+}

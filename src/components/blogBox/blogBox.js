@@ -32,7 +32,7 @@ class BlogBox extends Component{
 		if(redirect){
 			return <Redirect to={url}/>
 		}
-
+		console.log('image of blog is '+this.props.blog_image);
         return(
             <div className="single-blog">
 						    <a href="blogs.html">
