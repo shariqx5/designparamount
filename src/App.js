@@ -15,7 +15,6 @@ import Blogs from './pages/blogs/index';
 import SingleBlogPost from './pages/blogs/singleBlogPost';
 import CaseStudies from './pages/caseStudies';
 import SingleCaseStudy from './pages/caseStudies/singleCaseStudy';
-import BlogSearchResult from './pages/blogs/blogSearchResult';
 
 class App extends React.Component{
 
@@ -24,7 +23,6 @@ class App extends React.Component{
       script.src =  "/js/element-mouse-mover.js";
       script.async = true;
       document.body.append(script);
-
    }
 
    render(){
@@ -41,7 +39,6 @@ class App extends React.Component{
               <Route exact path="/contact" component={Contact}/>
               <Route exact path="/hire-designer" component={HireDesigner}/>
               <Route exact path="/blogs" component={Blogs}/>
-              <Route exact path="/blogs/search" component={BlogSearchResult} />
               <Route exact path="/blogs/:title" component={SingleBlogPost}/>
               <Route exact path="/case-study" component={CaseStudies} />
               <Route exact path="/case-study/:title" component={SingleCaseStudy}/>

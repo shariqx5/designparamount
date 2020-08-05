@@ -14,17 +14,65 @@ class CaseStudies extends Component{
         super(props);
         this.state = {
             caseStudies : [],
-            limit : 10
-        }
+			limit : 10,
+			currentPage:0,
+			offset:0,
+			searchQuery:''
+		}
+
+		this.handleSearch = this.handleSearch.bind(this);
     }
 
 
     async componentDidMount(){
-        const data = await caseStudyAPI.fetchAllCaseStudy();
+		this.checkSearchParamExist();
+        if(this.state.searchQuery === ""){
+            this.fetchAllData();
+        }
+	}
+
+
+
+	checkSearchParamExist(){
+        const search = window.location.search;
+        const params = new URLSearchParams(search);
+        const query = params.get('search');
+        if(query){
+           const encodedQuery = encodeURI(query);
+             this.setState({
+                searchQuery:encodedQuery
+            },()=>this.searchData());
+        }
+	}
+	
+
+
+	searchData = async()=>{
+        const data = await caseStudyAPI.searchCaseStudy(this.state.searchQuery);
+        this.setState({
+            caseStudies:data.data
+        })
+    }
+
+
+
+    fetchAllData = async()=>{
+		const data = await caseStudyAPI.fetchAllCaseStudy();
         this.setState({
             caseStudies : data.data
         });
+    }
+	
 
+
+	handleSearch(searchText){
+        this.props.history.push(window.location.pathname+"?search="+searchText);
+        searchText = encodeURI(searchText);
+        this.setState({
+            searchQuery:searchText,
+            caseStudies:[]
+        },()=>this.searchData());
+        
     }
 
 
@@ -68,7 +116,7 @@ class CaseStudies extends Component{
 								<h3>Search</h3>
 								<div className="row">
 									<div className="col-12">
-										<Search />
+										<Search handleSearch={this.handleSearch}/>
 									</div>
 								</div>
 							</div>

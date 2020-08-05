@@ -3,6 +3,7 @@ import {Layout,HelpAction,CaseStudyJumbotron,Search,Categories,Sidebar} from '..
 import ShortCastStudyThumbnail from './shortCastStudyThumbnail';
 import {CaseStudyAPI} from '../../api';
 import {StringHelper} from '../../helpers';
+import {Redirect} from 'react-router-dom';
 import './singleCaseStudy.css';
 
 
@@ -14,8 +15,12 @@ class SingleCaseStudy extends Component{
     constructor(props){
         super(props);
         this.state = {
-            caseStudy : ''
-        }
+			caseStudy : '',
+			redirect:false,
+			url:""
+		}
+		
+		this.handleSearch = this.handleSearch.bind(this);
     }
 
 
@@ -34,7 +39,24 @@ class SingleCaseStudy extends Component{
 
 
 
+	handleSearch(searchText){
+		this.setState({
+			redirect:true,
+			url:"/case-study?search="+searchText
+		})        
+    }
+
+
+
     render(){
+		const {redirect,url} = this.state;
+
+		if(redirect){
+			return(
+				<Redirect to={url} />
+			)
+		}
+
         return(
            <Layout>
                <CaseStudyJumbotron />
@@ -57,7 +79,7 @@ class SingleCaseStudy extends Component{
 								<h3>Search</h3>
 								<div className="row">
 									<div className="col-12">
-										<Search />
+										<Search handleSearch={this.handleSearch}/>
 									</div>
 								</div>
 							</div>

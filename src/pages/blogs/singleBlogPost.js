@@ -42,14 +42,7 @@ class SingleBlogPost extends Component{
 		this.setState({
 			redirect:true,
 			url:"/blogs?search="+searchText
-		})
-        // this.props.history.push(window.location.pathname+"?search="+searchText);
-        // searchText = encodeURI(searchText);
-        // this.setState({
-        //     searchQuery:searchText,
-        //     blogs:[]
-        // },()=>this.searchData());
-        
+		})        
     }
 
 

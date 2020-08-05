@@ -38,8 +38,7 @@ class Blogs extends Component{
         const params = new URLSearchParams(search);
         const query = params.get('search');
         if(query){
-            console.log(`search param is ${query}`);
-            const encodedQuery = encodeURI(query);
+           const encodedQuery = encodeURI(query);
              this.setState({
                 searchQuery:encodedQuery
             },()=>this.searchData());
