@@ -3,6 +3,7 @@ import {Layout,BlogJumbotron,HelpAction,Categories,Search,Sidebar} from '../../c
 import ShortBlogThumbnail from './shortBlogThumbnail';
 import {BlogAPI} from '../../api';
 import {StringHelper} from '../../helpers';
+import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 
 const blogAPI = new BlogAPI();
 const stringHelper = new StringHelper();
@@ -12,15 +13,19 @@ class SingleBlogPost extends Component{
 	constructor(props){
 		super(props);
 		this.state={
-			blog:''
+			blog:'',
+			redirect:false,
+			url:""
 		}
+
+		this.handleSearch = this.handleSearch.bind(this);
 	}
+
+
 
 	async componentDidMount(){
 		if(this.props.match.params!==""){
 			const title = this.props.match.params.title;
-			// console.log(this.props);
-			// console.log(this.props.match.params);
 			const data = await blogAPI.fetchSinglePostDetails(title);
 			this.setState({
 				blog:data.data[0]
@@ -31,8 +36,32 @@ class SingleBlogPost extends Component{
 		}
 	}
 
+
+	
+	handleSearch(searchText){
+		this.setState({
+			redirect:true,
+			url:"/blogs?search="+searchText
+		})
+        // this.props.history.push(window.location.pathname+"?search="+searchText);
+        // searchText = encodeURI(searchText);
+        // this.setState({
+        //     searchQuery:searchText,
+        //     blogs:[]
+        // },()=>this.searchData());
+        
+    }
+
+
+
     render(){
-		const {blog} = this.state;
+		const {blog,redirect,url} = this.state;
+		
+		if(redirect){
+			return(
+				<Redirect to={url}/>
+			)
+		}
         return(
             <Layout>
                 <BlogJumbotron />
@@ -97,7 +126,7 @@ class SingleBlogPost extends Component{
 								<h3>Search</h3>
 								<div className="row">
 									<div className="col-12">
-										<Search />
+										<Search handleSearch={this.handleSearch}/>
 									</div>
 								</div>
 							</div>

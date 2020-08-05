@@ -2,7 +2,6 @@ import React,{Component} from 'react';
 import {Layout,BlogJumbotron,HelpAction} from '../../components';
 import {BlogAPI} from '../../api';
 import BlogPost from './blogPost';
-import {Redirect} from 'react-router-dom';
 
 
 const blogAPI = new BlogAPI();
@@ -13,6 +12,7 @@ class Blogs extends Component{
         super(props);
         this.state={
             blogs : [],
+            searchQuery:"",
             currentPage:0,
             offset:0,
             limit:10,
@@ -24,32 +24,61 @@ class Blogs extends Component{
     }
 
 
-    async componentDidMount(){
-        const data = await blogAPI.fetchAllBlogs();
-        console.log(data);
+    componentDidMount(){
+        this.checkSearchParamExist();
+        if(this.state.searchQuery === ""){
+            this.fetchAllData();
+        }
+    }
+
+
+
+    checkSearchParamExist(){
+        const search = window.location.search;
+        const params = new URLSearchParams(search);
+        const query = params.get('search');
+        if(query){
+            console.log(`search param is ${query}`);
+            const encodedQuery = encodeURI(query);
+             this.setState({
+                searchQuery:encodedQuery
+            },()=>this.searchData());
+        }
+    }
+
+
+
+    searchData = async()=>{
+        const data = await blogAPI.searchBlogs(this.state.searchQuery);
         this.setState({
             blogs:data.data
         })
     }
 
 
-    handleSearch(searchText){
-        console.log(`Search value is ${searchText}`);
-        this.setState({
-            redirect : true,
-            url : `/blogs/search?query=${searchText}`,
-            blogs : []
-        })
+
+    fetchAllData = async()=>{
+            const data = await blogAPI.fetchAllBlogs();
+            this.setState({
+                blogs:data.data
+            })
     }
 
 
+
+    handleSearch(searchText){
+        this.props.history.push(window.location.pathname+"?search="+searchText);
+        searchText = encodeURI(searchText);
+        this.setState({
+            searchQuery:searchText,
+            blogs:[]
+        },()=>this.searchData());
+        
+    }
+
+
+
     render(){
-
-        const {redirect,url} = this.state;
-        if(redirect){
-            return <Redirect to={url}/>
-        }
-
         return(
             <Layout>
                 <BlogJumbotron />
