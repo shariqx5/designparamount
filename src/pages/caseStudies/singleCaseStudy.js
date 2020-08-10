@@ -5,6 +5,7 @@ import {CaseStudyAPI} from '../../api';
 import {StringHelper} from '../../helpers';
 import {Redirect} from 'react-router-dom';
 import './singleCaseStudy.css';
+import { withRouter } from 'react-router-dom';
 
 
 const caseStudyAPI = new CaseStudyAPI();
@@ -16,8 +17,6 @@ class SingleCaseStudy extends Component{
         super(props);
         this.state = {
 			caseStudy : '',
-			redirect:false,
-			url:""
 		}
 		
 		this.handleSearch = this.handleSearch.bind(this);
@@ -40,23 +39,12 @@ class SingleCaseStudy extends Component{
 
 
 	handleSearch(searchText){
-		this.setState({
-			redirect:true,
-			url:"/case-study?search="+searchText
-		})        
+		this.props.history.push(`case-study?search=${searchText}`);      
     }
 
 
 
     render(){
-		const {redirect,url} = this.state;
-
-		if(redirect){
-			return(
-				<Redirect to={url} />
-			)
-		}
-
         return(
            <Layout>
                <CaseStudyJumbotron />
@@ -113,4 +101,4 @@ class SingleCaseStudy extends Component{
 }
 
 
-export default SingleCaseStudy;
+export default withRouter(SingleCaseStudy);

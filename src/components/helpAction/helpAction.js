@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import {Link} from 'react-router-dom';
 
 class HelpAction extends Component{
 
@@ -23,7 +24,7 @@ class HelpAction extends Component{
 						</div>
 						<div className="link-area">
 							<a href="#" className="a-link more-padding-lr purple-link">Live Chat</a>
-							<a href="contact.html" className="a-link more-padding-lr">Contact Us</a>
+							<a href="#" className="a-link more-padding-lr"><Link className="purple-color" to="/contact">Contact Us</Link></a>
 						</div>
 					</div>
 				</div>

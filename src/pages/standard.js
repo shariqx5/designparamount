@@ -10,7 +10,7 @@ import {Layout,
         PortfolioNavigation,
         Portfolio,
         HelpAction,
-        StandardDesigner
+        StandardDesigner,
 } from '../components';
 
 class Standard extends Component{

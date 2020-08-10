@@ -11,6 +11,7 @@ class UltimateTable extends Component{
             packageTagline={"Great for Solo Entrepreneurs"}
             packageImage={"3.png"}
             packageClass={"utimate-price"}
+            url={"ultimate"}
             />
         )
     }

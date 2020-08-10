@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import {Link} from 'react-router-dom';
 
 class ProJumbotron extends Component{
 
@@ -25,7 +26,7 @@ class ProJumbotron extends Component{
                             <p>Modern branding designs that set your business apart from your competitors. Our professional designers add their creative juices to concoct a brand recipe that makes your business shine in the market.</p>
                         </div>
                         <div className="bannerbtnwhitediv">
-                            <a href="pricing.html" className="a-link purple-link pricing">See Pricing</a>
+                            <a href="#" className="a-link purple-link pricing"><Link className="purple-color" to="/pricing">See Pricing</Link></a>
                             <a href="#" className="a-link watchvideo">Watch The Video</a>
                         </div>
                     </div>

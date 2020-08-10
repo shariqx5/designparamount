@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import {Link} from 'react-router-dom';
 import './standardJumbotron.css';
 
 class StandardJumbotron extends Component{
@@ -21,7 +22,7 @@ class StandardJumbotron extends Component{
                                 <p>Modern branding designs that set your business apart from your competitors. Our professional designers creates brand recipe that makes your business shine in the market.</p>
                             </div>
                             <div className="bannerbtnwhitediv">
-                                <a href="pricing.html" className="a-link purple-link pricing">See Pricing</a>
+                                <a href="pricing.html" className="a-link purple-link pricing"><Link className="white-color" to="/pricing">See Pricing</Link></a>
                                 <a href="#" className="a-link watchvideo">Watch The Video</a>
                             </div>
                         </div>

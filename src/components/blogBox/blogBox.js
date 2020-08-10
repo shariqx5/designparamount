@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import {StringHelper} from '../../helpers';
-import {Redirect} from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 
 const stringHelper = new StringHelper();
 
@@ -8,31 +8,17 @@ class BlogBox extends Component{
 
 	constructor(props){
 		super(props);
-		this.state={
-			redirect:false,
-			url:''
-		}
 	}
 
 
 	onClick = (event)=>{
 		event.preventDefault();
 		const {url_title} = this.props;
-		this.setState({
-			url:`/blogs/${url_title}`,
-			redirect:true
-		})
+		this.props.history.push(`/blogs/${url_title}`);
 	}
 
 
     render(){
-
-		const {redirect,url} = this.state;
-
-		if(redirect){
-			return <Redirect to={url}/>
-		}
-		console.log('image of blog is '+this.props.blog_image);
         return(
             <div className="single-blog">
 						    <a href="blogs.html">
@@ -59,4 +45,4 @@ class BlogBox extends Component{
 }
 
 
-export default BlogBox;
+export default withRouter(BlogBox);

@@ -11,6 +11,7 @@ class ProTable extends Component{
             packageTagline={"Great for Solo Entrepreneurs"}
             packageImage={"2.png"}
             packageClass={"dark-grey-price"}
+            url={"pro"}
             />
         )
     }

@@ -9,6 +9,7 @@ import TShirts from './tShirtPortfolio';
 import BookCover from './bookCoverPortfolio';
 import Signage from './signagePortfolio';
 import BagDesign from './bagDesignPortfolio';
+import {Link} from 'react-router-dom';
 
 const portfolioOptions = {
     0:{
@@ -50,7 +51,7 @@ class Portfolio extends Component{
                         </div>
                         <div class="col-12" style={{zIndex:"2"}}>
                             <div class="link-area text-center mt-60 ">
-                                <a href="porfolio.html" class="a-link more-padding-lr purple-link">See More Work</a>
+                                <a href="" class="a-link more-padding-lr purple-link"><Link className="white-color" to="/portfolio">See More Work</Link></a>
                             </div>
                         </div>
                     </div>

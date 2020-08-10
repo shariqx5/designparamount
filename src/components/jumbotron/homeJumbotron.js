@@ -21,7 +21,7 @@ class HomeJumbotron extends Component{
 							<p>Our team works with the contemporary approach in design which is minimal, yet highly creative. Great quality of design and concepts matter most to us as they do to you.</p>
 						</div>
 						<div className="link-area">
-							<a href="pricing.html" className="a-link purple-link">See Pricing</a>
+							<a href="#" className="a-link purple-link"><Link className="white-color" to="/pricing">See Pricing</Link></a>
 							<a href="#portfolio" className="a-link scroll-to">Vist Portfolio</a>
 						</div>
 					</div>

@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import {Link} from 'react-router-dom';
 
 class PricingTable extends Component{
 
@@ -43,7 +44,7 @@ class PricingTable extends Component{
 								<a href="#" className="a-link more-padding-lr filled-link">Get a Demo</a>
 							</div>
 							<div className="price-link-area">
-								<a href="standard.html" className="a-link more-padding-lr  mt-10">Learn More <i className="fas fa-long-arrow-alt-right"></i></a>
+								<a href="standard.html" className="a-link more-padding-lr  mt-10"><Link className="white-color" to={`/${this.props.url}`}>Learn More</Link> <i className="fas fa-long-arrow-alt-right"></i></a>
 							</div>
 						</div>
         )

@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import {BlogAPI} from '../api';
 import {Layout,
         HomeJumbotron,
         Clients,
@@ -11,8 +12,11 @@ import {Layout,
         ProTable,
         UltimateTable,
         HelpAction,
-        BlogBox
+        BlogBox,
+        LoadingBlogBox
     } from '../components';
+
+const blogAPI = new BlogAPI();
 
 class Home extends Component{
 
@@ -21,9 +25,30 @@ class Home extends Component{
     //         videos:[]
     //     }
     // }
+
+    state = {
+        blogs : [],
+        limit : 4
+    }
+
+
+    async componentDidMount(){
+        const data = await blogAPI.fetchAllBlogs();
+        this.setState({
+            blogs:data.data
+        })
+    }
     
 
     render(){
+        const {blogs,limit} = this.state;
+        const LoadingBlogs = [];
+		if(blogs.length<=0){
+			for(let i = 0;i<limit;i++){
+				LoadingBlogs.push(<div className="col-md-3"><LoadingBlogBox /></div>);
+			}
+        }
+        
         return(
             <Layout>
                 <HomeJumbotron />
@@ -78,18 +103,16 @@ class Home extends Component{
 							<h1>Read Our Experience! <br /><span>Stay Up-To Date With Our Latest Blog</span></h1>
 						</div>
 					</div>
-                    <div className="col-md-3">
-                        <BlogBox />
-                    </div>
-                    <div className="col-md-3">
-                        <BlogBox />
-                    </div>
-                    <div className="col-md-3">
-                        <BlogBox />
-                    </div>
-                    <div className="col-md-3">
-                        <BlogBox />
-                    </div>
+                    {
+								blogs.length>0?(
+									blogs.map((blog,j)=>(
+										<div className="col-md-3">
+											<BlogBox key={j} {...blog}/>
+										</div>
+									))
+								):LoadingBlogs
+								
+					}
                 </div>
 			</div>
 		</section>

@@ -10,6 +10,7 @@ class StandardTable extends Component{
             packagePrice={"99"}
             packageTagline={"Great for Solo Entrepreneurs"}
             packageImage={"1.png"}
+            url={"standard"}
             />
         )
     }

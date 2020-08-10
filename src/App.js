@@ -15,6 +15,8 @@ import Blogs from './pages/blogs/index';
 import SingleBlogPost from './pages/blogs/singleBlogPost';
 import CaseStudies from './pages/caseStudies';
 import SingleCaseStudy from './pages/caseStudies/singleCaseStudy';
+import Request from './pages/request';
+import FourZeroFour from './pages/fourZeroFour';
 
 class App extends React.Component{
 
@@ -39,9 +41,11 @@ class App extends React.Component{
               <Route exact path="/contact" component={Contact}/>
               <Route exact path="/hire-designer" component={HireDesigner}/>
               <Route exact path="/blogs" component={Blogs}/>
+              <Route exact path="/request" component={Request}/>
               <Route exact path="/blogs/:title" component={SingleBlogPost}/>
               <Route exact path="/case-study" component={CaseStudies} />
               <Route exact path="/case-study/:title" component={SingleCaseStudy}/>
+              <Route component={FourZeroFour}/>
            </Switch>
         </Router>
      )

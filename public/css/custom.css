@@ -1,0 +1,27 @@
+.black-color{
+    color : #282b30;
+    display : inline-block;
+    position: relative;
+    font-weight: 700;
+}
+
+.get-a-demo-link{
+    color : #5e42d3 !important;
+}
+
+
+.gray-color{
+    color : #8c8d92;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+
+.white-color{
+    color : white !important;
+}
+
+
+.purple-color{
+    color : #5e42d3;
+}

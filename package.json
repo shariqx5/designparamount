@@ -1,5 +1,6 @@
 {
   "name": "desginparamount",
+  "homepage":"http://designparamount.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

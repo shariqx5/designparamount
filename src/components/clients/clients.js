@@ -25,7 +25,7 @@ class Client extends Component{
 
     render(){
         return(
-            <section className="white-section pb-0">
+            <section className="white-section pb-0 position-rel mb-80">
 			    <img src="/images/shapes/circle.png" alt="" className="position-absolute top-0 left-0 circle-top-left max-width-190" />
 			    <img src="/images/shapes/triangle.png" alt="" className="position-absolute top-0 right-0 triangle-top-right max-width-190" />
                 <div className="container">

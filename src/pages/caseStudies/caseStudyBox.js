@@ -1,35 +1,22 @@
 import React,{Component} from 'react';
-import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
+import { withRouter} from 'react-router-dom/cjs/react-router-dom.min';
 
 class CaseStudyBox extends Component{
 
       constructor(props){
           super(props);
-          this.state = {
-              redirect:false,
-              url:""
-          }
       }
 
 
       onClick = (event)=>{
 		event.preventDefault();
-		const {url_title} = this.props;
-		this.setState({
-			url:`/case-study/${url_title}`,
-			redirect:true
-		})
+        const {url_title} = this.props;
+        this.props.history.push(`/case-study/${url_title}`);
     }
     
 
 
       render(){
-
-         const {redirect,url} = this.state;
-         if(redirect){
-             return <Redirect to={url}/>
-         }
-
           return(
             <div className="single-blog case-study-item">
                 <a href="#" onClick={this.onClick}>
@@ -52,4 +39,4 @@ class CaseStudyBox extends Component{
 }
 
 
-export default CaseStudyBox;
+export default withRouter(CaseStudyBox);

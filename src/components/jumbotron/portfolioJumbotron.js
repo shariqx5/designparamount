@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import {Link} from 'react-router-dom';
 
 class PortfolioJumbotron extends Component{
 
@@ -18,7 +19,7 @@ class PortfolioJumbotron extends Component{
                                 decide the kind of brand you want to build with.</p>
 						</div>
 						<div className="link-area">
-							<a href="pricing.html" className="a-link purple-link">See Pricing</a>
+							<a href="#" className="a-link purple-link"><Link className="white-color" to="/pricing">See Pricing</Link></a>
 							<a href="#" className="a-link">Watch The Video</a>
 						</div>
 					</div>

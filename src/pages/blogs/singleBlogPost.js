@@ -3,7 +3,7 @@ import {Layout,BlogJumbotron,HelpAction,Categories,Search,Sidebar} from '../../c
 import ShortBlogThumbnail from './shortBlogThumbnail';
 import {BlogAPI} from '../../api';
 import {StringHelper} from '../../helpers';
-import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
+import { withRouter } from 'react-router-dom';
 
 const blogAPI = new BlogAPI();
 const stringHelper = new StringHelper();
@@ -13,9 +13,7 @@ class SingleBlogPost extends Component{
 	constructor(props){
 		super(props);
 		this.state={
-			blog:'',
-			redirect:false,
-			url:""
+			blog:''
 		}
 
 		this.handleSearch = this.handleSearch.bind(this);
@@ -39,22 +37,14 @@ class SingleBlogPost extends Component{
 
 	
 	handleSearch(searchText){
-		this.setState({
-			redirect:true,
-			url:"/blogs?search="+searchText
-		})        
+		this.props.history.push(`/blogs?search=${searchText}`);    
     }
 
 
 
     render(){
-		const {blog,redirect,url} = this.state;
-		
-		if(redirect){
-			return(
-				<Redirect to={url}/>
-			)
-		}
+		const {blog} = this.state;
+	
         return(
             <Layout>
                 <BlogJumbotron />
@@ -175,4 +165,4 @@ class SingleBlogPost extends Component{
 }
 
 
-export default SingleBlogPost;
+export default withRouter(SingleBlogPost);

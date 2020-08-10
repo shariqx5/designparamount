@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import {Link} from 'react-router-dom';
 
 class CustomIllustration extends Component{
 
@@ -15,7 +16,7 @@ class CustomIllustration extends Component{
 	                            <p>Our illustration artists create the most appealing and elegant illustrations to tell your brand story in unique ways. Do you need a custom-made mascot for your brand? Are you looking for an artist who can tell a memorable tale through drawings? You have reached the right place!</p>
 	                        </div>
 	                        <div className="price-link-area text-left mb-20">
-								<a href="request.html" className="a-link more-padding-lr filled-link">Get a Demo</a>
+								<a href="#" className="a-link more-padding-lr filled-link"><Link className="white-color" to="/request">Get a Demo</Link></a>
 							</div>
 	                    </div>
 	                </div>

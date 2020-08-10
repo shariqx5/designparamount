@@ -20,7 +20,7 @@ class Navbar extends Component{
                         <div className="col-lg-6 col-md-6 col-sm-12 position-initial">
                             <ul className="menu">
                                 <li className="dropdown">
-                                    <a href="javascript:void(0)">Product</a>
+                                    <a href="javascript:void(0)" className="black-color">Product</a>
                                     <div className="dropdown-content">
                                         <div className="proheaderdiv headerdropdowndiv1">
                                             <div>
@@ -29,7 +29,7 @@ class Navbar extends Component{
                                                     <h6>Design Pickle Ultimate</h6>
                                                     <h6>The recipe to ingenious brand building</h6>
                                                     <p>All ingredients needed for single-handed startups</p>
-                                                    <Link to="/ultimate"><p>Learn More &nbsp;<i className="fas fa-arrow-right"></i></p></Link>
+                                                    <Link className="white-color" to="/ultimate"><p>Learn More &nbsp;<i className="fas fa-arrow-right"></i></p></Link>
                                                 </a>
                                             </div>
                                         </div>
@@ -39,7 +39,7 @@ class Navbar extends Component{
                                                     <h6>Design Pickle Pro</h6>
                                                     <h6>The recipe to ingenious brand building</h6>
                                                     <p>All ingredients needed for single-handed startups</p>
-                                                    <Link to="/pro"><p>Learn More &nbsp;<i className="fas fa-arrow-right"></i></p></Link>
+                                                    <Link className="white-color" to="/pro"><p>Learn More &nbsp;<i className="fas fa-arrow-right"></i></p></Link>
                                                 </a>
                                             </div>
                                         </div>
@@ -50,23 +50,23 @@ class Navbar extends Component{
                                                     <h6>Design Pickle Standard</h6>
                                                     <h6>The recipe to ingenious brand building</h6>
                                                     <p>All ingredients needed for single-handed startups</p>
-                                                    <Link to="/standard"><p>Learn More &nbsp;<i className="fas fa-arrow-right"></i></p></Link>
+                                                    <Link className="white-color" to="/standard"><p>Learn More &nbsp;<i className="fas fa-arrow-right"></i></p></Link>
                                                 </a>
                                             </div>
                                         </div>
                                     </div>
                                 </li>
                                 {/* <!--<li><a href="index.html">Home</a></li>--> */}
-                                <li><a href="#"><Link to="/portfolio">Our Work</Link></a></li>
-                                <li><a href="#"><Link to="/pricing">Pricing</Link></a></li>
-                                <li><a href="#"><Link to="/about">About</Link></a></li>
-                                <li><a href="#"><Link to="contact">Contact</Link></a></li>
+                                <li><a href="#"><Link className="black-color" to="/portfolio">Our Work</Link></a></li>
+                                <li><a href="#"><Link className="black-color" to="/pricing">Pricing</Link></a></li>
+                                <li><a href="#"><Link className="black-color" to="/about">About</Link></a></li>
+                                <li><a href="#"><Link className="black-color" to="/contact">Contact</Link></a></li>
                             </ul>
                         </div>
                         <div className="col-md-3 d-none d-lg-block">
                             <ul className="menu menu-right">
-                                <li><a href="login.html">Login</a></li>
-                                <li><a href="request.html" className="get-a-demo-link">Get A Demo</a></li>
+                                <li><a href="#"><Link className="black-color" to="/login">Login</Link></a></li>
+                                <li><a href="#" className="get-a-demo-link"><Link className="get-a-demo-link" to="/request">Get A Demo</Link></a></li>
                             </ul>
                         </div>
 			        </div>

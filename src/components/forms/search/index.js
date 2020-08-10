@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
+import {withRouter} from 'react-router-dom';
 
 class Search extends Component{
 
@@ -19,10 +19,7 @@ class Search extends Component{
             var input = document.getElementById("search-input");
             console.log(input.value);
             if(input.value === ""){
-                this.setState({
-                    redirect : false,
-                    url : '/blogs'
-                })
+                this.props.history.push("/blogs");
             }
             else{
                 this.setState({
@@ -35,14 +32,6 @@ class Search extends Component{
 
 
     render(){
-
-        const {redirect, url} = this.state;
-        if(redirect){
-            return (
-                <Redirect to={url} />
-            )
-        }
-
         return(
             <form onSubmit={this.submitForm}>
 				<input id="search-input" type="text" name = "searchText" placeholder="Enter Your Company Name" className="blog-form-input" onKeyUp={this.onTextChange} contentEditable={true}/> 
@@ -53,4 +42,4 @@ class Search extends Component{
 }
 
 
-export default Search;
+export default withRouter(Search);

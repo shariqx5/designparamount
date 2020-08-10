@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import {Link} from 'react-router-dom';
 
 class SeePortfolio extends Component{
 
@@ -11,7 +12,7 @@ class SeePortfolio extends Component{
 	                    <p>Witness our vast portfolio with a huge variety of designs, illustrations and custom-made artworks for our happy clients. Our work speaks for itself. You can also explore our previously created craft to get inspiration for your next great project.</p>
 	                </div>
                     <div className="price-link-area text-left mb-20">
-                        <a href="request.html" className="a-link more-padding-lr filled-link">Get a Demo</a>
+                        <a href="#" className="a-link more-padding-lr filled-link"><Link className="white-color" to="/request">Get a Demo</Link></a>
                     </div>
 	            </div>
 	            <div className="col-md-6 pricingdivbgimg" style={{backgroundImage:"/images/pricing/priceservice2.jpg",backgroundSize:"cover",backgroundRepeat:"no-repeat",backgroundPositionX:"center",backgroundPositionY:"center",borderRadius:"0 8px 8px 0"}}>

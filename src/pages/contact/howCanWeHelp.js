@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import {Link} from 'react-router-dom';
 
 class HowCanWeHelp extends Component{
 
@@ -65,7 +66,7 @@ class HowCanWeHelp extends Component{
                         <h5 className="card-title">Request <span>Demo</span></h5>
                         <p className="card-text">Request a demo to get a better understanding of our design skills.</p>
                           <div className="link-area">
-							<a href="request.html" className="a-link purple-link">Demo</a>
+							<a href="#" className="a-link purple-link"><Link className="white-color" to="/request">Demo</Link></a>
 						  </div>
                       </div>
                     </div>
@@ -95,7 +96,7 @@ class HowCanWeHelp extends Component{
                         <h5 className="card-title">Request <span>Demo</span></h5>
                         <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
                           <div className="link-area">
-							<a href="request.html" className="a-link purple-link">Demo</a>
+							<a href="#" className="a-link purple-link"><Link to="/request">Demo</Link></a>
 						  </div>
                       </div>
                     </div>

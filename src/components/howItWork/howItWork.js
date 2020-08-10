@@ -9,7 +9,7 @@ class HowItWork extends Component{
 
     render(){
         return(
-            <section className={this.props.showBlack?"position-rel corevaluesec":"position-rel corevaluesec"}>
+            <section className={this.props.showBlack?"position-rel corevaluesec pt-80":"position-rel corevaluesec pt-80"}>
             
             <img src="images/pro/shape2.png" alt="" className="position-absolute" style={{maxWidth:"220px",left:"-105px",top:"-160px",width:"100%"}}/>
             <img src="images/pro/shape1.png" alt="" className="position-absolute" style={{maxWidth:"220px",right:"-100px",transform:"rotate(4deg)",top:"0px",width:"100%"}}/>

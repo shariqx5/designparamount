@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import {Link} from 'react-router-dom';
 
 class UltimateJumbotron extends Component{
 
@@ -25,7 +26,7 @@ class UltimateJumbotron extends Component{
 						<p>No HR. No interviews. No drama. In a few clicks you’ll have access to a professional designer ready to jump into your creative ecosystem.</p>
 					</div>
 					<div className="bannerbtnwhitediv probannerbtn">
-						<a href="pricing.html" className="a-link purple-link pricing">See Pricing</a>
+						<a href="#" className="a-link purple-link pricing"><Link className="white-color" to="/pricing">See Pricing</Link></a>
 						<a href="#" className="a-link watchvideo">Watch The Video</a>
 					</div>
 				</div>

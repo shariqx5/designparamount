@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import OwlCarousel from 'react-owl-carousel';
 import TeamMemberBox from '../teamMemberBox/TeamMemberBox';
+import {Link} from 'react-router-dom';
 
 //css imports
 import 'owl.carousel/dist/assets/owl.carousel.css';
@@ -38,10 +39,10 @@ class MeetDesigner extends Component{
                                 <p>Whether you’re just starting out or growing sales into the millions, learn from some of our most successful Design Pickle clients on how they grew their business through our unlimited graphic design support. learn from some of our most successful.</p>
                             </div>
                             <div className="link-area">
-                                <a href="request.html" className="a-link purple-link">Get a Demo</a>
+                                <a href="#" className="a-link purple-link"><Link className="white-color" to="/request">Get a Demo</Link></a>
                             </div>
                         </div>
-                        <img src="images/standard/team-bg.png" alt="" className="position-absolute" style={{maxWidth:"800px",top:"-35px",right:"-135px",width:"100%",opacity:"0.2"}}/>
+                        <img src="/images/standard/team-bg.png" alt="" className="position-absolute" style={{maxWidth:"800px",top:"-35px",right:"-135px",width:"100%",opacity:"0.2"}}/>
                         <div className="col-md-7">
                             <OwlCarousel
                                 className="testimonial-carousel owl-carousel"

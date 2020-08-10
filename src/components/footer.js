@@ -27,27 +27,27 @@ class Footer extends Component{
                             <div className="col-md-2 footer-content">
                                 <h6>PRODUCTS</h6>
                                 
-                                <a href="standard.html">Standard</a><br />
-                                <a href="pro.html">Pro</a><br />
-                                <a href="ultimate.html">Ultimate</a><br />
-                                <a href="request.html">Single Request</a><br />
-                                <a href="portfolio.html">Portfolio</a>
+                                <a href="#"><Link className="gray-color" to="/standard">Standard</Link></a><br />
+                                <a href="#"><Link className="gray-color" to="/pro">Pro</Link></a><br />
+                                <a href="#"><Link className="gray-color" to="/ultimate">Ultimate</Link></a><br />
+                                <a href="#"><Link className="gray-color" to="/request">Single Request</Link></a><br />
+                                <a href="#"><Link className="gray-color" to="/portfolio">Portfolio</Link></a>
                             </div>
                             <div className="col-md-2 footer-content">
                                 <h6>ABOUT</h6>
                                 
-                                <a href="about.html#team">Our Team</a><br />
-                                <a href="#"><Link to="/case-study">Case Studies</Link></a><br />
-                                <a href="designer.html">Hire A Designer</a><br />
-                                <a href="contact.html">Contact Us</a>
+                                <a href="#"><Link className="gray-color" to="/about#team">Our Team</Link></a><br />
+                                <a href="#"><Link className="gray-color" to="/case-study">Case Studies</Link></a><br />
+                                <a href="#"><Link className="gray-color" to="/hire-designer">Hire A Designer</Link></a><br />
+                                <a href="#"><Link className="gray-color" to="/contact">Contact Us</Link></a>
                             </div>
                             <div className="col-md-2 footer-content">
                                 <h6>RESOURCES</h6>
                                 
-                                <a href="#"><Link to="/blogs">Blog</Link></a><br />
-                                <a href="pricing.html">Pricing</a><br />
-                                <a href="signup.html">Sign Up</a><br />
-                                <a href="login.html">Log In</a>
+                                <a href="#"><Link className="gray-color" to="/blogs">Blog</Link></a><br />
+                                <a href="#"><Link className="gray-color" to="/pricing">Pricing</Link></a><br />
+                                <a href="/sign-up"><Link className="gray-color" to="/sign-up">Sign Up</Link></a><br />
+                                <a href="/login"><Link className="gray-color" to="/login">Log In</Link></a>
                             </div>
                             <div className="col-md-2 footer-content">
                                 <h6>Address</h6>
