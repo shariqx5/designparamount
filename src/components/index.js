@@ -35,6 +35,7 @@ import CaseStudyJumbotron from './jumbotron/caseStudyJumbotron';
 import RequestJumbotron from './jumbotron/requestJumbotron';
 import PricingPlan from './pricingPlan/pricingPlan';
 import ClientLayout from './clientLayout/clientLayout';
+import Table from './table/table';
 
 export {
     Layout,
@@ -73,5 +74,6 @@ export {
     CaseStudyJumbotron,
     RequestJumbotron,
     PricingPlan,
-    ClientLayout
+    ClientLayout,
+    Table
 }

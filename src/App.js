@@ -19,6 +19,8 @@ import Request from './pages/request';
 import FourZeroFour from './pages/fourZeroFour';
 import Login from './pages/login/login';
 import ClientHome from './pages/admin/home';
+import PendingOrders from './pages/admin/orders/pending/pending';
+import OrderDetails from './pages/admin/orders/orderDetails';
 
 class App extends React.Component{
 
@@ -49,6 +51,8 @@ class App extends React.Component{
               <Route exact path="/case-study" component={CaseStudies} />
               <Route exact path="/case-study/:title" component={SingleCaseStudy}/>
               <Route exact path="/client" component={ClientHome}/>
+              <Route exact path="/client/pending-orders" component={PendingOrders}/>
+              <Route exact path="/client/pending-orders/detail" component={OrderDetails} />
               <Route component={FourZeroFour}/>
            </Switch>
         </Router>
