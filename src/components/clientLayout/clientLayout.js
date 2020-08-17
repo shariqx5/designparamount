@@ -1,6 +1,5 @@
 import React,{Component} from 'react';
 import {Link} from 'react-router-dom';
-import './clientLayout.css';
 
 class ClientLayout extends Component{
 
@@ -38,7 +37,8 @@ class ClientLayout extends Component{
 
 
     loadCSS = ()=>{
-        const cssSrcs = ["https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css"];
+        const cssSrcs = ["https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css",
+                        "/css/admin-panel.css"];
 
         cssSrcs.map((cssSrc,i)=>{
           const link = document.createElement("link");
@@ -85,13 +85,13 @@ class ClientLayout extends Component{
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" className="dropdown-toggle">Orders</a>
                     <ul className="collapse list-unstyled" id="homeSubmenu">
                         <li>
-                            <a href="#"><Link to="/client/pending-orders">Pending</Link></a>
+                            <a href="#"><Link className="sidebar_link" to="/client/pending-orders">Pending</Link></a>
                         </li>
                         <li>
-                            <a href="#"><Link to="/client/completed-orders">Completed</Link></a>
+                            <a href="#"><Link className="sidebar_link" to="/client/completed-orders">Completed</Link></a>
                         </li>
                         <li>
-                            <a href="#"><Link to="/client/cancalled-orders">Cancalled</Link></a>
+                            <a href="#"><Link className="sidebar_link" to="/client/cancalled-orders">Cancalled</Link></a>
                         </li>
                     </ul>
                 </li>
