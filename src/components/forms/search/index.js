@@ -17,7 +17,6 @@ class Search extends Component{
     submitForm = (event) => {
         event.preventDefault();
             var input = document.getElementById("search-input");
-            console.log(input.value);
             if(input.value === ""){
                 this.props.history.push("/blogs");
             }

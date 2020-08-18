@@ -1,5 +1,6 @@
 import React from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import PrivateRoute from './hoc/privateRoute';
 
 //Pages
 import Home from './pages/home';
@@ -50,9 +51,9 @@ class App extends React.Component{
               <Route exact path="/blogs/:title" component={SingleBlogPost}/>
               <Route exact path="/case-study" component={CaseStudies} />
               <Route exact path="/case-study/:title" component={SingleCaseStudy}/>
-              <Route exact path="/client" component={ClientHome}/>
-              <Route exact path="/client/pending-orders" component={PendingOrders}/>
-              <Route exact path="/client/pending-orders/detail" component={OrderDetails} />
+              <PrivateRoute exact path="/client" component={ClientHome}/>
+              <PrivateRoute exact path="/client/pending-orders" component={PendingOrders}/>
+              <PrivateRoute exact path="/client/pending-orders/detail" component={OrderDetails} />
               <Route component={FourZeroFour}/>
            </Switch>
         </Router>

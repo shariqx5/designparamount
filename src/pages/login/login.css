@@ -50,6 +50,13 @@
   width: 450px;
 }
 
+
+.error{
+    color : red;
+    font-size: medium;
+    text-align: center;
+}
+
 @media (min-width: 1800px) {
     .wholesignupbox {
         padding: 80px 0px 80px 0px;

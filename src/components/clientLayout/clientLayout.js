@@ -1,6 +1,9 @@
 import React,{Component} from 'react';
+import {CookiesHelper} from '../../helpers';
 import {Link} from 'react-router-dom';
 
+
+const cookiesHelper = new CookiesHelper();
 class ClientLayout extends Component{
 
 
@@ -13,13 +16,16 @@ class ClientLayout extends Component{
       sidebarCollapse : "",
       showSidebar : "",
       showContent : "",
-      collapseIn : ""
+      collapseIn : "",
+      name : '',
+      email : ''
     }
 
 
     componentDidMount(){
 
       this.loadCSS();
+      this.loadCookies();
 
       const scriptSrc = ["https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js",
                          "https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"
@@ -47,6 +53,17 @@ class ClientLayout extends Component{
           document.head.append(link);
         });
 
+    }
+
+
+
+    loadCookies = ()=>{
+        const name = cookiesHelper.getCookie('name');
+        const email = cookiesHelper.getCookie('email');
+        this.setState({
+            name,
+            email
+        })
     }
 
 
@@ -80,7 +97,7 @@ class ClientLayout extends Component{
             </div>
 
             <ul className="list-unstyled components">
-                <p>Muhammad Shariq</p>
+                <p>{this.state.name}</p>
                 <li className="active">
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" className="dropdown-toggle">Orders</a>
                     <ul className="collapse list-unstyled" id="homeSubmenu">
@@ -140,7 +157,7 @@ class ClientLayout extends Component{
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  Muhammad Shariq
+                                  {this.state.email}
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                   <a class="dropdown-item" href="#">Logout</a>
