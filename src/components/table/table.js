@@ -11,7 +11,7 @@ class Table extends Component{
                         return <th>{head}</th>
                    })}
                 </thead>
-                <tbody>
+                <tbody id="data-table">
                     {this.props.children}
                 </tbody>
             </table>

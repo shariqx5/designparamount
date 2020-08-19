@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import {CookiesHelper} from '../../helpers';
 import {Link} from 'react-router-dom';
+import './clientLayout.css';
 
 
 const cookiesHelper = new CookiesHelper();
@@ -99,32 +100,10 @@ class ClientLayout extends Component{
             <ul className="list-unstyled components">
                 <p>{this.state.name}</p>
                 <li className="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" className="dropdown-toggle">Orders</a>
-                    <ul className="collapse list-unstyled" id="homeSubmenu">
-                        <li>
-                            <a href="#"><Link className="sidebar_link" to="/client/pending-orders">Pending</Link></a>
-                        </li>
-                        <li>
-                            <a href="#"><Link className="sidebar_link" to="/client/completed-orders">Completed</Link></a>
-                        </li>
-                        <li>
-                            <a href="#"><Link className="sidebar_link" to="/client/cancalled-orders">Cancalled</Link></a>
-                        </li>
-                    </ul>
+                    <Link to="/client/orders">Orders</Link>
                 </li>
                 <li>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" className="dropdown-toggle">Invoices</a>
-                    <ul className="collapse list-unstyled" id="pageSubmenu">
-                        <li>
-                            <a href="#">Unpaid</a>
-                        </li>
-                        <li>
-                            <a href="#">Paid</a>
-                        </li>
-                        <li>
-                            <a href="#">Refund</a>
-                        </li>
-                    </ul>
+                    <Link to="/client/invoices">Invoices</Link>
                 </li>
                 <li>
                     <a href="#">Portfolio</a>

@@ -33,7 +33,7 @@ class Search extends Component{
     render(){
         return(
             <form onSubmit={this.submitForm}>
-				<input id="search-input" type="text" name = "searchText" placeholder="Enter Your Company Name" className="blog-form-input" onKeyUp={this.onTextChange} contentEditable={true}/> 
+				<input id="search-input" type="text" name = "searchText" placeholder="Search" className="blog-form-input" onKeyUp={this.onTextChange} contentEditable={true}/> 
 				<i class="fas fa-search"></i>
 			</form>
         )

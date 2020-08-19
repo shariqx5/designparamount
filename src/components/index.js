@@ -36,6 +36,9 @@ import RequestJumbotron from './jumbotron/requestJumbotron';
 import PricingPlan from './pricingPlan/pricingPlan';
 import ClientLayout from './clientLayout/clientLayout';
 import Table from './table/table';
+import Pagination from './pagination/pagination';
+import LoadingTable from './table/loadingTable';
+import CollapsePanel from './collapsePanel/collapsePanel';
 
 export {
     Layout,
@@ -75,5 +78,8 @@ export {
     RequestJumbotron,
     PricingPlan,
     ClientLayout,
-    Table
+    Table,
+    Pagination,
+    LoadingTable,
+    CollapsePanel
 }

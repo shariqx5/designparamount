@@ -1,16 +1,24 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
-const PendingRow = (props)=>{
-    return(
-        <tr>
-                <td>1</td>
-                <td><a href="#">Prochain Logo Design</a></td>
-                <td>Logo Design</td>
-                <td>$300</td>
-                <td>Unpaid</td>
-                <td>14 August 2020</td>
-        </tr>
-    )
+class PendingRow extends React.Component{
+
+    constructor(props){
+        super(props);
+    }
+
+    render(){
+        return(
+            <tr>
+                    <td>{this.props.index}</td>
+                    <td><Link to={`/client/orders/detail?orderid=${this.props.order.invoice_id}`}>{this.props.order.itemname}</Link></td>
+                    <td>{this.props.order.category}</td>
+                    <td>{(this.props.order.currency!==null?this.props.order.currency:"$ "+this.props.order.itemprice)}</td>
+                    <td>{this.props.order.payment_status}</td>
+                    <td>{this.props.order.created_date}</td>
+            </tr>
+        )
+    }
 }
 
 

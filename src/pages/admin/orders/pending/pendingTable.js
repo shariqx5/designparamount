@@ -11,10 +11,12 @@ class PendingTable extends Component{
     render(){
         return(
             <Table heads={this.props.heads}>
-                <PendingRow />
-                <PendingRow />
-                <PendingRow />
-                <PendingRow />
+                {this.props.orders.length>0?(
+                    this.props.orders.map((order,i)=><PendingRow order={order} key={i} index={this.props.offset+i+1}/>)
+                ):(
+                <tr><td>No Orders Found</td></tr>
+                )
+                }
             </Table>
         
         )

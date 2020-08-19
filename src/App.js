@@ -21,7 +21,7 @@ import FourZeroFour from './pages/fourZeroFour';
 import Login from './pages/login/login';
 import ClientHome from './pages/admin/home';
 import PendingOrders from './pages/admin/orders/pending/pending';
-import OrderDetails from './pages/admin/orders/orderDetails';
+import OrderDetails from './pages/admin/orders/orderDetails/orderDetails';
 
 class App extends React.Component{
 
@@ -52,8 +52,8 @@ class App extends React.Component{
               <Route exact path="/case-study" component={CaseStudies} />
               <Route exact path="/case-study/:title" component={SingleCaseStudy}/>
               <PrivateRoute exact path="/client" component={ClientHome}/>
-              <PrivateRoute exact path="/client/pending-orders" component={PendingOrders}/>
-              <PrivateRoute exact path="/client/pending-orders/detail" component={OrderDetails} />
+              <PrivateRoute exact path="/client/orders" component={PendingOrders}/>
+              <PrivateRoute exact path="/client/orders/detail" component={OrderDetails} />
               <Route component={FourZeroFour}/>
            </Switch>
         </Router>

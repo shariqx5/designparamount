@@ -1,0 +1,9 @@
+.order-details table tbody tr{
+    margin : 7px;
+}
+
+
+.order-details table tbody tr td{
+    margin-right : 10px !important;
+    padding-right : 50px !important;
+}
