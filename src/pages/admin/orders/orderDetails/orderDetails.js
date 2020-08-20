@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import {ClientLayout,CollapsePanel} from '../../../../components';
 import {OrderAPI} from '../../../../api';
 import Skeleton from 'react-loading-skeleton';
+import {withRouter} from 'react-router-dom';
 import './orderDetails.css';
 
 
@@ -32,6 +33,23 @@ class OrderDetails extends Component{
         }
 
     }
+
+
+
+
+    handleButtonClick = (event)=>{
+        event.preventDefault();
+        const {orderId,orderDetails} = this.state;
+        this.props.history.push({
+            pathname : '/client/orders/detail/invoice',
+            state : {
+                orderDetails : orderDetails
+            }
+        });
+
+    }
+
+
 
 
     render(){
@@ -76,7 +94,7 @@ class OrderDetails extends Component{
                             </tr>
                             <tr>
                                 <td>Invoice</td>
-                                <td><button className="btn btn-primary btn-sm">Invoice</button></td>
+                                <td><button className="btn btn-primary btn-sm" onClick={this.handleButtonClick}>Invoice</button></td>
                             </tr>
                         </tbody>
                     </table>
@@ -88,4 +106,4 @@ class OrderDetails extends Component{
 }
 
 
-export default OrderDetails;
+export default withRouter(OrderDetails);

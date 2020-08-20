@@ -22,6 +22,7 @@ import Login from './pages/login/login';
 import ClientHome from './pages/admin/home';
 import PendingOrders from './pages/admin/orders/pending/pending';
 import OrderDetails from './pages/admin/orders/orderDetails/orderDetails';
+import Invoice from './pages/admin/orders/invoice/index';
 
 class App extends React.Component{
 
@@ -54,6 +55,7 @@ class App extends React.Component{
               <PrivateRoute exact path="/client" component={ClientHome}/>
               <PrivateRoute exact path="/client/orders" component={PendingOrders}/>
               <PrivateRoute exact path="/client/orders/detail" component={OrderDetails} />
+              <PrivateRoute exact path="/client/orders/detail/invoice" component={Invoice}/>
               <Route component={FourZeroFour}/>
            </Switch>
         </Router>

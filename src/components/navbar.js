@@ -1,13 +1,38 @@
 import React,{Component} from 'react';
+import {CookiesHelper} from '../helpers';
 import {Link} from 'react-router-dom';
 
+
+
+const cookiesHelper = new CookiesHelper();
 class Navbar extends Component{
     
     constructor(props){
         super(props);
+        this.state = {
+            showLogin : true
+        }
     }
+
+    checkToShowLoginOrNot = ()=>{
+        const token = cookiesHelper.getCookie('authToken');
+        if(token!=="" && token!==null){
+            this.setState({
+                showLogin : false
+            })
+        }
+
+        else {
+            this.setState({
+                showLogin : true
+            })
+        }
+    }
+
+
     
     render(){
+
         return(
             <header className="header">
 		        <div className="container-fluid headerdivdesktop">
@@ -65,7 +90,7 @@ class Navbar extends Component{
                         </div>
                         <div className="col-md-3 d-none d-lg-block">
                             <ul className="menu menu-right">
-                                <li><a href="#"><Link className="black-color" to="/login">Login</Link></a></li>
+                                <li><a href="#">{this.state.showLogin?(<Link className="black-color" to="/login">Login</Link>):(<Link className="black-color" to="/client/orders">Client Area</Link>)}</a></li>
                                 <li><a href="#" className="get-a-demo-link"><Link className="get-a-demo-link" to="/request">Get A Demo</Link></a></li>
                             </ul>
                         </div>

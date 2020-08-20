@@ -14,6 +14,14 @@ class CookiesHelper {
         return Cookies.get([name]);
     }
 
+
+
+    removeLoginCookies = ()=>{
+        Cookies.remove("authToken");
+        Cookies.remove("email");
+        Cookies.remove("name");
+    }
+
 }
 
 

@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import {CookiesHelper} from '../../helpers';
-import {Link} from 'react-router-dom';
+import {Link,Redirect} from 'react-router-dom';
 import './clientLayout.css';
 
 
@@ -19,7 +19,9 @@ class ClientLayout extends Component{
       showContent : "",
       collapseIn : "",
       name : '',
-      email : ''
+      email : '',
+      redirect : false,
+      url : ''
     }
 
 
@@ -83,9 +85,29 @@ class ClientLayout extends Component{
     }
 
 
+
+
+    logout = (event)=>{
+        event.preventDefault();
+        cookiesHelper.removeLoginCookies();
+        this.setState({
+            redirect : true,
+            url : "/"
+        })
+    }
+
   
 
     render(){
+
+    
+      const {redirect, url} = this.state;
+      if(redirect){
+          return(
+              <Redirect to={url} />
+          )
+      }
+
       return(
         <div className="wrapper">
         <nav id="sidebar" className={this.state.showSidebar!==""?this.state.showSidebar:""}>
@@ -101,15 +123,6 @@ class ClientLayout extends Component{
                 <p>{this.state.name}</p>
                 <li className="active">
                     <Link to="/client/orders">Orders</Link>
-                </li>
-                <li>
-                    <Link to="/client/invoices">Invoices</Link>
-                </li>
-                <li>
-                    <a href="#">Portfolio</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
                 </li>
             </ul>
         </nav>
@@ -139,7 +152,7 @@ class ClientLayout extends Component{
                                   {this.state.email}
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                  <a class="dropdown-item" href="#">Logout</a>
+                                  <a class="dropdown-item" href="#" onClick = {this.logout}>Logout</a>
                                   {/* <a class="dropdown-item" href="#">Another action</a>
                                   <div class="dropdown-divider"></div>
                                   <a class="dropdown-item" href="#">Something else here</a> */}
