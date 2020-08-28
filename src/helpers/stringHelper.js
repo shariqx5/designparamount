@@ -22,6 +22,10 @@ class StringHelper {
     }
 
 
+
+    convertObjectToURL = (object)=>{
+        return new URLSearchParams(object).toString();
+    }
     
     
 }

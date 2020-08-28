@@ -1,0 +1,14 @@
+.wrapper{
+    width : 60%;
+    margin: 2% auto;
+    background-color: #ECF0F5;
+    padding : 20px;
+    border-top: 3px solid #5E43D4;
+}
+
+
+.wrapper .title_heading{
+    text-align: center;
+    align-content: center;
+    margin-bottom: 20px;
+}

@@ -39,6 +39,7 @@ import Table from './table/table';
 import Pagination from './pagination/pagination';
 import LoadingTable from './table/loadingTable';
 import CollapsePanel from './collapsePanel/collapsePanel';
+import PaymentLayout from './paymentLayout/paymentLayout';
 
 export {
     Layout,
@@ -81,5 +82,6 @@ export {
     Table,
     Pagination,
     LoadingTable,
-    CollapsePanel
+    CollapsePanel,
+    PaymentLayout
 }

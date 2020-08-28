@@ -13,6 +13,21 @@ class ValidationConfig{
     }
 
 
+
+    checkforvalidnumeric(value){
+        value = Number(value);
+        let numericRegex = new RegExp(/^[0-9]+$/);
+        return numericRegex.test(value)?true:false;
+    }
+
+
+
+    checkforvaliddouble(value){
+        let numericRegex = new RegExp(/^([0-9]*\.[0-9]+|[0-9]+)$/);
+        return numericRegex.test(value)?true:false;
+    }
+
+
     checkforvalidnumber(value){
         let valueRegex = new RegExp(/^([0-9]{4})$/);
         return valueRegex.test(value)?true:false;

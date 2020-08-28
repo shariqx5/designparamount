@@ -1,0 +1,88 @@
+body, p { font-family: 'Poppins', sans-serif; }
+      hr{ margin-top:8px;}
+      .bd-placeholder-img { font-size: 1.125rem; text-anchor: middle; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+      #sidebar {background-color: #fff; border-radius: 0px; padding: 15px; box-shadow: 4px 4px 0 #e0e0e0; max-height: 745px;}
+      .col-md-8 {background-color: #fff; border-radius: 8px; padding: 30px;margin-right: 2%; box-shadow: 4px 4px 0 #e0e0e0;}
+      .header { position: relative; background: #fff; width: 100%; padding: 7px 0; z-index: 100; border: 1px solid #e4e4e4; transition: all .5s; font-family: 'Nunito Sans', sans-serif; }
+      .logo { width: 100%; font-size: 28px; }
+      .logo img { width: 100%; max-width: 105px; }
+      .menu {width: 100%;overflow: hidden;padding: 6px 0px; font-size: 14px;}
+      .menu ul { list-style: none; padding: 0; margin: 0; float: right; /*width: 650px;*/ }
+      .menu ul a { text-decoration: none; color: #333; }
+      .menu ul li {padding: 10px 15px;float: left;}
+      .menu-mob { width: 50px; height: 40px; border-radius: 4px; position: relative; float: right; cursor: pointer; }
+	  .menu-bars {width: 25px; position: absolute; top: 50%; left: 50%;height: 4px; background: #008dff; transform: translate(-50%, -50%); }
+	  .menu-bars::before { content: ''; width: 25px; position: absolute; top: -8px; height: 4px; background: #008dff; }
+	  .menu-bars::after {content: '';width: 25px; position: absolute;top: 8px; height: 4px; background: #008dff; }
+	  .mob-menu-list { background: #fff; position: absolute; top: 50px; right: 15px; text-align: center; box-shadow: 0px 0px 10px #00000040; width: 150px; display: none; }
+	  .mob-menu-list ul { list-style: none; padding: 15px; margin: 0; }
+	  .mob-menu-list ul a { text-decoration: none; color: #333; }
+	  .mob-menu-list ul li { padding: 9px 15px; }
+	  .section-heading {background-color: #19a47d; padding: 10px 11px; color: #fff; }
+	  .badge-secondary { color: #19a47d; background-color: #ffffff; }
+	  .form-control { padding: 1.375rem .75rem; }
+	  .custom-select {height:calc(1.375em + 1.55rem + 0px); }
+	  .custom-select1 {height:calc(1.375em + 1.55rem + 0px); max-width:30%;}
+	  .complete {padding-top: 31px; border-top: 1px dashed #aaa;margin-top: 20px;}
+	  .lh-condensed { line-height: 1.25; }
+      .input-group-prepend { margin-right: -53%; }
+      .coupon-response { padding: 0.35rem 1.25rem; }
+      .coupon-response-div { margin-top:10px; }
+      #discount_div {display:none !important;}
+      .head-number {font-weight: 600;font-size: 16px;border-radius: 50px;border: 2px solid #7a61ef;}
+      .company_number {padding: 7px 13px 0 13px;margin-top: 2px;margin-bottom: 3px; line-height: 2.3;position: relative;float: right; 
+    font-size: 13px; color: #000 !important; text-decoration: none;background-color: transparent; text-transform: uppercase; font-weight: 700; 
+      
+      }
+      .icon-icons-01 { margin-right: 5px; }
+      .icon-icons-01:before { color: #19a47d; position: relative; top: 2px;}
+      
+      #bt-dropin .braintree-sheet{border-radius: 0px;}
+      .billborder{border-radius:0px;padding: 15px;}
+      .tinvoice{border-bottom-right-radius: 0px !important;border-bottom-left-radius: 0px !important;}
+      .binvoice{ border-top-left-radius: 0px !important;border-top-right-radius: 0px !important;}
+      .binfo{border-radius: 0px !important;}
+      .company_number:hover{ text-decoration: none !important;color:#19a47d;}
+     .paramount .section-heading,.paramount .btn-primary, .paramount .btn-primary:not(:disabled):not(.disabled).active, .paramount .btn-primary:not(:disabled):not(.disabled):active, .paramount .show>.btn-primary.dropdown-toggle {background-color: #19a47d}
+	  .paramount .badge-secondary {color: #19a47d; padding : .25em 0.6em; font-size: 100%;}
+    
+    #payment-form .row { margin: 0 -7px; }
+    #payment-form .row .col-md-6, #payment-form .row .col-md-12, #payment-form .row .col-md-5, #payment-form .row .col-md-4, #payment-form .row .col-md-3 { padding: 0 7px; }
+    .input-group-prepend, .iti--allow-dropdown { width: 100%; }
+        #item_quantity{
+            width: 40px;
+        }  
+      @media (min-width: 768px) { 
+        .bd-placeholder-img-lg { font-size: 3.5rem; }
+		.col-md-8 { -ms-flex: 0 0 66.666667%; flex: 0 0 66.666667%; max-width: 64.666667%; }
+		.input-group-prepend { margin-right: -67%; }
+		
+      }
+      
+      @media (max-width: 450px) {
+        .input-group-prepend { margin-right: -62%; }
+        .menu ul { float: none;}
+		.menu ul li { padding: 10px 15px; width: 200px; margin: 0 auto; float:none; text-align: center; }
+		.logo {text-align: center; margin: 10px 0;}
+      }
+      
+      @media (min-width: 1900px) { 
+          .container {
+                max-width: 1440px;
+            }
+          
+        .header { padding: 10px 0;}
+        
+        .logo img { max-width: 141px; }
+        
+        .company_number {
+            padding: 13px 13px 0 13px;
+            font-size: 16px;
+        }
+		
+      }
+        
+      
+      [data-braintree-id="expiration-date-field-group"] .braintree-form-expiration,.braintree-form-cvv, .braintree-form-postal-code { display: block; width: 100%; height: calc(1.5em + .75rem + 2px); padding: 1.375rem .75rem; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border: 1px solid #ced4da; border-radius: 0px; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out; }
+      [data-braintree-id="number-field-group"] .braintree-form-number { display: block; width: 100%; height: calc(1.5em + .75rem + 2px); padding: 1.375rem .75rem; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border: 1px solid #ced4da; border-radius: 0px; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out; }
+      [data-braintree-id="expiration-date-field-group"] .braintree-form-expiration:focus { color: #495057; background-color: #fff; border-color: #80bdff; outline: 0; box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25); }

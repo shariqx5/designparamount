@@ -23,6 +23,11 @@ import ClientHome from './pages/admin/home';
 import PendingOrders from './pages/admin/orders/pending/pending';
 import OrderDetails from './pages/admin/orders/orderDetails/orderDetails';
 import Invoice from './pages/admin/orders/invoice/index';
+import Payment from './pages/payment';
+import PaymentFailed from './pages/payment/transactionFailed';
+import PaymentSuccess from './pages/payment/transactionSuccess';
+import PaymentGenerator from './pages/payment/paymentGenerator/paymentGenerator';
+import PaymentGeneratorResponse from './pages/payment/paymentGenerator/paymentGeneratorResponse';
 
 class App extends React.Component{
 
@@ -49,6 +54,11 @@ class App extends React.Component{
               <Route exact path="/blogs" component={Blogs}/>
               <Route exact path="/request" component={Request}/>
               <Route exact path="/login" component={Login}/>
+              <Route exact path="/payment" component={Payment}/>
+              <Route exact path="/payment/generator" component={PaymentGenerator}/>
+              <Route exact path="/payment/generator/link" component={PaymentGeneratorResponse} />
+              <Route exact path="/payment/failed" component={PaymentFailed}/>
+              <Route exact path="/payment/success" component={PaymentSuccess}/>
               <Route exact path="/blogs/:title" component={SingleBlogPost}/>
               <Route exact path="/case-study" component={CaseStudies} />
               <Route exact path="/case-study/:title" component={SingleCaseStudy}/>

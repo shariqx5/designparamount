@@ -1,0 +1,41 @@
+#payment-container{
+    margin-top: 10% !important;
+    margin-bottom: 50px;
+}
+
+
+.payment-section-heading{
+    background-color: #6E3DB7;
+    color : white;
+    padding : 8px 8px;
+    border-radius: 10px;
+}
+
+
+.payment-section-heading span.badge{
+    background-color: white;
+    padding : 8px;
+    margin-right: 10px;
+    color : #6E3DB7;
+}
+
+
+.payment-box{
+    background-color: rgb(250, 250, 250);
+    box-shadow: 10px 10px rgb(218, 217, 217);;
+    padding : 40px;
+    border-radius: 10px;
+}
+
+.payment-box-second{
+    background-color: rgb(250, 250, 250);
+    box-shadow: 10px 10px rgb(218, 217, 217);;
+    padding : 20px;
+    border-radius: 10px;
+}
+
+
+.money-back-img{
+    text-align: center !important;
+    align-content: center;
+}

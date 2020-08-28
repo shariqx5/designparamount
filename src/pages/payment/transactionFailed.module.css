@@ -1,0 +1,31 @@
+.thank_section { text-align: center; margin-top : 10%; margin-bottom: 50px;}
+.thankyou_container { background: #333333; color: #fff; width: 100%; max-width: 800px; margin: 0 auto; padding: 45px 30px 30px 30px; box-shadow: 0px 4px 20px 5px rgba(0, 0, 0, 0.2); border-radius: 10px; }
+.thank_tick { font-size: 32px; width: 75px;height: 75px; background: rgb(226, 90, 80); border-radius: 50%;box-shadow: 0 6px 30px 0 rgba(255, 39, 39, 0.22);position: relative; color: #fff;margin: 0 auto; }
+.thank_tick i {position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); }
+.thank_tick > .after, .thank-tick > .before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgb(255, 255, 255); border-radius: 50%; z-index: 1; color: #fff; }
+.thank_tick > .after { opacity: .2; -webkit-animation: pulse 1.5s infinite; animation: pulse 1.5s infinite; }
+.thank_tick > .before { transform: scale(1); opacity: .1; -webkit-animation: 1.5s pulse .3s infinite; animation: 1.5s pulse .3s infinite; }
+.thank_detail { width: 100%; }
+.thank_detail h1 { padding: 5px 0 15px 0; position: relative; }
+.thank_detail h1:before { content: ''; background: rgb(39, 117, 255); width: 60px; height: 2px; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
+.thank_detail h3 { font-size: 17px; line-height: 24px; font-weight: 300; }
+.order_detail h2 { font-size: 24px; padding: 0 0 15px 0; position: relative; margin-bottom: 20px; }
+.order_detail h2:before { content: ''; background: rgb(39, 117, 255); width: 60px; height: 2px; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
+.order_detail ul { list-style: none; padding: 0; margin: 0 auto; width: 100%; max-width: 400px; overflow: hidden; }
+.order_detail ul li { width: 50%; float: left; padding: 5px 10px; border: 1px solid #ddd; }
+.order_detail ul li:nth-child(1) { border-top-left-radius: 6px; } 
+.order_detail ul li:nth-child(2) { border-top-right-radius: 6px; } 
+.order_detail ul li:nth-last-child(2) { border-bottom-left-radius: 6px; font-weight: 500; }
+.order_detail ul li:last-child { border-bottom-right-radius: 6px; font-weight: 500; }
+.success_table {max-width: 400px;margin: 0 auto;border: 1px solid;border-collapse: unset;border-radius: 1em;}
+
+@-webkit-keyframes pulse{0%{transform:scale(1)}50%{transform:scale(2)}to{transform:scale(1);opacity:0}}
+@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(2)}to{transform:scale(1);opacity:0}}
+
+
+@media (max-width: 768px) {
+    .thank_detail h1 { font-size: 22px; }
+    .thank_detail h3 { font-size: 15px; }
+    .order_detail h2 { font-size: 21px; padding: 0 0 10px 0; }
+    .thankyou_container { padding: 45px 20px 30px 20px; }
+}
