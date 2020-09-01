@@ -1,0 +1,7 @@
+.contact_heading h1 { text-align: center; color: #ffffff; -webkit-text-stroke-width: 1px; -webkit-text-stroke-color: black; text-shadow: 3px 4px 11px rgba(36, 35, 35, 0.78); font-size: 5em; line-height: 1.2em; border-left: 20px solid; border-radius: 40px; border-right: 20px solid; padding: 0px 20px; }
+.contact_heading h1:after { margin: 0 auto; margin-top: 20px; background: #ffffff; }
+.contact_heading h1 span { font-weight: 600; }
+.contact_heading p { color: #ffffff; text-align: center; }
+.contact { background: #5e42d3; height: 100vh; padding-top: 15%; }
+
+.contact_heading p { font-size: 24px; margin: 0px 0px 0px; }

@@ -2,6 +2,19 @@ import {SERVER_ADDRESS} from '../config';
 
 class PaymentAPI {
 
+
+    getTokenData = async(token)=>{
+        const response = await fetch(SERVER_ADDRESS+`stripe/index?token=${token}`,{
+            method : "GET"
+        });
+
+        const data = await response.json();
+
+        return data;
+    }
+
+
+
     submitPaymentIntentRequest = async(payment_method_id,customer_detail)=>{
         const response = await fetch(SERVER_ADDRESS+"stripe/stripe_paymentIntent",{
             method:"POST",
@@ -70,7 +83,7 @@ class PaymentAPI {
 
 
     getItemCategory = async()=>{
-        const response = await fetch(SERVER_ADDRESS+"stripe/get_itemcategory",{
+        const response = await fetch(SERVER_ADDRESS+"payment/get_itemcategory",{
             method:"GET"
         });
 
@@ -82,7 +95,7 @@ class PaymentAPI {
 
 
     getSalePersons = async()=>{
-        const response = await fetch(SERVER_ADDRESS+"stripe/get_salesman",{
+        const response = await fetch(SERVER_ADDRESS+"payment/get_salesman",{
             method:"GET"
         });
 
@@ -99,7 +112,7 @@ class PaymentAPI {
             formData.append(key,formObject[key])
         }
         //converting object into formdata
-        const response = await fetch(SERVER_ADDRESS+"ptoken/generate_link",{
+        const response = await fetch(SERVER_ADDRESS+"payment/generate_link",{
             method:"POST",
             body : formData
         });

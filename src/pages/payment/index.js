@@ -2,17 +2,19 @@ import React,{Component} from 'react';
 import PaymentContainer from './paymentContainer';
 import {UtilityValidationHelper,StringHelper} from '../../helpers';
 import {CardElement} from '@stripe/react-stripe-js';
-import {PaymentAPI} from '../../api';
+import {PaymentAPI,BrainTreeAPI} from '../../api';
 import {withRouter} from 'react-router-dom';
+import {Redirect} from 'react-router-dom';
 import './payment.css';
 
 const stringHelper = new StringHelper();
+const brainTreeAPI = new BrainTreeAPI();
 const paymentAPI = new PaymentAPI();
 const utilityValidation = new UtilityValidationHelper();
 
 class Payment extends Component{
 
-
+    instance;
     constructor(props){
         super(props);
         this.state = {
@@ -26,25 +28,31 @@ class Payment extends Component{
             region : "",
             city : "",
             zipcode : "",
-            itemprice : 49,
-            itemname : "Basic Logo",
+            itemprice : "",
+            itemname : "",
             quantity : 1,
-            ptoken : "1097d08714bd2714eef741e0a26f5f5eb349aa39",
-            category : "Logo Design",
+            ptoken : "",
+            category : "",
             discount : "",
-            original_amount : 49,
-            sale_type : "Fresh Sales",
+            discounted_amount : '',
+            original_amount : "",
+            sale_type : "",
             company_id : "",
             item_desc : "",
             user_id : "",
-            payment_gateway : "Stripe",
-            currency : "USD",
-            currency_symbol : "$",
+            payment_gateway : "",
+            currency : "",
+            currency_symbol : "",
             coupon_id : "",
             payment_method_nonce : "",
+            salesman : '',
             stripe : null,
             elements : null,
+            clientToken : '', 
             customerDetails : {},
+            payment_method_nonce : '',
+            redirect : false,
+            url : '',
             error : {
                 firstName : "",
                 lastName : "",
@@ -62,7 +70,73 @@ class Payment extends Component{
 
         this.setStripeAndElements = this.setStripeAndElements.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.setBrainTreeInstance = this.setBrainTreeInstance.bind(this);
     }
+
+
+
+
+    componentDidMount(){
+        this.getTokenData();
+
+    }
+
+
+
+    getTokenData = async()=>{
+        const search = window.location.search;
+        const params = new URLSearchParams(search);
+        const token = params.get('token');
+        if(token!==""){
+             const response = await paymentAPI.getTokenData(token);
+             if(response.status === 'success'){
+                 this.setState({
+                    category : response.category,
+                    currency_symbol : response.country_info.currency_symbol,
+                    currency : response.currency,
+                    discount : response.discount,
+                    discounted_amount : response.discounted_amount,
+                    item_desc : response.item_desc,
+                    itemname : response.itemname,
+                    itemprice : response.itemprice,
+                    original_amount : response.original_amount,
+                    payment_gateway : response.payment_gateway,
+                    ptoken : response.payment_token,
+                    sale_type : response.sale_type,
+                    salesman : response.salesman
+                 },()=>{
+                    this.intializePaymentGateway();
+                 })
+             }
+             else{
+                this.setState({
+                    redirect : true,
+                    url : '/payment/expired'
+                })
+             }
+        }
+        else{
+            this.setState({
+                redirect : true,
+                url : '/invalid-payment-link'
+            })
+        }
+    }
+
+
+
+    intializePaymentGateway = async()=>{
+        const {payment_gateway} = this.state;
+        if(payment_gateway === 'braintree'){
+            const response = await brainTreeAPI.getClientToken();
+            if(response.status === 'success'){
+                this.setState({
+                    clientToken : response.token
+                })
+            }
+        }
+    }
+
 
 
 
@@ -126,6 +200,13 @@ class Payment extends Component{
 
 
 
+      
+      setBrainTreeInstance = (instance)=>{
+            this.instance = instance;
+      }
+
+
+
       handleSubmit = async(event)=>{
         event.preventDefault();
         const {error} = this.state;
@@ -134,22 +215,18 @@ class Payment extends Component{
             error
         })
 
-        const {firstName,lastName,email,phone,address,country,region,city,zipcode} = this.state;
+        const {firstName,lastName,email,phone,address,country,region,city,zipcode,payment_gateway} = this.state;
         if(utilityValidation.checkErrorExist(this.state.error)){
             if(firstName!=="" && lastName!=="" && email !=="" && phone!=="" && address!=="" && country!=="" && region!=="" && city!=="" && zipcode!==""){
 
                 this.generateCustomerDetailsObject();
-
-                const stripeTokenResponse = await this.createPaymentToken();
-                if(stripeTokenResponse.error){
-                    //send failed data to server
-                    this.submitFailedRequest(stripeTokenResponse);
+                if(payment_gateway === 'stripe'){
+                    await this.handleStripePayment();
                 }
-                else {
-                    //call paymentIntentAPI
-                    const simplePaymentIntentResponse = await this.submitPaymentIntentRequest(stripeTokenResponse.paymentMethod.id);
-                    this.handleServerResponse(simplePaymentIntentResponse);
+                else{
+                    await this.handleBrainTreePayment();
                 }
+               
             }
             else{
                 error.formError = "Fill all required fileds";
@@ -169,6 +246,45 @@ class Payment extends Component{
         }
         
     }
+
+
+
+
+    handleStripePayment = async()=>{
+
+        const stripeTokenResponse = await this.createPaymentToken();
+        if(stripeTokenResponse.error){
+            //send failed data to server
+            this.submitFailedRequest(stripeTokenResponse);
+        }
+        else {
+            //call paymentIntentAPI
+            const simplePaymentIntentResponse = await this.submitPaymentIntentRequest(stripeTokenResponse.paymentMethod.id);
+            this.handleServerResponse(simplePaymentIntentResponse);
+        }
+    }
+
+
+
+    handleBrainTreePayment = async()=>{
+        const {nonce} = await this.instance.requestPaymentMethod();
+        this.setState({
+            payment_method_nonce : nonce
+        },()=>this.submitBraintreePaymentForm())
+
+    }
+
+
+
+    submitBraintreePaymentForm = async()=>{
+        const {customerDetails,payment_method_nonce} = this.state;
+        customerDetails.payment_method_nonce = payment_method_nonce;
+        const response = await brainTreeAPI.submitForm(customerDetails);
+        if(response.status === 'success'){
+            this.props.history.push("/payment/success");
+        }
+    }
+
 
 
 
@@ -257,7 +373,6 @@ class Payment extends Component{
         customerDetails['error_code'] = response.error.code;
         customerDetails['error_message'] = response.error.message;
         const data = await paymentAPI.submitFailedRequest(customerDetails);
-        console.log(data);
         //redirecting user to payment failed page
         this.props.history.push('/payment/failed');
     }
@@ -269,7 +384,7 @@ class Payment extends Component{
         const {firstName,lastName,email,phone,address,company,country,region,city,zipcode,
             itemprice,itemname,item_desc,quantity,ptoken,category,
             discount,original_amount,sale_type,company_id,
-            user_id,payment_gateway,currency,coupon_id
+            user_id,payment_gateway,currency,coupon_id,payment_method_nonce
         } = this.state;
         const customerDetails = {
             firstname:firstName,
@@ -294,7 +409,8 @@ class Payment extends Component{
             user_id,
             payment_gateway,
             currency,
-            coupon_id
+            coupon_id,
+            payment_method_nonce
         }
 
         this.setState({
@@ -313,9 +429,15 @@ class Payment extends Component{
 
 
     render(){
+        const {redirect , url} = this.state;
+        if(redirect){
+           return <Redirect to = {url}/>
+        }
         return(
             <PaymentContainer 
             {...this.state}
+            instance = {this.instance}
+            setBrainTreeInstance = {this.setBrainTreeInstance}
             onChange = {this.onChange}
             onChangePhoneNumber = {this.onChangePhoneNumber}
             selectCountry = {this.selectCountry}

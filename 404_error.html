@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Oops Sorry | DesignParamount</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap');
+
+        body{
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+
+    <style>
+        .contact-heading h1 { text-align: center; color: #ffffff; -webkit-text-stroke-width: 1px; -webkit-text-stroke-color: black; text-shadow: 3px 4px 11px rgba(36, 35, 35, 0.78); font-size: 5em; line-height: 1.2em; border-left: 20px solid; border-radius: 40px; border-right: 20px solid; padding: 0px 20px; }
+        .contact-heading h1:after { margin: 0 auto; margin-top: 20px; background: #ffffff; }
+        .contact-heading h1 span { font-weight: 600; }
+        .contact-heading p { color: #ffffff; text-align: center; }
+        #contact { background: #5e42d3; height: 100vh; padding-top: 15%; }
+       
+        .contact-heading p { font-size: 24px; margin: 0px 0px 0px; }
+    </style>
+</head>
+<body>
+
+    
+     <section id="contact" class="contact-sec">
+        <div class="auto-container pl-45 pr-45 d-flex justify-content-center">
+            <div class="row">
+                <div class="row reorder-xs">
+                    <div class="contact-heading text-left col-xs-12 col-md-12 ">
+                        
+                        <h1>
+                            <span>Oops Sorry!</span><br>This Offer Is Expired
+                        </h1>
+                        <br>
+                        <p>We are taking back to you on our website in <span id="timer">5</span> sec</p>
+                        
+                    </div>
+                </div>
+                </div>
+            </div>  
+        
+    </section>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        window.setInterval(function(){
+            let timer = $('#timer').html();
+            let timePrint = $('#timer').html(parseInt(timer)-1);
+        },1000);
+        
+        window.setTimeout(function(){
+            
+            let url = "<?php echo base_url(); ?>";
+            window.location.href = url;
+    
+        }, 5000);
+    </script>
+
+</body>
+</html>
+    

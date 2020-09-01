@@ -38,9 +38,9 @@ class Navbar extends Component{
 		        <div className="container-fluid headerdivdesktop">
 			        <div className="row position-rel">
 				        <div className="col-lg-3" style={{paddingTop:"14px",paddingLeft:"15px"}}>
-                            <a href="index.html">
-                            <img alt="Logo-Header" src="/images/logo-header.svg" className="logo-wid" />
-                            </a>
+                            <Link to="/">
+                                <img alt="Logo-Header" src="/images/logo-header.svg" className="logo-wid" />
+                            </Link>
 				        </div>
                         <div className="col-lg-6 col-md-6 col-sm-12 position-initial">
                             <ul className="menu">
@@ -104,18 +104,18 @@ class Navbar extends Component{
 
                 {/* <!-- Top Navigation Menu --> */}
                     <div className="topnav">
-                        <a href="index.html" className="active">
+                        <Link to="/" className="active">
                             <img alt="Logo-Header" src="/images/logo-header.svg" />
-                        </a>
+                        </Link>
                         <div id="myLinks">
-                            <a href="standard.html">Standard</a>
-                            <a href="pro.html">Pro</a>
-                            <a href="portfolio.html">Our Work</a>
-                            <a href="pricing.html">Pricing</a>
-                            <a href="about.html">About</a>
-                            <a href="contact.html">Contact</a>
-                            <a href="request.html">Get a Demo</a>
-                            <a href="login.html">Login</a>
+                            <Link to="/standard">Standard</Link>
+                            <Link to="/pro">Pro</Link>
+                            <Link to="/portfolio">Our Work</Link>
+                            <Link to="/pricing">Pricing</Link>
+                            <Link to="/about">About</Link>
+                            <Link to="/contact">Contact</Link>
+                            <Link to="/request">Get a Demo</Link>
+                            <Link to="/login">Login</Link>
                         </div>
                         <a href="javascript:void(0);" className="icon" onclick="myFunction()">
                             <i className="fa fa-bars"></i>

@@ -1,14 +1,11 @@
 import React,{Component} from 'react';
-import {PaymentLayout,Layout} from '../../components';
+import {Layout} from '../../components';
 import ReactIntlTelInput from 'react-intl-tel-input';
 import {CountryDropdown,RegionDropdown} from 'react-country-region-selector';
-import {loadStripe} from '@stripe/stripe-js';
-import {Elements} from '@stripe/react-stripe-js';
-import CheckoutForm from './checkoutForm';
+import Stripe from './stripe';
+import Braintree from './braintree';
+import BrainTreeMark from './braintree/braintreeMark';
 import 'react-intl-tel-input/dist/main.css';
-
-
-const stripe = loadStripe('pk_test_51H20O4D6ElJzVKH7q3IqB8EhIgiTAT2lCFxgrcS9I8YHLOu2gEoCf6YNqvc01yghofj4oreXvbDdkRSYnEL2fTKH005njOZ6D1');
 
 class PaymentContainer extends Component{
 
@@ -61,9 +58,7 @@ class PaymentContainer extends Component{
         </div>
         
         <div className="complete"> 
-            <a href="https://www.braintreegateway.com/merchants/yd27yfdzq222kq2t/verified" target="_blank" style={{display : "table",margin : "12px auto 30px auto",clear:"both"}}> 
-                <img src="https://s3.amazonaws.com/braintree-badges/braintree-badge-wide-dark.png" width="289px" height="48px" border="0" /> 
-            </a> 
+            {this.props.payment_gateway === "braintree"?(<BrainTreeMark />):""}
             <a href="javascript:void(0)" target="_blank" className="money-back-img" display = {{display : "table", margin : "12px auto",clear : "both"}}> 
                 <img src="https://designcater.com/assets/images/checkout/moneyback.png" width="200px" border="0" />
             </a>
@@ -169,28 +164,15 @@ class PaymentContainer extends Component{
 
         <div className="row">
             <div className="col-md-12" id="bt-dropin">
-                <Elements stripe={stripe}>
-                    <CheckoutForm setStripeAndElements = {this.props.setStripeAndElements}/>
-                </Elements>
+                {this.props.payment_gateway === 'stripe'? (
+                  <Stripe setStripeAndElements = {this.props.setStripeAndElements}/>
+                ):(
+                  <Braintree clientToken = {this.props.clientToken} instance = {this.props.instance} setBrainTreeInstance = {this.props.setBrainTreeInstance}/>
+                )}
             </div>
         </div>
         
         <hr className="mb-4" />
-        <input type="hidden" id="final_itemprice" name="itemprice" class="itemprice" value={this.props.itemprice!==""?this.props.itemprice : ""} />
-        <input type="hidden" id="check_itemname" name="itemname" id="itemname" class="itemname" value={this.props.itemname!==""?this.props.itemname : ""} />
-        <input type="hidden" id="check_quantity" name="quantity" id="quantity" value = "1" />
-        <input type="hidden" id="check_ptoken" name="ptoken" value={this.props.payment_token!==""?this.props.payment_token : ""} />
-        <input type="hidden" id="check_category" name="category" value={this.props.category !== ""?this.props.category : ""} />
-        <input type="hidden" name="discount" id="discount" value={this.props.discount!==""?this.props.discount : ""} />
-        <input type="hidden" id="check_orignal_amount" name="original_amount" id="original_amount" value={this.props.original_amount!==""?this.props.original_amount : ""} />
-        <input type="hidden" id="check_sale_type" name="sale_type" value={this.props.sale_type!==""?this.props.sale_type : ""} />
-        <input type="hidden" id="company_id" name="company_id" class="company_id" value={this.props.company_id !== ""?this.props.company_id : ""} />
-        <input type="hidden" id="item_desc" name="item_desc" class="item_desc" value={this.props.item_desc!==""?this.props.item_desc : ""} />
-        <input type="hidden" name="user_id" value={this.props.user_id!==""?this.props.user_id : ""} />
-        <input type="hidden" name="payment_gateway" value={this.props.payment_gateway !== ""?this.props.payment_gateway : ""} />
-        <input type="hidden" id="check_currency" name="currency" value={this.props.currency!==""?this.props.currency : ""} />
-        <input type="hidden" id="coupon_id" name="coupon_id" class="coupon_id" value="" />
-        <input type="hidden" id="nonce" name="payment_method_nonce" />
         <button className="btn btn-primary btn-lg btn-block binfo" id = "final_submit_btn" type="submit" onClick={this.props.onFormSubmit}>Pay Now</button>
         {error.formError!=="" && <label htmlFor="form-error" className="error" style={{textAlign:"center"}}>{error.formError}</label>}
       </form>

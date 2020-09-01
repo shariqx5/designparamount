@@ -36,6 +36,7 @@
 
 
 .money-back-img{
-    text-align: center !important;
-    align-content: center;
+    display: table;
+    margin: 12px auto;
+    clear: both;
 }

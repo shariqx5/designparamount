@@ -1,6 +1,7 @@
 import React from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import PrivateRoute from './hoc/privateRoute';
+import './App.css';
 
 //Pages
 import Home from './pages/home';
@@ -28,6 +29,7 @@ import PaymentFailed from './pages/payment/transactionFailed';
 import PaymentSuccess from './pages/payment/transactionSuccess';
 import PaymentGenerator from './pages/payment/paymentGenerator/paymentGenerator';
 import PaymentGeneratorResponse from './pages/payment/paymentGenerator/paymentGeneratorResponse';
+import PaymentTokenExpired from './pages/payment/expiredOffer';
 
 class App extends React.Component{
 
@@ -54,11 +56,13 @@ class App extends React.Component{
               <Route exact path="/blogs" component={Blogs}/>
               <Route exact path="/request" component={Request}/>
               <Route exact path="/login" component={Login}/>
-              <Route exact path="/payment" component={Payment}/>
+              <Route exact path="/payment/stripe" component={Payment}/>
+              <Route exact path="/payment/braintree" component={Payment}/>
               <Route exact path="/payment/generator" component={PaymentGenerator}/>
               <Route exact path="/payment/generator/link" component={PaymentGeneratorResponse} />
               <Route exact path="/payment/failed" component={PaymentFailed}/>
               <Route exact path="/payment/success" component={PaymentSuccess}/>
+              <Route exact path="/payment/expired" component={PaymentTokenExpired}/>
               <Route exact path="/blogs/:title" component={SingleBlogPost}/>
               <Route exact path="/case-study" component={CaseStudies} />
               <Route exact path="/case-study/:title" component={SingleCaseStudy}/>

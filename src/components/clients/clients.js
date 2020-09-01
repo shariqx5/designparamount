@@ -53,9 +53,6 @@ class Client extends Component{
                             <img src="/images/companies/3.png" alt="" />
                         </div>
                         <div className="item">
-                            <img src="/images/companies/4.png" alt="" />
-                        </div>
-                        <div className="item">
                             <img src="/images/companies/5.png" alt="" />
                         </div>
                         <div className="item">
