@@ -3,7 +3,6 @@ import PricingTabs from './pricingTabs/pricingTabs';
 import AddsOn from './addsOn';
 import FAQ from './FAQ';
 import {Layout,PricingPlan} from '../../components';
-import './pricing.css';
 
 class Pricing extends Component{
     render(){

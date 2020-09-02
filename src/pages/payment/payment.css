@@ -40,3 +40,20 @@
     margin: 12px auto;
     clear: both;
 }
+
+
+
+#discount_div{
+    background-color: #6E3DB7;
+    color : white !important;
+}
+
+
+#discount_div div h6{
+    color : white !important;
+}
+
+
+#itemDiscount{
+    color : white !important;
+}

@@ -1,11 +1,40 @@
 import React,{Component} from 'react';
 import style from './transactionFailed.module.css';
 import {Layout} from '../../components';
+import Skeleton from 'react-loading-skeleton';
+import {Redirect} from 'react-router-dom';
 
 class TransactionFailed extends Component{
 
+	state = {
+		message : '',
+		redirect : false,
+		url : ''
+	}
+
+
+
+	componentDidMount(){
+		if(this.props.location.state !=="" && this.props.location.state!==undefined){
+			const {message} = this.props.location.state;
+			this.setState({
+				message
+			})
+		}
+		else{
+			this.setState({
+				redirect : true,
+				url : "/"
+			})
+		}
+	}
+
 
     render(){
+		const {redirect, url} = this.state;
+		if(redirect){
+			return <Redirect to={url}/>
+		}
         return(
             <Layout>
     <section className={`${style.thank_section}`}>
@@ -18,7 +47,7 @@ class TransactionFailed extends Component{
 				</div>
 				<div className={`${style.thank_detail}`}>
 					<h1>Transaction Failed</h1>
-					<h3>You Transaction Failed due to invalid Card</h3>
+		<h3>{this.state.message!==""?this.state.message : <Skeleton />}</h3>
 					<div className={`${style.order_detail}`}>
 						<h2>Please Try Again..!!</h2>
 					

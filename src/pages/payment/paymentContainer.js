@@ -5,6 +5,7 @@ import {CountryDropdown,RegionDropdown} from 'react-country-region-selector';
 import Stripe from './stripe';
 import Braintree from './braintree';
 import BrainTreeMark from './braintree/braintreeMark';
+import Redeem from './redeem';
 import 'react-intl-tel-input/dist/main.css';
 
 class PaymentContainer extends Component{
@@ -28,7 +29,7 @@ class PaymentContainer extends Component{
       <ul className="list-group mb-3">
         <li className="list-group-item d-flex justify-content-between lh-condensed binvoice">
           <div>
-            <h5 className="my-0">Branded Logo</h5>
+        <h5 className="my-0">{this.props.itemname}</h5>
           </div>
           
         </li>
@@ -36,26 +37,24 @@ class PaymentContainer extends Component{
           <div>
             <h6 className="my-0">Item Price</h6>
           </div>
-          <span className="text-muted itemprice_coupon" id="itemPrice">USD 135</span>
+        <span className="text-muted itemprice_coupon" id="itemPrice">{this.props.currency+" "+this.props.original_amount}</span>
         </li>
-        
+        {this.props.discount!==""?(
+          <li className="list-group-item d-flex justify-content-between" id="discount_div" style={{display:"flex !important"}} >
+          <div> <h6 className="my-0">Discount</h6> 
+             <small></small> 
+          </div> 
+        <span  id="itemDiscount">{this.props.currency+" "+this.props.discount}</span> 
+          </li>
+
+        ):""}
         <li className="list-group-item d-flex justify-content-between tinvoice">
           <span>Total (USD)</span>
-          <strong id="calculated_total" className="total_amount">USD 100</strong>
+        <strong id="calculated_total" className="total_amount">{this.props.currency+" "+this.props.itemprice}</strong>
         </li>
       </ul>
     
-        <div id="coupon-div">
-            <div className="input-group">
-              <input type="text" className="form-control coupon-code binfo" placeholder="Promo code" />
-              <div className="input-group-append">
-                <button type="button" id="" className="btn btn-secondary apply-coupon binfo">Redeem</button>
-              </div>
-            </div>
-            
-            <div className="coupon-response-div"></div>
-            
-        </div>
+        <Redeem applyCoupon = {this.props.applyCoupon}/>
         
         <div className="complete"> 
             {this.props.payment_gateway === "braintree"?(<BrainTreeMark />):""}

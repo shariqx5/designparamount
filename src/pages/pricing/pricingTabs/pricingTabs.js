@@ -2,12 +2,13 @@ import React,{Component} from 'react';
 import Monthly from './monthly/monthly';
 import Quarterly from './quarterly/quarterly';
 import Anually from './anually/anually';
+import style from './pricingTabs.module.css';
 
 class PricingTabs extends Component{
 
     render(){
         return(
-            <section className="white-section pricingtabsec position-rel">
+            <section className={`white-section ${style.pricingtabsec} position-rel`}>
 				<img src="images/shapes/circle.png" alt="" className="position-absolute" style={{maxWidth:"190px",bottom:"290px",right:"-115px",width:"100%"}}/>
 				<img src="images/shapes/lines.png" alt="" className="position-absolute" style={{maxWidth:"190px",left:"-90px",bottom:"457px",width:"100%"}}/>
 				<img src="images/standard/purple-zigzag.png" alt=""  className="position-absolute" style={{maxWidth:"110px",left:"15px",zIndex:"2",top:"575px",width:"100%"}}/>
@@ -16,7 +17,7 @@ class PricingTabs extends Component{
 				<img src="images/shapes/pinkcircle.png" alt=""  className="position-absolute" style={{maxWidth:"95px",right:"-30px",zIndex:"1",top:"425px",transform:"rotate(40deg)",width:"100%"}}/>
 				<img src="images/standard/yellow.png" alt=""  className="position-absolute"  style={{maxWidth:"102px",left:"-30px",zIndex:"2",top:"140px",width:"100%"}}/>
 	        
-	        	<div className="pricingbannercolor"></div>
+	        	<div className={`${style.pricingbannercolor}`}></div>
 				<div className="home-banner-bg position-absolute header-distance">
 						{/* <!--<img src="images/home/banner-bg/1.png" alt="" / id="home-banner-bg-1">--> */}
 						<img src="images/home/banner-bg/2.png" alt=""  id="home-banner-bg-2" />
@@ -32,8 +33,8 @@ class PricingTabs extends Component{
 								<p>All design gauge plans include unlimited request <br />and are backed  by a 100% satisfaction guarantee.</p>
 							</div>
 							
-							<div className="col-xs-12 three-pricing-sec ">
-									<ul className="nav nav-tabs pricingtab" role="tablist">
+							<div className="col-xs-12 three-pricing-sec">
+									<ul className={`nav nav-tabs ${style.pricingtab}`} role="tablist">
 									<li className="nav-item">
 										<a className="nav-link active" href="#monthly" role="tab" data-toggle="tab">Monthly</a>
 									</li>
@@ -45,7 +46,7 @@ class PricingTabs extends Component{
 									</li>
 									</ul>
 								
-									<div className="tab-content pricingtabcontent">
+									<div className={`tab-content ${style.pricingtabcontent}`}>
 										<Monthly />
 										<Quarterly />
 										<Anually />

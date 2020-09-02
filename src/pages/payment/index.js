@@ -5,6 +5,7 @@ import {CardElement} from '@stripe/react-stripe-js';
 import {PaymentAPI,BrainTreeAPI} from '../../api';
 import {withRouter} from 'react-router-dom';
 import {Redirect} from 'react-router-dom';
+import Notiflix from 'notiflix';
 import './payment.css';
 
 const stringHelper = new StringHelper();
@@ -71,6 +72,7 @@ class Payment extends Component{
         this.setStripeAndElements = this.setStripeAndElements.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.setBrainTreeInstance = this.setBrainTreeInstance.bind(this);
+        this.applyCoupon = this.applyCoupon.bind(this);
     }
 
 
@@ -251,14 +253,18 @@ class Payment extends Component{
 
 
     handleStripePayment = async()=>{
-
+        
+        Notiflix.Loading.Standard("Creating Token...");
         const stripeTokenResponse = await this.createPaymentToken();
         if(stripeTokenResponse.error){
+            //removing loader
+            Notiflix.Loading.Remove();
             //send failed data to server
-            this.submitFailedRequest(stripeTokenResponse);
+            this.submitFailedRequest(stripeTokenResponse.error);
         }
         else {
             //call paymentIntentAPI
+            Notiflix.Loading.Change("Submitting your request...");
             const simplePaymentIntentResponse = await this.submitPaymentIntentRequest(stripeTokenResponse.paymentMethod.id);
             this.handleServerResponse(simplePaymentIntentResponse);
         }
@@ -267,10 +273,18 @@ class Payment extends Component{
 
 
     handleBrainTreePayment = async()=>{
-        const {nonce} = await this.instance.requestPaymentMethod();
-        this.setState({
-            payment_method_nonce : nonce
-        },()=>this.submitBraintreePaymentForm())
+        try{
+            Notiflix.Loading.Standard("Connecting with Payment Gateway");
+            const {nonce} = await this.instance.requestPaymentMethod();
+            Notiflix.Loading.Remove();
+            this.setState({
+                payment_method_nonce : nonce
+            },()=>this.submitBraintreePaymentForm())
+        }
+        catch(error){
+            Notiflix.Loading.Remove();
+            console.log(error);
+        }
 
     }
 
@@ -279,9 +293,35 @@ class Payment extends Component{
     submitBraintreePaymentForm = async()=>{
         const {customerDetails,payment_method_nonce} = this.state;
         customerDetails.payment_method_nonce = payment_method_nonce;
+
+        Notiflix.Loading.Standard("Finalizing Payment");
+        
         const response = await brainTreeAPI.submitForm(customerDetails);
+        
+        console.log('Braintree response');
+        console.log(response);
+
+        Notiflix.Loading.Remove();
+        
         if(response.status === 'success'){
-            this.props.history.push("/payment/success");
+            this.props.history.push({
+                pathname : "/payment/success",
+                state : {
+                    itemName : this.state.itemname,
+                    itemOriginalPrice : this.state.original_amount,
+                    itemDiscount : this.state.discount,
+                    itemDiscountedPrice : this.state.itemprice,
+                    itemCurrency : this.state.currency
+                }
+            });
+        }
+        else{
+            this.props.history.push({
+                pathname : "/payment/failed",
+                state : {
+                    message : response.message
+                }
+            });
         }
     }
 
@@ -290,12 +330,17 @@ class Payment extends Component{
 
     handleServerResponse = (response)=>{
         if(response.error){
+            Notiflix.Loading.Remove();
             this.submitFailedRequest(response);
         }
         else if(response.requires_action){
+            //changing loader text
+            Notiflix.Loading.Change("Launching 3d secure");
             this.handle3DSecureRequest(response);
         }
         else{
+            //Removing Loader
+            Notiflix.Loading.Remove();
             //payment success page
             this.submitSuccessRequest();
         }
@@ -323,6 +368,7 @@ class Payment extends Component{
 
 
     handle3DSecureRequest = async(response)=>{
+        Notiflix.Loading.Remove();
         var action = response.next_action;
         if(action && action.type === 'redirect_to_url'){
             this.props.history.push(action.redirect_to_url.url);
@@ -335,6 +381,7 @@ class Payment extends Component{
             this.submitFailedRequest(cardHandlerResponse);
         }
         else{
+            Notiflix.Loading.Standard("Finalizing payment")
             const _3DIntentResponse = await this.submitPaymentIntent3DSecureRequest(cardHandlerResponse.paymentIntent.id);
             this.handleServerResponse(_3DIntentResponse);
         }
@@ -363,18 +410,32 @@ class Payment extends Component{
         const {customerDetails} = this.state;
         const data = await paymentAPI.submitSuccessRequest(customerDetails);
         //logic for redirectnig user to payment success page
-        this.props.history.push("/payment/success");
+        this.props.history.push({
+            pathname : "/payment/success",
+            state : {
+                itemName : this.state.itemname,
+                itemOriginalPrice : this.state.original_amount,
+                itemDiscount : this.state.discount,
+                itemDiscountedPrice : this.state.itemprice,
+                itemCurrency : this.state.currency
+            }
+        });
     }
 
 
 
     submitFailedRequest = async(response)=>{
         const {customerDetails} = this.state;
-        customerDetails['error_code'] = response.error.code;
-        customerDetails['error_message'] = response.error.message;
+        customerDetails['error_code'] = response.code;
+        customerDetails['error_message'] = response.message;
         const data = await paymentAPI.submitFailedRequest(customerDetails);
         //redirecting user to payment failed page
-        this.props.history.push('/payment/failed');
+        this.props.history.push({
+            pathname : "/payment/failed",
+            state : {
+                message : response.message
+            }
+        });
     }
 
 
@@ -428,6 +489,30 @@ class Payment extends Component{
 
 
 
+    applyCoupon = (couponId,coupon_code,coupon_discount)=>{
+        var {itemprice,discount,discounted_amount,original_amount} = this.state;
+        original_amount = Number(original_amount);
+        itemprice = Number(itemprice);
+        discount = discount!==""?Number(discount):"";
+        discounted_amount = discounted_amount!==""?Number(discounted_amount):"";
+        coupon_discount = coupon_discount!==""?Number(coupon_discount):"";
+
+        var coupon_discount_number = (original_amount/100)*coupon_discount;
+        itemprice = original_amount - coupon_discount_number;
+        discount = coupon_discount_number;
+        discounted_amount = coupon_discount_number;
+
+        this.setState({
+            itemprice,
+            discount,
+            discounted_amount,
+            coupon_id: couponId
+        })
+
+    }
+
+
+
     render(){
         const {redirect , url} = this.state;
         if(redirect){
@@ -444,6 +529,7 @@ class Payment extends Component{
             selectRegion = {this.selectRegion}
             onFormSubmit = {this.handleSubmit}
             setStripeAndElements = {this.setStripeAndElements}
+            applyCoupon = {this.applyCoupon}
             />
         )
     }

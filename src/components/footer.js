@@ -64,9 +64,9 @@ class Footer extends Component{
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-6 footerlinks">
-                                <a href="privacy.html">Privacy Policy</a>&emsp;
+                                <Link to="/privacy">Privacy Policy</Link>&emsp;
                                 <span>|</span>&emsp;
-                                <a href="terms.html">Terms &amp; Conditions</a>
+                                <Link to="/terms">Terms &amp; Conditions</Link>
                             </div>
                             <div className="col-lg-6 text-right copyrightdiv">
                                 <p>&#169; Design Paramount 2020. All rights reserved.</p>

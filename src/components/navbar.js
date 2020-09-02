@@ -30,6 +30,18 @@ class Navbar extends Component{
     }
 
 
+
+
+    changeNavbar = ()=>{
+            var x = document.getElementById("myLinks");
+            if (x.style.display === "block") {
+              x.style.display = "none";
+            } else {
+              x.style.display = "block";
+            }
+    }
+
+
     
     render(){
 
@@ -117,7 +129,7 @@ class Navbar extends Component{
                             <Link to="/request">Get a Demo</Link>
                             <Link to="/login">Login</Link>
                         </div>
-                        <a href="javascript:void(0);" className="icon" onclick="myFunction()">
+                        <a href="javascript:void(0);" className="icon" onClick={this.changeNavbar}>
                             <i className="fa fa-bars"></i>
                         </a>
                     </div>

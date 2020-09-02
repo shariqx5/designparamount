@@ -25,11 +25,24 @@ class CaseStudies extends Component{
 
 
     async componentDidMount(){
+		this.loadScripts();
 		this.checkSearchParamExist();
         if(this.state.searchQuery === ""){
             this.fetchAllData();
         }
 	}
+
+
+
+	loadScripts = ()=>{
+        const scriptsPath = ["/js/stickyKit.js"];
+        scriptsPath.map((scriptPath,i)=>{
+            const script = document.createElement("script");
+            script.src = scriptPath;
+            script.async = true;
+            document.body.append(script);
+        });
+    }
 
 
 

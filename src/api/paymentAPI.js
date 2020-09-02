@@ -121,6 +121,19 @@ class PaymentAPI {
         return data;
     }
 
+
+
+
+    applyCoupon = async(coupon)=>{
+        const response = await fetch(SERVER_ADDRESS+`payment/redeem_coupon/${coupon}`,{
+            method : "GET"
+        });
+
+
+        const data = await response.json();
+        return data;
+    }
+
 }
 
 

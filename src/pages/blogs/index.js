@@ -3,7 +3,6 @@ import {Layout,BlogJumbotron,HelpAction} from '../../components';
 import {BlogAPI} from '../../api';
 import BlogPost from './blogPost';
 
-
 const blogAPI = new BlogAPI();
 
 class Blogs extends Component{
@@ -25,10 +24,23 @@ class Blogs extends Component{
 
 
     componentDidMount(){
+        this.loadScripts();
         this.checkSearchParamExist();
         if(this.state.searchQuery === ""){
             this.fetchAllData();
         }
+    }
+
+
+
+    loadScripts = ()=>{
+        const scriptsPath = ["/js/stickyKit.js"];
+        scriptsPath.map((scriptPath,i)=>{
+            const script = document.createElement("script");
+            script.src = scriptPath;
+            script.async = true;
+            document.body.append(script);
+        });
     }
 
 

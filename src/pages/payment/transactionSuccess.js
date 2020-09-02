@@ -1,10 +1,47 @@
 import React,{Component} from 'react';
 import {Layout} from '../../components';
 import style from './transactionSuccess.module.css';
+import Skeleton from 'react-loading-skeleton';
+import {Redirect} from 'react-router-dom';
 
 class TransactionSuccess extends Component{
 
+  state = {
+    redirect : false,
+    url : "",
+    itemName : "",
+    itemOriginalPrice : "",
+    itemDiscount : "",
+    itemDiscountedPrice : "",
+    itemCurrency : ""
+  }
+
+  componentDidMount(){
+    if(this.props.location.state !== "" && this.props.location.state !== undefined){
+      const {itemName,itemOriginalPrice,itemDiscount,itemDiscountedPrice,itemCurrency} = this.props.location.state;
+      this.setState({
+        itemName,
+        itemOriginalPrice,
+        itemDiscount,
+        itemDiscountedPrice,
+        itemCurrency
+      })
+    }
+    else{
+      this.setState({
+        redirect : true,
+        url : '/'
+      })
+    }
+  }
+
+
     render(){
+      const {redirect, url} = this.state;
+      if(redirect){
+        return <Redirect to = {url} />
+      }
+
         return(
             <Layout>
                 {/* // <!-- Google Tag Manager (noscript) --> */}
@@ -29,26 +66,25 @@ class TransactionSuccess extends Component{
     						<tbody>
                                 <tr>
                                   <th scope="row" style={{borderTop:"none"}}>Item</th>
-                                  <td style={{borderTop:"none"}}>Branded Logo</td>
+        <td style={{borderTop:"none"}}>{this.state.itemName!==""?this.state.itemName : <Skeleton />}</td>
                                 </tr>
                                 
                                 <tr>
                                   <th scope="row">Item Price</th>
                                   {/* <td><?php echo $currency.$itemprice; ?></td> */}
-                                  <td>100</td>
+                                  <td>{this.state.itemOriginalPrice!==""?this.state.itemOriginalPrice:<Skeleton />}</td>
                                 </tr>
-                                
-                                {/* <?php if(!empty($discount)) { ?>
-                                    <tr>
-                                      <th scope="row">Discount</th>
-                                      <td><?php echo $discount; ?></td>
-                                    </tr>
-                                <?php } ?> */}
+                                {this.state.itemDiscount!==""?(
+                                  <tr>
+                                    <th scope="row">Discount</th>
+                                    <td>{this.state.itemDiscount}</td>
+                                  </tr>
+                                ):""}
                                 
                                 <tr>
                                   <th scope="row">Total</th>
                                   {/* <td><?php echo $currency.$total; ?></td> */}
-                                  <td>$ 100</td>
+                                  <td>{this.state.itemDiscountedPrice!==""?this.state.itemCurrency+" "+this.state.itemDiscountedPrice:<Skeleton />}</td>
                                 </tr>
                             </tbody>
 						</table>

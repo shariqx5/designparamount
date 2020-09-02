@@ -1,10 +1,11 @@
 import React,{Component} from 'react';
+import style from './pricing.module.css';
 
 class FAQ extends Component{
 
     render(){
         return(
-            <section className="faqsec position-rel">
+            <section className={`${style.faqsec} position-rel`}>
 	        
 	        <img src="images/shapes/circle.png" alt="" className="position-absolute" style={{maxWidth:"190px",left:"-110px",bottom:"1px",transform:"rotate(-30deg)",width:"100%"}}/>
 	        <img src="images/shapes/lines.png" alt="" className="position-absolute" style={{maxWidth:"190px",right:"-110px",top:"11px",width:"100%"}}/>
@@ -17,22 +18,22 @@ class FAQ extends Component{
 	                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
 	                    </div>	
 	                     <div className="row">
-	                        <form className="subscribeinputform">
+	                        <form className={`${style.subscribeinputform}`}>
 	                            <div>
-	                                <input className="subscribeinput" placeholder="Enter Your Email Address Here..." />
-	                                <button className="subscribebtn" type="submit">Notify Me</button>
+	                                <input className={`${style.subscribeinput}`} placeholder="Enter Your Email Address Here..." />
+	                                <button className={`${style.subscribebtn}`} type="submit">Notify Me</button>
 	                            </div>
 	                         </form>
 	                     </div>
 	            </div>
 	<div className="col-md-6">
 	<div id="accordion">
-	  <div className="card faqaccordion">
-	    <div className="card-header" id="headingOne">
+	  <div className={`card ${style.faqaccordion}`}>
+	    <div className={`card-header ${style.card_header}`} id="headingOne">
 	      <h5 className="mb-0">
-	        <button className="btn faqaccordionbtn collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+	        <button className={`btn ${style.faqaccordionbtn} collapsed`} data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
 	          What does unlimited really mean?
-	            <i className="fa fa-plus float-right plussign"></i>
+	            <i className={`fa fa-plus ${style.plussign} float-right`}></i>
 	        </button>
 	          
 	          {/* <!--<i className="fa fa-minus minussign"></i>--> */}
@@ -43,12 +44,12 @@ class FAQ extends Component{
 	      <div className="card-body">It means you can have as many revisions as you want for as much time as you want until and unless you are 100% happy with the work.</div>
 	    </div>
 	  </div>
-	  <div className="card faqaccordion">
-	    <div className="card-header" id="headingTwo">
+	  <div className={`card ${style.faqaccordion}`}>
+	    <div className={`card-header ${style.card_header}`} id="headingTwo">
 	      <h5 className="mb-0">
-	        <button className="btn faqaccordionbtn collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+	        <button className={`btn ${style.faqaccordionbtn} collapsed`} data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
 	          Can I Design?
-	            <i className="fa fa-plus plussign float-right"></i>
+	            <i className={`fa fa-plus ${style.plussign} float-right`}></i>
 	          </button>
 	          
 	      </h5>
@@ -59,12 +60,12 @@ class FAQ extends Component{
 	      </div>
 	    </div>
 	  </div>
-	  <div className="card faqaccordion">
-	    <div className="card-header" id="headingThree">
+	  <div className={`card ${style.faqaccordion}`}>
+	    <div className={`card-header ${style.card_header}`} id="headingThree">
 	      <h5 className="mb-0">
-	        <button className="btn faqaccordionbtn collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+	        <button className={`btn ${style.faqaccordionbtn} collapsed`} data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
 	          Who owns the creative work?
-	            <i className="fa fa-plus plussign float-right"></i>
+	            <i className={`fa fa-plus ${style.plussign} float-right`}></i>
 	        </button>
 	          
 	      </h5>
@@ -75,12 +76,12 @@ class FAQ extends Component{
 	      </div>
 	    </div>
 	  </div>
-	    <div className="card faqaccordion">
-            <div className="card-header" id="headingFour">
+	    <div className={`card ${style.faqaccordion}`}>
+            <div className={`card-header ${style.card_header}`} id="headingFour">
                 <h5 className="mb-0">
-                    <button className="btn faqaccordionbtn collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    <button className={`btn ${style.faqaccordionbtn}`} data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                         What is the turnaround time?
-                        <i className="fa fa-plus plussign float-right"></i>
+                        <i className={`fa fa-plus ${style.plussign} float-right`}></i>
                     </button>
                     
                 </h5>
@@ -91,12 +92,12 @@ class FAQ extends Component{
                 </div>
             </div>
 	    </div>
-            <div className="card faqaccordion">
-                    <div className="card-header" id="headingFive">
+            <div className={`card ${style.faqaccordion}`}>
+                    <div className={`card-header ${style.card_header}`} id="headingFive">
                     <h5 className="mb-0">
-                        <button className="btn faqaccordionbtn collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        <button className={`btn ${style.faqaccordionbtn}`} data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                         How many revisions can I request?
-                            <i className="fa fa-plus plussign float-right"></i>
+                            <i className={`fa fa-plus ${style.plussign} float-right`}></i>
                         </button>
                 
                     </h5>

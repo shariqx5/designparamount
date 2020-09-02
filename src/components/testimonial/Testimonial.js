@@ -5,7 +5,7 @@ class Testimonial extends Component{
 
     render(){
         return(
-            <section className="purple-sec case-study-sec position-rel" style={{paddingBottom:"50px"}}>
+            <section className="purple-sec case-study-sec position-rel" style={{paddingBottom:"50px",paddingTop:"100px"}}>
 			<div className="case-study-bg position-absolute top-0 right-0 height-full">
 				<img src="/images/testimonials/bg/1.png" alt="" id="case-study-bg-1" />
 				<img src="/images/testimonials/bg/2.png" alt="" id="case-study-bg-2" />
