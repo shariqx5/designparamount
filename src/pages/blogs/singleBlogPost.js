@@ -22,6 +22,7 @@ class SingleBlogPost extends Component{
 
 
 	async componentDidMount(){
+		this.loadScripts();
 		if(this.props.match.params!==""){
 			const title = this.props.match.params.title;
 			const data = await blogAPI.fetchSinglePostDetails(title);
@@ -33,6 +34,18 @@ class SingleBlogPost extends Component{
 			this.props.history.goBack();
 		}
 	}
+
+
+
+	loadScripts = ()=>{
+        const scriptsPath = ["/js/stickyKit.js"];
+        scriptsPath.map((scriptPath,i)=>{
+            const script = document.createElement("script");
+            script.src = scriptPath;
+            script.async = true;
+            document.body.append(script);
+        });
+    }
 
 
 	

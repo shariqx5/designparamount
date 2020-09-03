@@ -24,6 +24,7 @@ class SingleCaseStudy extends Component{
 
 
     async componentDidMount(){
+		this.loadScripts();
 		if(this.props.match.params!==""){
 			const title = this.props.match.params.title;
 			const data = await caseStudyAPI.fetchSinglePostDetails(title);
@@ -38,8 +39,23 @@ class SingleCaseStudy extends Component{
 
 
 
+
+	loadScripts = ()=>{
+        const scriptsPath = ["/js/stickyKit.js"];
+        scriptsPath.map((scriptPath,i)=>{
+            const script = document.createElement("script");
+            script.src = scriptPath;
+            script.async = true;
+            document.body.append(script);
+        });
+	}
+	
+
+
+
+
 	handleSearch(searchText){
-		this.props.history.push(`case-study?search=${searchText}`);      
+		this.props.history.push(`/case-study?search=${searchText}`);      
     }
 
 

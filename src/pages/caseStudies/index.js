@@ -13,6 +13,7 @@ class CaseStudies extends Component{
     constructor(props){
         super(props);
         this.state = {
+			loading : true,
             caseStudies : [],
 			limit : 10,
 			currentPage:0,
@@ -24,12 +25,9 @@ class CaseStudies extends Component{
     }
 
 
-    async componentDidMount(){
+    componentDidMount(){
 		this.loadScripts();
 		this.checkSearchParamExist();
-        if(this.state.searchQuery === ""){
-            this.fetchAllData();
-        }
 	}
 
 
@@ -49,13 +47,16 @@ class CaseStudies extends Component{
 	checkSearchParamExist(){
         const search = window.location.search;
         const params = new URLSearchParams(search);
-        const query = params.get('search');
+		const query = params.get('search');
         if(query){
            const encodedQuery = encodeURI(query);
              this.setState({
                 searchQuery:encodedQuery
             },()=>this.searchData());
-        }
+		}
+		else{
+			this.fetchAllData();
+		}
 	}
 	
 
@@ -63,7 +64,8 @@ class CaseStudies extends Component{
 	searchData = async()=>{
         const data = await caseStudyAPI.searchCaseStudy(this.state.searchQuery);
         this.setState({
-            caseStudies:data.data
+			caseStudies:data.data,
+			loading : false
         })
     }
 
@@ -72,7 +74,8 @@ class CaseStudies extends Component{
     fetchAllData = async()=>{
 		const data = await caseStudyAPI.fetchAllCaseStudy();
         this.setState({
-            caseStudies : data.data
+			caseStudies : data.data,
+			loading : false
         });
     }
 	
@@ -83,7 +86,7 @@ class CaseStudies extends Component{
         searchText = encodeURI(searchText);
         this.setState({
             searchQuery:searchText,
-            caseStudies:[]
+            loading : true
         },()=>this.searchData());
         
     }
@@ -91,9 +94,9 @@ class CaseStudies extends Component{
 
     render(){
 
-        const {caseStudies,limit} = this.state;
+        const {loading,limit,caseStudies} = this.state;
 		const LoadingCaseStudy = [];
-		if(caseStudies.length<=0){
+		if(loading){
 			for(let i = 0;i<limit;i++){
 				LoadingCaseStudy.push(<div className="col-md-6"><LoadingCaseStudyBox /></div>);
 			}
@@ -112,15 +115,18 @@ class CaseStudies extends Component{
 					<div className="col-md-8">
 						<div className="row">
                         {
+							loading ? (
+								LoadingCaseStudy
+							): (
 								caseStudies.length>0?(
 									caseStudies.map((caseStudy,j)=>(
 										<div className="col-md-6">
 											<CaseStudyBox key={j} {...caseStudy}/>
 										</div>
 									))
-								):LoadingCaseStudy
-								
-							}
+								):<h2>No Data Found!</h2>
+							)		
+						}
 						</div>
 					</div>
                     <div className="col-md-4 margin-fixed-mob" style={{zIndex:2}}>

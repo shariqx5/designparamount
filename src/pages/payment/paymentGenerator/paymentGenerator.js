@@ -137,7 +137,7 @@ class PaymentGenerator extends Component{
         salesman : salesPerson,
         payment_gateway : paymentGateway,
         original_amount : itemPrice,
-        amount : Number(itemPrice) - Number(itemDiscount)
+        amount : itemPrice
       };
 
 

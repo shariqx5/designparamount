@@ -10,9 +10,9 @@ class BlogPost extends Component{
 	}
 
     render(){
-		const {blogs,limit} = this.props;
+		const {blogs,limit,loading} = this.props;
 		const LoadingBlogs = [];
-		if(blogs.length<=0){
+		if(loading){
 			for(let i = 0;i<limit;i++){
 				LoadingBlogs.push(<div className="col-md-6"><LoadingBlogBox /></div>);
 			}
@@ -29,14 +29,17 @@ class BlogPost extends Component{
 					<div className="col-md-8">
 						<div className="row">
 							{
-								blogs.length>0?(
-									blogs.map((blog,j)=>(
-										<div className="col-md-6">
-											<BlogBox key={j} {...blog}/>
-										</div>
-									))
-								):LoadingBlogs
-								
+								loading ? (
+									LoadingBlogs
+								):(
+									blogs.length>0?(
+										blogs.map((blog,j)=>(
+											<div className="col-md-6">
+												<BlogBox key={j} {...blog}/>
+											</div>
+										))
+									):<h2>No Data found!</h2>
+								)
 							}
 						</div>
 					</div>

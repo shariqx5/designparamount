@@ -10,6 +10,7 @@ class Blogs extends Component{
     constructor(props){
         super(props);
         this.state={
+            loading : true,
             blogs : [],
             searchQuery:"",
             currentPage:0,
@@ -26,9 +27,6 @@ class Blogs extends Component{
     componentDidMount(){
         this.loadScripts();
         this.checkSearchParamExist();
-        if(this.state.searchQuery === ""){
-            this.fetchAllData();
-        }
     }
 
 
@@ -55,6 +53,9 @@ class Blogs extends Component{
                 searchQuery:encodedQuery
             },()=>this.searchData());
         }
+        else{
+            this.fetchAllData();
+        }
     }
 
 
@@ -62,7 +63,8 @@ class Blogs extends Component{
     searchData = async()=>{
         const data = await blogAPI.searchBlogs(this.state.searchQuery);
         this.setState({
-            blogs:data.data
+            blogs:data.data,
+            loading : false
         })
     }
 
@@ -71,7 +73,8 @@ class Blogs extends Component{
     fetchAllData = async()=>{
             const data = await blogAPI.fetchAllBlogs();
             this.setState({
-                blogs:data.data
+                blogs:data.data,
+                loading : false
             })
     }
 
@@ -82,7 +85,7 @@ class Blogs extends Component{
         searchText = encodeURI(searchText);
         this.setState({
             searchQuery:searchText,
-            blogs:[]
+            loading : true
         },()=>this.searchData());
         
     }

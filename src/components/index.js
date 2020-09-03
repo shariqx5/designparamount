@@ -40,6 +40,7 @@ import Pagination from './pagination/pagination';
 import LoadingTable from './table/loadingTable';
 import CollapsePanel from './collapsePanel/collapsePanel';
 import PaymentLayout from './paymentLayout/paymentLayout';
+import PrivacyJumbotron from './jumbotron/privacyJumbotron';
 
 export {
     Layout,
@@ -83,5 +84,6 @@ export {
     Pagination,
     LoadingTable,
     CollapsePanel,
-    PaymentLayout
+    PaymentLayout,
+    PrivacyJumbotron
 }

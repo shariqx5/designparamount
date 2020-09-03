@@ -297,9 +297,6 @@ class Payment extends Component{
         Notiflix.Loading.Standard("Finalizing Payment");
         
         const response = await brainTreeAPI.submitForm(customerDetails);
-        
-        console.log('Braintree response');
-        console.log(response);
 
         Notiflix.Loading.Remove();
         

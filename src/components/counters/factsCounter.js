@@ -2,6 +2,15 @@ import React,{Component} from 'react';
 
 class FactsCounter extends Component{
 
+
+    componentDidMount(){
+        const script = document.createElement("script");
+        script.src = "/js/counter.js";
+        script.async = true;
+        document.body.append(script);
+    }
+
+
     render(){
         return(
             <section className="bgpurplecolor corevaluesec aboutfactsec position-rel">

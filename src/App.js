@@ -32,6 +32,8 @@ import PaymentGenerator from './pages/payment/paymentGenerator/paymentGenerator'
 import PaymentGeneratorResponse from './pages/payment/paymentGenerator/paymentGeneratorResponse';
 import PaymentTokenExpired from './pages/payment/expiredOffer';
 import ScrollToTop from './pages/scrollToTop';
+import Privacy from './pages/privacyPolicy/privacyPolicy';
+import TermsAndCondition from './pages/terms&Condition';
 
 class App extends React.Component{
 
@@ -90,6 +92,8 @@ class App extends React.Component{
                <Route exact path="/blogs" component={Blogs}/>
                <Route exact path="/request" component={Request}/>
                <Route exact path="/login" component={Login}/>
+               <Route exact path="/privacy" component={Privacy}/>
+               <Route exact path="/terms" component={TermsAndCondition}/>
                <Route exact path="/payment/stripe" component={Payment}/>
                <Route exact path="/payment/braintree" component={Payment}/>
                <Route exact path="/payment/generator" component={PaymentGenerator}/>

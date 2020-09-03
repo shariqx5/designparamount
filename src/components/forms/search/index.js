@@ -17,16 +17,12 @@ class Search extends Component{
     submitForm = (event) => {
         event.preventDefault();
             var input = document.getElementById("search-input");
-            if(input.value === ""){
-                this.props.history.push("/blogs");
-            }
-            else{
-                this.setState({
+            this.setState({
                     searchText : input.value
-                });
+            });
 
-                this.props.handleSearch(input.value);
-            }
+            this.props.handleSearch(input.value);
+            
     }
 
 
