@@ -11,8 +11,8 @@ import StandardTable from './pricingTables/standardTable';
 import ProTable from './pricingTables/proTable';
 import UltimateTable from './pricingTables/ultimateTable';
 import HelpAction from './helpAction/helpAction';
-import BlogBox from './blogBox/blogBox';
-import LoadingBlogBox from './blogBox/loadingBlogBox';
+import BlogBox from './blogs/blogBox';
+import LoadingBlogBox from './blogs/loadingBlogBox';
 import HowItWork from './howItWork/howItWork';
 import MeetDesigners from './meetDesigner/meetDesigner';
 import StandardDesigner from './addDesigner/standardDesigner';
@@ -41,6 +41,9 @@ import LoadingTable from './table/loadingTable';
 import CollapsePanel from './collapsePanel/collapsePanel';
 import PaymentLayout from './paymentLayout/paymentLayout';
 import PrivacyJumbotron from './jumbotron/privacyJumbotron';
+import ImageOptimizer from './imageOptimizer';
+import SectionPortfolio from './sections/sectionPortfolio/';
+import SectionPricing from './sections/sectionPricing/';
 
 export {
     Layout,
@@ -85,5 +88,8 @@ export {
     LoadingTable,
     CollapsePanel,
     PaymentLayout,
-    PrivacyJumbotron
+    PrivacyJumbotron,
+    ImageOptimizer,
+    SectionPortfolio,
+    SectionPricing
 }

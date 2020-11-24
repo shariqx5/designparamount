@@ -19,11 +19,15 @@
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <!-- <link rel="stylesheet" href="%PUBLIC_URL%/css/bootstrap.min.css"> -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/fonts/font-awesome/css/all.css">
-	  <link rel="stylesheet" href="%PUBLIC_URL%/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="%PUBLIC_URL%/css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="%PUBLIC_URL%/css/bootstrap.min.css">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"/></noscript>
+    <link rel="preload" as="style" type="text/css" href="%PUBLIC_URL%/fonts/font-awesome/css/all.css" onload="this.onload = null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="%PUBLIC_URL%/fonts/font-awesome/css/all.css"/></noscript>
+    <link rel="preload" as="style" href="%PUBLIC_URL%/css/owl.carousel.min.css" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylsheet" href="%PUBLIC_URL%/css/owl.carousel.min.css"/></noscript>
+    <link rel="preload" as="style" href="%PUBLIC_URL%/css/jquery.fancybox.min.css" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="%PUBLIC_URL%/css/jquery.fancybox.min.css"/></noscript>
     <link rel="stylesheet" href="%PUBLIC_URL%/css/style.css">
     <link rel="stylesheet" href="%PUBLIC_URL%/css/custom.css">
     <!--
@@ -36,9 +40,7 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Hire a Designer</title>
-    <script src="%PUBLIC_URL%/js/jquery-3.4.1.min.js"></script>
-    <script src="%PUBLIC_URL%/js/jquery.sticky-kit.js" async></script>
-    <script src="%PUBLIC_URL%/js/stickyKit.js" async></script>
+    <script  src="%PUBLIC_URL%/js/jquery-3.4.1.min.js"></script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -54,13 +56,14 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
     
-    <script src="%PUBLIC_URL%/js/bootstrap.min.js"></script>
-    <script src="%PUBLIC_URL%/js/owl.carousel.min.js"></script>
-    
-    <script src="%PUBLIC_URL%/js/fixed-section.js"></script>
-    <script src="%PUBLIC_URL%/js/element-mouse-mover.js"></script>
-    <script src="%PUBLIC_URL%/js/scrollable-tabs.js"></script>
-    <script src="%PUBLIC_URL%/js/jquery.fancybox.min.js"></script>
+    <script defer src="%PUBLIC_URL%/js/bootstrap.min.js"></script>
+    <script async defer src="%PUBLIC_URL%/js/owl.carousel.min.js"></script>
+    <script async defer src="%PUBLIC_URL%/js/jquery.sticky-kit.js" async></script>
+    <script async defer src="%PUBLIC_URL%/js/stickyKit.js" async></script>
+    <script async defer src="%PUBLIC_URL%/js/fixed-section.js"></script>
+    <script async defer src="%PUBLIC_URL%/js/element-mouse-mover.js"></script>
+    <script async defer src="%PUBLIC_URL%/js/scrollable-tabs.js"></script>
+    <script async defer src="%PUBLIC_URL%/js/jquery.fancybox.min.js"></script>
    
   </body>
 </html>

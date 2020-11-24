@@ -1,9 +1,8 @@
 import React,{Component} from 'react';
-import {CookiesHelper} from '../helpers';
+import {CookiesHelper, URLHelper} from '../helpers';
 import {Link} from 'react-router-dom';
 
-
-
+const urlHelper = new URLHelper();
 const cookiesHelper = new CookiesHelper();
 class Navbar extends Component{
     
@@ -61,49 +60,49 @@ class Navbar extends Component{
                                     <div className="dropdown-content">
                                         <div className="proheaderdiv headerdropdowndiv1">
                                             <div>
-                                                <a href="#" className="position-rel">
+                                                <Link to={urlHelper.getURL('logo-design')} className="position-rel white-color">
                                                     <img src="/images/pricing/service/3.png" alt="Design-Paramount" className="position-absolute" style={{width:"100%",top:"18px",left:"24px",maxWidth:"45px"}}/>
-                                                    <h6>Design Pickle Ultimate</h6>
+                                                    <h6>Logo Design</h6>
                                                     <h6>The recipe to ingenious brand building</h6>
                                                     <p>All ingredients needed for single-handed startups</p>
-                                                    <Link className="white-color" to="/ultimate"><p>Learn More &nbsp;<i className="fas fa-arrow-right"></i></p></Link>
-                                                </a>
+                                                    <Link className="white-color" to={urlHelper.getURL('logo-design')}><p>Learn More &nbsp;<i className="fas fa-arrow-right"></i></p></Link>
+                                                </Link>
                                             </div>
                                         </div>
                                         <div className="proheaderdiv headerdropdowndiv2">
-                                            <div><a href="#" className="position-rel">
+                                            <div><Link to={urlHelper.getURL('brand-design')} className="position-rel white-color">
                                                     <img src="/images/pricing/service/2.png" alt="Design-Paramount" className="position-absolute" style={{width:"100%",top:"18px",left:"24px",maxWidth:"45px"}}/>
-                                                    <h6>Design Pickle Pro</h6>
+                                                    <h6>Branding Design</h6>
                                                     <h6>The recipe to ingenious brand building</h6>
                                                     <p>All ingredients needed for single-handed startups</p>
-                                                    <Link className="white-color" to="/pro"><p>Learn More &nbsp;<i className="fas fa-arrow-right"></i></p></Link>
-                                                </a>
+                                                    <Link className="white-color" to={urlHelper.getURL('brand-design')}><p>Learn More &nbsp;<i className="fas fa-arrow-right"></i></p></Link>
+                                                </Link>
                                             </div>
                                         </div>
                                         <div className="proheaderdiv headerdropdowndiv3">
                                             <div>
-                                                <a href="standard.html" className="position-rel">
+                                                <Link to={urlHelper.getURL('web-design')} className="position-rel white-color">
                                                     <img src="/images/pricing/service/1.png" alt="Design-Paramount" className="position-absolute" style={{width:"100%",top:"18px",left:"24px",maxWidth:"45px"}}/>
-                                                    <h6>Design Pickle Standard</h6>
+                                                    <h6>Web Design</h6>
                                                     <h6>The recipe to ingenious brand building</h6>
                                                     <p>All ingredients needed for single-handed startups</p>
-                                                    <Link className="white-color" to="/standard"><p>Learn More &nbsp;<i className="fas fa-arrow-right"></i></p></Link>
-                                                </a>
+                                                    <Link className="white-color" to={urlHelper.getURL('web-design')}><p>Learn More &nbsp;<i className="fas fa-arrow-right"></i></p></Link>
+                                                </Link>
                                             </div>
                                         </div>
                                     </div>
                                 </li>
                                 {/* <!--<li><a href="index.html">Home</a></li>--> */}
-                                <li><a href="#"><Link className="black-color" to="/portfolio">Our Work</Link></a></li>
-                                <li><a href="#"><Link className="black-color" to="/pricing">Pricing</Link></a></li>
-                                <li><a href="#"><Link className="black-color" to="/about">About</Link></a></li>
-                                <li><a href="#"><Link className="black-color" to="/contact">Contact</Link></a></li>
+                                <li><a href="#"><Link className="black-color" to={urlHelper.getURL('portfolio')}>Our Work</Link></a></li>
+                                <li><a href="#"><Link className="black-color" to={urlHelper.getURL('pricing')}>Pricing</Link></a></li>
+                                <li><a href="#"><Link className="black-color" to={urlHelper.getURL('about')}>About</Link></a></li>
+                                <li><a href="#"><Link className="black-color" to={urlHelper.getURL('contact')}>Contact</Link></a></li>
                             </ul>
                         </div>
                         <div className="col-md-3 d-none d-lg-block">
                             <ul className="menu menu-right">
-                                <li><a href="#">{this.state.showLogin?(<Link className="black-color" to="/login">Login</Link>):(<Link className="black-color" to="/client/orders">Client Area</Link>)}</a></li>
-                                <li><a href="#" className="get-a-demo-link"><Link className="get-a-demo-link" to="/request">Get A Demo</Link></a></li>
+                                <li><a href="#">{this.state.showLogin?(<Link className="black-color" to={urlHelper.getURL('login')}>Login</Link>):(<Link className="black-color" to={urlHelper.getURL('client-orders')}>Client Area</Link>)}</a></li>
+                                <li><a href="#" className="get-a-demo-link"><Link className="get-a-demo-link" to={urlHelper.getURL('request')}>Get A Demo</Link></a></li>
                             </ul>
                         </div>
 			        </div>

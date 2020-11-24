@@ -2281,6 +2281,10 @@ ul.scrollable-tabs-ul {
     text-align: center;
 }
 
+.three-pricing-sec{
+	background-color:white;
+}
+
 .three-pricing-sec .price-head img {
     max-width: 100px;
 }

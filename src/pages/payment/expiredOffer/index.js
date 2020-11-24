@@ -51,7 +51,7 @@ class ExpiredOffer extends Component{
 
 
     loadCSS = ()=>{
-        const urls = ["https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css","https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap"];
+        const urls = ["/css/bootstrap.min.css"];
         for (var url in urls){
             const link = document.createElement("link");
             link.href = url;
