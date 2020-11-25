@@ -7,33 +7,65 @@
 .payment-section-heading{
     background-color: #6E3DB7;
     color : white;
-    padding : 8px 8px;
-    border-radius: 10px;
+    padding : 3px;
+    border-radius: 5px;
 }
 
 
 .payment-section-heading span.badge{
     background-color: white;
-    padding : 8px;
+    padding : 9px 15px;
     margin-right: 10px;
     color : #6E3DB7;
+    border-radius: 3px 0 0 3px;
+}
+
+.payment-section-heading span.badge + span.head-t {
+    line-height: 36px;
+    font-size: 19px;
+}
+
+.input-group-prepend, .input-group-prepend > div {
+    width: 100%;
+}
+
+#final_submit_btn {
+    background: #6E3DB7;
+    outline: 0;
+    font-size: 18px;
+    box-shadow: none;
+}
+
+input:focus, select:focus {
+    outline: 0 !important;
+    box-shadow: none !important;
+    border-color: #6E3DB7 !important;
+}
+
+.list-group-item {
+    line-height: 1;
 }
 
 
-.payment-box{
-    background-color: rgb(250, 250, 250);
-    box-shadow: 10px 10px rgb(218, 217, 217);;
-    padding : 40px;
-    border-radius: 10px;
+.list-group-item h6, .list-group-item span, .list-group-item strong {
+    font-size: 16px;
 }
 
-.payment-box-second{
-    background-color: rgb(250, 250, 250);
-    box-shadow: 10px 10px rgb(218, 217, 217);;
+.payment-box {
+    background-color: #fff;
     padding : 20px;
-    border-radius: 10px;
+    border-radius: 8px;
 }
 
+.payment-box-second {
+    background-color: #fff;
+    padding : 20px;
+    border-radius: 8px;
+}
+
+.main {
+    background: #eee;
+}
 
 .money-back-img{
     display: table;
@@ -56,4 +88,23 @@
 
 #itemDiscount{
     color : white !important;
+}
+
+
+@media only screen and (max-width: 576px) {
+    .main {
+        padding-top: 60px;
+    }
+
+    .show-on-mob {
+        display: initial;
+    }
+
+    .hide-on-mob {
+        display: none;
+    }
+
+    .payment-section-heading span.badge {
+        padding: 7px 15px;
+    }
 }

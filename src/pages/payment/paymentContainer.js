@@ -21,55 +21,61 @@ class PaymentContainer extends Component{
            <Layout>
                <div className="container" id="payment-container">
                <div className="row">
-    <div className="col-md-4 offset-md-1 order-md-2 mb-4 payment-box">
-      <h4 className="justify-content-between align-items-center mb-3 section-heading payment-section-heading">
-        <span className="badge badge-secondary binfo">3</span>
-        <span>Billing Invoice</span>
-      </h4>
-      <ul className="list-group mb-3">
-        <li className="list-group-item d-flex justify-content-between lh-condensed binvoice">
-          <div>
-        <h5 className="my-0">{this.props.itemname}</h5>
-          </div>
+    <div className="col-md-4 order-md-2 mb-4">
+      <div class="payment-box">
+        <h4 className="justify-content-between align-items-center mb-3 section-heading payment-section-heading">
+          <span className="badge badge-secondary binfo hide-on-mob">3</span>
+          <span className="badge badge-secondary binfo show-on-mob">1</span>
           
-        </li>
-        <li className="list-group-item d-flex justify-content-between lh-condensed binvoice">
-          <div>
-            <h6 className="my-0">Item Price</h6>
-          </div>
-        <span className="text-muted itemprice_coupon" id="itemPrice">{this.props.currency+" "+this.props.original_amount}</span>
-        </li>
-        {this.props.discount!==""?(
-          <li className="list-group-item d-flex justify-content-between" id="discount_div" style={{display:"flex !important"}} >
-          <div> <h6 className="my-0">Discount</h6> 
-             <small></small> 
-          </div> 
-        <span  id="itemDiscount">{this.props.currency+" "+this.props.discount}</span> 
+          <span class="head-t">Billing Invoice</span>
+        </h4>
+        <ul className="list-group mb-3">
+          <li className="list-group-item d-flex justify-content-between lh-condensed binvoice">
+            <div>
+          <h5 className="my-0">{this.props.itemname}</h5>
+            </div>
+            
           </li>
+          <li className="list-group-item d-flex justify-content-between lh-condensed binvoice">
+            <div>
+              <h6 className="my-0">Item Price</h6>
+            </div>
+          <span className="text-muted itemprice_coupon" id="itemPrice">{this.props.currency+" "+this.props.original_amount}</span>
+          </li>
+          {this.props.discount!==""?(
+            <li className="list-group-item d-flex justify-content-between" id="discount_div" style={{display:"flex !important"}} >
+            <div> <h6 className="my-0">Discount</h6> 
+              <small></small> 
+            </div> 
+          <span  id="itemDiscount">{this.props.currency+" "+this.props.discount}</span> 
+            </li>
 
-        ):""}
-        <li className="list-group-item d-flex justify-content-between tinvoice">
-          <span>Total (USD)</span>
-        <strong id="calculated_total" className="total_amount">{this.props.currency+" "+this.props.itemprice}</strong>
-        </li>
-      </ul>
-    
-        <Redeem applyCoupon = {this.props.applyCoupon}/>
-        
-        <div className="complete"> 
-            {this.props.payment_gateway === "braintree"?(<BrainTreeMark />):""}
-            <a href="javascript:void(0)" target="_blank" className="money-back-img" display = {{display : "table", margin : "12px auto",clear : "both"}}> 
-                <img src="https://designcater.com/assets/images/checkout/moneyback.png" width="200px" border="0" />
-            </a>
-        </div>
+          ):""}
+          <li className="list-group-item d-flex justify-content-between tinvoice">
+            <span>Total (USD)</span>
+          <strong id="calculated_total" className="total_amount">{this.props.currency+" "+this.props.itemprice}</strong>
+          </li>
+        </ul>
+      
+          <Redeem applyCoupon = {this.props.applyCoupon}/>
+          
+          <div className="complete"> 
+              {this.props.payment_gateway === "braintree"?(<BrainTreeMark />):""}
+              <a href="javascript:void(0)" target="_blank" className="money-back-img" display = {{display : "table", margin : "12px auto",clear : "both"}}> 
+                  <img src="https://designcater.com/assets/images/checkout/moneyback.png" width="200px" border="0" />
+              </a>
+          </div>
+      </div>
     </div>
-    <div className="col-md-7 billborder payment-box-second" id="main-formarea">
+    <div className="col-md-8 billborder" id="main-formarea">
+      <div class="payment-box-second">
 		    <h4 className="justify-content-between align-items-center mb-3 section-heading payment-section-heading">
-                <span className="badge badge-secondary">1</span>
-                <span>Billing Information</span>
+                <span className="badge badge-secondary hide-on-mob">1</span>
+                <span className="badge badge-secondary show-on-mob">2</span>
+                <span class="head-t">Billing Information</span>
 	        </h4>
       <form id="payment-form" className="needs-validation" action="https://designcater.com/payment/paynow/paycredit" method="post">
-        <div className="row">
+        <div className="form-row">
           <div className="col-md-6 mb-3">
             <input type="text" className="form-control binfo" id="firstname" name="firstName" value={this.props.firstName} onChange={this.props.onChange} placeholder="First Name" required />
             {error.firstName!=="" && <label htmlFor="firstname-error" className="error">{error.firstName}</label>}
@@ -83,7 +89,7 @@ class PaymentContainer extends Component{
           </div>
         </div>
 
-        <div className="row">
+        <div className="form-row">
           <div className="col-md-6 mb-3">
 
             <input type="email" className="form-control binfo" id="email" name="email" value={this.props.email} onChange={this.props.onChange} placeholder="Email Address" required />
@@ -119,7 +125,7 @@ class PaymentContainer extends Component{
           {error.address !== "" && <label htmlFor="address" className="error">{error.address}</label>}
         </div>
         
-        <div className="row">
+        <div className="form-row">
           <div className="col-md-6 mb-3">
             <input type="text" className="form-control binfo" id="companyname" name="company" value={this.props.company} onChange={this.props.onChange} placeholder="Company" required />
             {error.company !== "" && <label htmlFor="company" className="error">{error.company}</label>}
@@ -135,7 +141,7 @@ class PaymentContainer extends Component{
           </div>
         </div>
         
-        <div className="row">
+        <div className="form-row">
           <div className="col-md-5 mb-3">
             <RegionDropdown 
             country = {this.props.country}
@@ -157,11 +163,12 @@ class PaymentContainer extends Component{
         </div>
         
         <h4 className="justify-content-between align-items-center mb-3 mt-3 section-heading payment-section-heading" style={{marginBottom : "0"}}>
-	        <span className="badge badge-secondary binfo">2</span>
-	        <span>Payment Information</span>
+	        <span className="badge badge-secondary binfo hide-on-mob">2</span>
+	        <span className="badge badge-secondary binfo show-on-mob">3</span>
+	        <span class="head-t">Payment Information</span>
 	      </h4>
 
-        <div className="row">
+        <div className="form-row">
             <div className="col-md-12" id="bt-dropin">
                 {this.props.payment_gateway === 'stripe'? (
                   <Stripe setStripeAndElements = {this.props.setStripeAndElements}/>
@@ -175,6 +182,7 @@ class PaymentContainer extends Component{
         <button className="btn btn-primary btn-lg btn-block binfo" id = "final_submit_btn" type="submit" onClick={this.props.onFormSubmit}>Pay Now</button>
         {error.formError!=="" && <label htmlFor="form-error" className="error" style={{textAlign:"center"}}>{error.formError}</label>}
       </form>
+    </div>
     </div>
   </div>
            
