@@ -8,7 +8,7 @@ import {Layout,
         SectionPortfolio,
         SectionPricing,
         SectionAbout,
-        LogoDesignTabs
+        WebDesignTabs
 } from '../../components';
 
 class WebDesign extends Component{
@@ -18,7 +18,7 @@ class WebDesign extends Component{
             <Layout>
                 <StandardJumbotron />
                 <SectionAbout />
-                <LogoDesignTabs />
+                <WebDesignTabs />
                 <SectionPortfolio />
                 <SectionPricing />
                 <HowItWork />

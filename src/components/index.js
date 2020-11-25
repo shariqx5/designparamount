@@ -46,6 +46,7 @@ import SectionPortfolio from './sections/sectionPortfolio/';
 import SectionPricing from './sections/sectionPricing/';
 import SectionAbout from './sections/sectionAbout';
 import LogoDesignTabs from './sections/sectionLogoDesignTabs';
+import WebDesignTabs from './sections/sectionWebDesignTabs';
 
 export {
     Layout,
@@ -95,5 +96,6 @@ export {
     SectionPortfolio,
     SectionPricing,
     SectionAbout,
-    LogoDesignTabs
+    LogoDesignTabs,
+    WebDesignTabs
 }

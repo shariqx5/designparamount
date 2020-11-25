@@ -52,8 +52,6 @@ class About extends Component{
                 </section>
                 <OurPurpose />
                 <OurMission />
-                <MeetTheTeam />
-                <DesignerOfMonth />
                 <HelpAction />
             </Layout>
         )

@@ -17,7 +17,6 @@ class PortfolioPage extends Component{
                     </div>
 		        </section>
                 <Portfolio />
-                <MeetDesigners style='pro'/>
                 <HelpAction />
             </Layout>
         )

@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import {CookiesHelper, URLHelper} from '../helpers';
+import Popup from './popup';
 import {Link} from 'react-router-dom';
 
 const urlHelper = new URLHelper();
@@ -39,7 +40,6 @@ class Navbar extends Component{
               x.style.display = "block";
             }
     }
-
 
     
     render(){
@@ -102,7 +102,7 @@ class Navbar extends Component{
                         <div className="col-md-3 d-none d-lg-block">
                             <ul className="menu menu-right">
                                 <li><a href="#">{this.state.showLogin?(<Link className="black-color" to={urlHelper.getURL('login')}>Login</Link>):(<Link className="black-color" to={urlHelper.getURL('client-orders')}>Client Area</Link>)}</a></li>
-                                <li><a href="#" className="get-a-demo-link"><Link className="get-a-demo-link" to={urlHelper.getURL('request')}>Get A Demo</Link></a></li>
+                                <li><a href="#" className="get-a-demo-link" onClick={this.props.togglePopup}>Request a Quote</a></li>
                             </ul>
                         </div>
 			        </div>
