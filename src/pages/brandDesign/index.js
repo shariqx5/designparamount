@@ -12,7 +12,8 @@ import {Layout,
         HelpAction,
         ProDesigner,
         SectionPortfolio,
-        SectionPricing
+        SectionPricing,
+        SectionAbout
 } from '../../components';
 
 class BrandDesign extends Component{
@@ -21,6 +22,7 @@ class BrandDesign extends Component{
         return(
             <Layout>
                 <ProJumbotron />
+                <SectionAbout />
                 <SectionPortfolio />
                 <SectionPricing />
                 <HowItWork />

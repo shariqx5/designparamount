@@ -6,7 +6,9 @@ import {Layout,
         Testimonial,
         HelpAction,
         SectionPortfolio,
-        SectionPricing
+        SectionPricing,
+        SectionAbout,
+        LogoDesignTabs
 } from '../../components';
 
 class WebDesign extends Component{
@@ -15,6 +17,8 @@ class WebDesign extends Component{
         return(
             <Layout>
                 <StandardJumbotron />
+                <SectionAbout />
+                <LogoDesignTabs />
                 <SectionPortfolio />
                 <SectionPricing />
                 <HowItWork />

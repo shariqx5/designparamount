@@ -44,6 +44,8 @@ import PrivacyJumbotron from './jumbotron/privacyJumbotron';
 import ImageOptimizer from './imageOptimizer';
 import SectionPortfolio from './sections/sectionPortfolio/';
 import SectionPricing from './sections/sectionPricing/';
+import SectionAbout from './sections/sectionAbout';
+import LogoDesignTabs from './sections/sectionLogoDesignTabs';
 
 export {
     Layout,
@@ -91,5 +93,7 @@ export {
     PrivacyJumbotron,
     ImageOptimizer,
     SectionPortfolio,
-    SectionPricing
+    SectionPricing,
+    SectionAbout,
+    LogoDesignTabs
 }
