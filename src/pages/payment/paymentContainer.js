@@ -19,6 +19,7 @@ class PaymentContainer extends Component{
       const {country, region, error} = this.props;
         return(
            <Layout>
+             <div className="main-payment">
                <div className="container" id="payment-container">
                <div className="row">
     <div className="col-md-4 order-md-2 mb-4">
@@ -186,6 +187,7 @@ class PaymentContainer extends Component{
     </div>
   </div>
            
+               </div>
                </div>
            </Layout>
         )

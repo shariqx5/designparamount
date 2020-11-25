@@ -16,7 +16,7 @@ class EmblemLogo extends Component{
 			    </div>
 	            </div>
                 <div className="col-md-6 d-flex align-items-center justify-content-center">
-                    <img src="https://www.designcater.com/assets/images/logo-branding/logo-type/1.jpg" alt="" />
+					<img src="/images/logo-types/4.jpg" alt="" />
                 </div>
             </div>
 	    </div>)
