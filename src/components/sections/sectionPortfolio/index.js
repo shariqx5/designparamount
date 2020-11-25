@@ -8,7 +8,7 @@ class SectionPortfolio extends Component{
     render(){
         return(
             <React.Fragment>
-                <section className="purple-sec portfolio-before-sec mt-40" id="portfolio">
+                <section className="purple-sec portfolio-before-sec" id="portfolio">
                     <img src="/images/shapes/triangle.png" alt="" className="position-absolute top-0 left-0 triangle-top-left max-width-190" />
                     <img src="/images/shapes/circle.png" alt="" className="position-absolute top-0 right-0 circle-top-right max-width-190" />
 

@@ -7,7 +7,7 @@ class SectionPricing extends Component{
 
     render(){
         return(
-            <section class="white-section three-pricing-sec">
+            <section class="white-section three-pricing-sec pb-0">
                 <img src="images/shapes/triangle.png" alt="" class="position-absolute top-0 right-0 triangle-top-right max-width-190" />
                 <img src="images/shapes/circle.png" alt="" class="position-absolute top-0 left-0 circle-top-left-2 max-width-190" />
                 <img src="images/shapes/lines.png" alt="" class="position-absolute top-20 left-0 lines-top-left max-width-200" />

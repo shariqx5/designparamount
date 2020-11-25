@@ -1,6 +1,6 @@
 #payment-container{
-    margin-top: 10% !important;
-    margin-bottom: 50px;
+    padding-top: 10% !important;
+    padding-bottom: 50px;
 }
 
 
@@ -63,7 +63,7 @@ input:focus, select:focus {
     border-radius: 8px;
 }
 
-.main {
+.main-payment {
     background: #eee;
 }
 
@@ -90,9 +90,13 @@ input:focus, select:focus {
     color : white !important;
 }
 
+.show-on-mob {
+    display: none;
+}
+
 
 @media only screen and (max-width: 576px) {
-    .main {
+    .main-payment {
         padding-top: 60px;
     }
 

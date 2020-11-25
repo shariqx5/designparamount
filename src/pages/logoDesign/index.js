@@ -14,7 +14,7 @@ import {Layout,
 class LogoDesign extends Component{
 
     componentDidMount(){
-        document.body.style.backgroundColor = "#353535";
+        document.body.style.backgroundColor = "#fff";
     }
 
 

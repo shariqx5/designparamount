@@ -2356,6 +2356,11 @@ ul.scrollable-tabs-ul {
 }
 
 
+.logo-side-sec {
+	width: 120%;
+	margin: -25px 0 -25px 0;
+}
+
 
 @media (min-width: 600px) {
     .main {
@@ -3317,6 +3322,11 @@ ul.scrollable-tabs-ul {
 
 	.promaincoldiv, .propageheadingdiv {
 		padding-top: 0 !important;
+	}
+
+	.logo-side-sec {
+		width: 100%;
+		margin: 0;
 	}
 
 	.mob-none {
