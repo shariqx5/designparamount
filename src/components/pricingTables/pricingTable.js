@@ -1,11 +1,43 @@
 import React,{Component} from 'react';
+import {PaymentAPI} from '../../api';
+import {URLHelper} from '../../helpers';
 import {Link} from 'react-router-dom';
+import { withRouter } from 'react-router-dom/cjs/react-router-dom.min';
+import Notiflix from 'notiflix';
+
+const paymentAPI = new PaymentAPI();
+const urlHelper = new URLHelper();
 
 class PricingTable extends Component{
 
     constructor(props){
         super(props);
-    }
+	}
+	
+
+
+	submitPaymentRequest = async(event)=>{
+
+		event.preventDefault();
+
+		Notiflix.Loading.Standard('Redirecting towards payment...');
+
+		const {packagePrice,  packageCurrency, packageName} = this.props;
+		const response = await paymentAPI.generatePaymentLink(packagePrice, packageCurrency, packageName);
+		var paymentBaseURL = '';
+		const {token, payment_gateway} = response;
+		if(payment_gateway === 'stripe'){
+			paymentBaseURL = urlHelper.getURL('payment-stripe');
+		}
+		else{
+			paymentBaseURL = urlHelper.getURL('payment-braintree');
+		}
+
+		Notiflix.Loading.Remove();
+
+		paymentBaseURL = paymentBaseURL+"?token="+token;
+		this.props.history.push(paymentBaseURL);
+	}
 
     render(){
         return(
@@ -41,10 +73,10 @@ class PricingTable extends Component{
 								</ul>
 							</div>
 							<div className="price-link-area">
-								<a href="#" className="a-link more-padding-lr filled-link">Get a Demo</a>
+								<a href="#" onClick={this.submitPaymentRequest} className="a-link more-padding-lr filled-link">Order Now</a>
 							</div>
 							<div className="price-link-area">
-								<a href="standard.html" className="a-link more-padding-lr  mt-10"><Link className="white-color" to={`/${this.props.url}`}>Learn More</Link> <i className="fas fa-long-arrow-alt-right"></i></a>
+								<a href="standard.html" className="a-link more-padding-lr  mt-10"><Link className="white-color" to={`${this.props.url}`}>Learn More</Link> <i className="fas fa-long-arrow-alt-right"></i></a>
 							</div>
 						</div>
         )
@@ -52,4 +84,4 @@ class PricingTable extends Component{
 }
 
 
-export default PricingTable;
+export default withRouter(PricingTable);

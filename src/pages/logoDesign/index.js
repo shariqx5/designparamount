@@ -6,7 +6,7 @@ import {Layout,
         Testimonial,
         SectionPortfolio,
         HelpAction,
-        SectionAbout,
+        SectionAboutLogo,
         SectionPricing,
         LogoDesignTabs
 } from '../../components';
@@ -26,7 +26,7 @@ class LogoDesign extends Component{
         return(
             <Layout>
                 <UltimateJumbotron />
-                <SectionAbout />
+                <SectionAboutLogo />
                 <LogoDesignTabs />
                 <SectionPortfolio />
                 <SectionPricing />

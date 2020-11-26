@@ -1,16 +1,11 @@
 import React,{Component} from 'react';
 import {Layout,
         ProJumbotron,
-        Clients,
+        SectionBrand,
         ExpensiveDesign,
         HowItWork,
         Testimonial,
-        MeetDesigners,
-        Services,
-        PortfolioNavigation,
-        Portfolio,
         HelpAction,
-        ProDesigner,
         SectionPortfolio,
         SectionPricing,
         SectionAbout
@@ -22,7 +17,7 @@ class BrandDesign extends Component{
         return(
             <Layout>
                 <ProJumbotron />
-                <SectionAbout />
+                <SectionBrand />
                 <SectionPortfolio />
                 <SectionPricing />
                 <HowItWork />

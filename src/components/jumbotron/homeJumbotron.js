@@ -36,7 +36,7 @@ class HomeJumbotron extends Component{
 
 				<div className="half-height-box">
 					<div className="right-sec-heading">
-						<h2>Ultimate</h2>
+						<h2>Logo Design</h2>
 						<h3>Create a Professional Brand Online</h3>
 						<p>Great for existing companies that want to step up.</p>
 						<a href="#"><Link to="/ultimate">Learn More</Link> <i className="fas fa-long-arrow-alt-right"></i></a>
@@ -46,7 +46,7 @@ class HomeJumbotron extends Component{
 				<div className="half-height-box d-flex pl-13-per">
 			        <div className="half-width-box">
     					<div className="right-sec-heading pl-0">
-    						<h2>Pro</h2>
+    						<h2>Brand Design</h2>
     						<h3>Add a designer to your team</h3>
     						<p>Great for Creative Agencies.</p>
     						<a href="pro.html">Learn More <i className="fas fa-long-arrow-alt-right"></i></a>
@@ -54,7 +54,7 @@ class HomeJumbotron extends Component{
 					</div>
 					<div className="half-width-box standard-box">
     					<div className="right-sec-heading pl-0">
-    						<h2>Startup</h2>
+    						<h2>Web Design</h2>
     						<h3>Add a designer to your team</h3>
     						<p>Great Logo Design.</p>
     						<a href="standard.html">Learn More <i className="fas fa-long-arrow-alt-right"></i></a>

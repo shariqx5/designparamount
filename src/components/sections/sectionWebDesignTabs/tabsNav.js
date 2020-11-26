@@ -6,16 +6,16 @@ class TabsNav extends Component{
     render(){
         return(<ul className="nav nav-tabs serivces-tabs-new" role="tablist">
             <li className="nav-item">
-                <a className="nav-link active" href="#wordmark-logo-service" role="tab" data-toggle="tab">Word Mark Logo</a>
+                <a className="nav-link active" href="#wordmark-logo-service" role="tab" data-toggle="tab">HTML</a>
             </li>
             <li className="nav-item">
-                <a className="nav-link" href="#abstract-logo-service" role="tab" data-toggle="tab">Abstract Logo</a>
+                <a className="nav-link" href="#abstract-logo-service" role="tab" data-toggle="tab">CMS</a>
             </li>
             <li className="nav-item">
-                <a className="nav-link" href="#illustrative-logo-service" role="tab" data-toggle="tab">Illustrative Logo</a>
+                <a className="nav-link" href="#illustrative-logo-service" role="tab" data-toggle="tab">E-Commerce</a>
             </li>
             <li className="nav-item">
-                <a className="nav-link" href="#emblem-logo-service" role="tab" data-toggle="tab">Emblem Logo</a>
+                <a className="nav-link" href="#emblem-logo-service" role="tab" data-toggle="tab">Portal</a>
             </li>
         </ul>)
     }

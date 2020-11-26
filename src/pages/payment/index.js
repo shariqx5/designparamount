@@ -73,6 +73,7 @@ class Payment extends Component{
         this.handleSubmit = this.handleSubmit.bind(this);
         this.setBrainTreeInstance = this.setBrainTreeInstance.bind(this);
         this.applyCoupon = this.applyCoupon.bind(this);
+        this.getUserCountry = this.getUserCountry.bind(this);
     }
 
 
@@ -82,7 +83,6 @@ class Payment extends Component{
         this.getTokenData();
 
     }
-
 
 
     getTokenData = async()=>{
@@ -527,6 +527,7 @@ class Payment extends Component{
             onFormSubmit = {this.handleSubmit}
             setStripeAndElements = {this.setStripeAndElements}
             applyCoupon = {this.applyCoupon}
+            getUserCountry = {this.getUserCountry}
             />
         )
     }

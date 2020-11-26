@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import ImageOptimizer from '../../imageOptimizer';
 
 class AbstractLogo extends Component{
 
@@ -16,7 +17,7 @@ class AbstractLogo extends Component{
 			    </div>
 	            </div>
                 <div className="col-md-6 d-flex align-items-center justify-content-center">
-				<img src="/images/logo-types/2.jpg" alt="" />
+					<ImageOptimizer path={"/design_gigantic/logo-types/abstract.jpg"} lqip={{active:true, quality:20}}/>
                 </div>
             </div>
 	    </div>)

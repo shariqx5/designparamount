@@ -10,18 +10,17 @@ class CarPortfolio extends Component{
     									<div className="row">
     										<div className="col-md-4">
     											<div className="mlr--15 content">
-    												<a data-fancybox="images" href={`${IMAGE_SERVER_ADDRESS}/images/portfolio/car/1_jtlEtiw3g4.jpg`} className="portfolio-img">
-													<ImageOptimizer path={"/images/portfolio/car/1_jtlEtiw3g4.jpg"} lqip={{active:true, quality:20}}/>
-														<img src="/images/portfolio/car/1.jpg" alt="" />
-                                                        <div className="content-details fadeIn-top">
+    												<a data-fancybox="images" href={`${IMAGE_SERVER_ADDRESS}/design_gigantic/portfolio/car/1.jpg`} className="portfolio-img">
+													<ImageOptimizer path={"/design_gigantic/portfolio/car/1.jpg"} lqip={{active:true, quality:20}}/>
+														<div className="content-details fadeIn-top">
                                                            <i className="fa fa-search" aria-hidden="true"></i>
                                                           </div>
     												</a>
     											</div>
     											
     											<div className="mlr--15 content">
-    												<a data-fancybox="images" href={`${IMAGE_SERVER_ADDRESS}/images/portfolio/car/2_2-avls9Q5C.jpg`} className="portfolio-img">
-													<ImageOptimizer path={"/images/portfolio/car/2_2-avls9Q5C.jpg"} lqip={{active:true, quality:20}}/>
+    												<a data-fancybox="images" href={`${IMAGE_SERVER_ADDRESS}/design_gigantic/portfolio/car/2.jpg`} className="portfolio-img">
+													<ImageOptimizer path={"/design_gigantic/portfolio/car/2.jpg"} lqip={{active:true, quality:20}}/>
                                                         <div className="content-details fadeIn-top">
                                                            <i className="fa fa-search" aria-hidden="true"></i>
                                                           </div>
@@ -30,17 +29,17 @@ class CarPortfolio extends Component{
     										</div>
     										<div className="col-md-4">
     											<div className="mlr--15 content">
-    												<a data-fancybox="images" href={`${IMAGE_SERVER_ADDRESS}/images/portfolio/car/5_XAmhjBLcB.jpg`} className="portfolio-img">
-													<ImageOptimizer path={"/images/portfolio/car/5_XAmhjBLcB.jpg"} lqip={{active:true, quality:20}}/>
-														<img src="/images/portfolio/car/5.jpg" alt="" />
+    												<a data-fancybox="images" href={`${IMAGE_SERVER_ADDRESS}/design_gigantic/portfolio/car/5.jpg`} className="portfolio-img">
+													<ImageOptimizer path={"/design_gigantic/portfolio/car/5.jpg"} lqip={{active:true, quality:20}}/>
+														<img src="/design_gigantic/portfolio/car/5.jpg" alt="" />
                                                         <div className="content-details fadeIn-top">
                                                            <i className="fa fa-search" aria-hidden="true"></i>
                                                           </div>
     												</a>
     											</div>
     											<div className="mlr--15 content">
-    												<a data-fancybox="images" href={`${IMAGE_SERVER_ADDRESS}/images/portfolio/car/4_MaGThDOTPZ.jpg`} className="portfolio-img">
-													<ImageOptimizer path={"/images/portfolio/car/4_MaGThDOTPZ.jpg"} lqip={{active:true, quality:20}}/>
+    												<a data-fancybox="images" href={`${IMAGE_SERVER_ADDRESS}/design_gigantic/portfolio/car/4.jpg`} className="portfolio-img">
+													<ImageOptimizer path={"/design_gigantic/portfolio/car/4.jpg"} lqip={{active:true, quality:20}}/>
 														<div className="content-details fadeIn-top">
                                                            <i className="fa fa-search" aria-hidden="true"></i>
                                                           </div>
@@ -49,8 +48,8 @@ class CarPortfolio extends Component{
     										</div>
     										<div className="col-md-4">
     											<div className="mlr--15 content">
-    												<a data-fancybox="images" href={`${IMAGE_SERVER_ADDRESS}/images/portfolio/car/3_l-v2-tw4xZ.jpg`} className="portfolio-img">
-													<ImageOptimizer path={"/images/portfolio/car/3_l-v2-tw4xZ.jpg"} lqip={{active:true, quality:20}}/>
+    												<a data-fancybox="images" href={`${IMAGE_SERVER_ADDRESS}/design_gigantic/portfolio/car/3.jpg`} className="portfolio-img">
+													<ImageOptimizer path={"/design_gigantic/portfolio/car/3.jpg"} lqip={{active:true, quality:20}}/>
 														<div className="content-details fadeIn-top">
                                                            <i className="fa fa-search" aria-hidden="true"></i>
                                                           </div>

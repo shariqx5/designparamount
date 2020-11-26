@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import ImageOptimizer from '../imageOptimizer';
 import {Link} from 'react-router-dom';
 
 class ProJumbotron extends Component{
@@ -20,7 +21,7 @@ class ProJumbotron extends Component{
                 <div className="row">
                     <div className="col-md-5">
                         <div className="banner-heading standardbannerheadingdiv">
-                            <h6 style={{position:"relative"}}><img src="images/standard/circle.png" alt="" className="position-absolute" style={{left:"-5px",zIndex:"2",maxWidth:"60px",top:"-18px"}}/> Standard</h6>
+                            <h6 style={{position:"relative"}}><img src="images/standard/circle.png" alt="" className="position-absolute" style={{left:"-5px",zIndex:"2",maxWidth:"60px",top:"-18px"}}/>Brand Design</h6>
                             <h1>A New Approach to Graphic Design.</h1>
                             <h1><span>Simple. Scalable. Reliable.</span></h1>
                             <p>Modern branding designs that set your business apart from your competitors. Our professional designers add their creative juices to concoct a brand recipe that makes your business shine in the market.</p>
@@ -31,7 +32,7 @@ class ProJumbotron extends Component{
                         </div>
                     </div>
                     <div className="col-md-7 standardpagemainbannerimg">
-                        <img src="images/standard/main-shape.png" />
+                        <ImageOptimizer path={"design_gigantic/banners/branding_banner.png"} lqip={{active:true, quality:20}}/>
                     </div>
                 </div>
             </div>

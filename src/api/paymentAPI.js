@@ -134,6 +134,20 @@ class PaymentAPI {
         return data;
     }
 
+
+
+    generatePaymentLink = async(price, currency, packageType, itemName = 'Dummy Logo')=>{
+        itemName = encodeURI(itemName);
+        packageType = encodeURI(packageType);
+        const response = await fetch(SERVER_ADDRESS+`payment/pay_now_link/${itemName}/${price}/${packageType}/${currency}`, {
+            method : "GET"
+        });
+    
+        const data = await response.json();
+        console.log(data);
+        return data;
+    }
+
 }
 
 

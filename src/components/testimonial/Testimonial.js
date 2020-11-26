@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import {Link} from 'react-router-dom';
+import ImageOptimizer from '../imageOptimizer';
 
 class Testimonial extends Component{
 
@@ -7,10 +8,10 @@ class Testimonial extends Component{
         return(
             <section className="purple-sec case-study-sec position-rel" style={{paddingBottom:"50px",paddingTop:"100px"}}>
 			<div className="case-study-bg position-absolute top-0 right-0 height-full">
-				<img src="/images/testimonials/bg/1.png" alt="" id="case-study-bg-1" />
-				<img src="/images/testimonials/bg/2.png" alt="" id="case-study-bg-2" />
-				<img src="/images/testimonials/bg/3.png" alt="" id="case-study-bg-3" />
-				<img src="/images/testimonials/bg/4.png" alt="" id="case-study-bg-4" />
+				<ImageOptimizer path={"/design_gigantic/testimonial/bg/1.jpg"} lqip={{active:true, quality:20}}/>
+				<ImageOptimizer path={"/design_gigantic/testimonial/bg/2.jpg"} lqip={{active:true, quality:20}}/>
+				<ImageOptimizer path={"/design_gigantic/testimonial/bg/3.jpg"} lqip={{active:true, quality:20}}/>
+				<ImageOptimizer path={"/design_gigantic/testimonial/bg/4.jpg"} lqip={{active:true, quality:20}}/>
 			</div>
 			<div className="container-fluid position-absolute height-full testcontentsec">
 				<div className="row height-full">
@@ -30,7 +31,7 @@ class Testimonial extends Component{
 								<div className="testimonial-bubble-area">
 									<div className="testimonial-bubble">
 										<div className="testimonial-bubble-img">
-											<img src="/images/testimonials/bubbles/1.jpg" alt="" />
+										 	<ImageOptimizer path={"/design_gigantic/testimonial/1.jpg"} lqip={{active:true, quality:20}}/>
 										</div>
 										<div className="textimonial-bubble-detail">
 											<p className="textimonial-bubble-name">Ellen Parker, <span>Hifived</span></p>
@@ -46,7 +47,7 @@ class Testimonial extends Component{
 									</div>
 									<div className="testimonial-bubble">
 										<div className="testimonial-bubble-img">
-											<img src="/mages/testimonials/bubbles/2.jpg" alt="" />
+											<ImageOptimizer path={"/design_gigantic/testimonial/2.jpg"} lqip={{active:true, quality:20}}/>
 										</div>
 										<div className="textimonial-bubble-detail">
 											<p className="textimonial-bubble-name">Bertha Miller, <span>Sudaen</span></p>
@@ -62,7 +63,7 @@ class Testimonial extends Component{
 									</div>
 									<div className="testimonial-bubble">
 										<div className="testimonial-bubble-img">
-											<img src="/images/testimonials/bubbles/3.jpg" alt="" />
+											<ImageOptimizer path={"/design_gigantic/testimonial/3.jpg"} lqip={{active:true, quality:20}}/>
 										</div>
 										<div className="textimonial-bubble-detail">
 											<p className="textimonial-bubble-name">Amasu Brown, <span>Socktech</span></p>
@@ -86,8 +87,8 @@ class Testimonial extends Component{
 				<div className="row">
 					<div className="col-lg-5 col-md-5 offset-md-7">
 						<div className="section-heading">
-							<h1 className="default-heading"><span>We Walk The Walk,</span> But Our Customers Talk The Talk</h1>
-							<p>Whether you have considered hiring an in house designer, tried to manage a freelancer, or even worked with one of those “other design sites,” we know it sucks. Design Paramount is all about making your life easier. AKA not suck. All for one flat rate.</p>
+							<h1 className="default-heading"><span>Gage Us With The</span> Word Of Mouth We Gather!</h1>
+							<p>Design Gigantic, a logo design company, is essentially an institution where simple ideas are converted into brilliant and passionate designs. We take pride in creating design schemes for our clients that reflect their business, making our work unique in all of the industry. Based in the US, we are the 'Go-To' digital marketing and design consultancy for those who want nothing but the best.</p>
 						</div>
 						<Link to="/case-study" className="thick-link">Explore More Case Studies <i className="fas fa-long-arrow-alt-right"></i></Link>
 					</div>

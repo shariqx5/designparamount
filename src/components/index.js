@@ -44,7 +44,9 @@ import PrivacyJumbotron from './jumbotron/privacyJumbotron';
 import ImageOptimizer from './imageOptimizer';
 import SectionPortfolio from './sections/sectionPortfolio/';
 import SectionPricing from './sections/sectionPricing/';
-import SectionAbout from './sections/sectionAbout';
+import SectionAboutLogo from './sections/sectionAbout/Logo';
+import SectionBrand from './sections/sectionAbout/Brand';
+import SectionWebsite from './sections/sectionAbout/Website';
 import LogoDesignTabs from './sections/sectionLogoDesignTabs';
 import WebDesignTabs from './sections/sectionWebDesignTabs';
 
@@ -95,7 +97,9 @@ export {
     ImageOptimizer,
     SectionPortfolio,
     SectionPricing,
-    SectionAbout,
     LogoDesignTabs,
-    WebDesignTabs
+    WebDesignTabs,
+    SectionAboutLogo,
+    SectionBrand, 
+    SectionWebsite
 }

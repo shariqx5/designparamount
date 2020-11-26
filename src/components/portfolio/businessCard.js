@@ -10,16 +10,16 @@ class BusinessCard extends Component{
     									<div class="row">
     										<div class="col-md-4">
     											<div class="mlr--15 content">
-													<a data-fancybox="images" href={`${IMAGE_SERVER_ADDRESS}/images/portfolio/card/1_XlQiovaD18.jpg`} class="portfolio-img">
-													<ImageOptimizer path={"/images/portfolio/card/1_XlQiovaD18.jpg"} lqip={{active:true, quality:20}}/>
+													<a data-fancybox="images" href={`${IMAGE_SERVER_ADDRESS}/design_gigantic/portfolio/card/1.jpg`} class="portfolio-img">
+													<ImageOptimizer path={"/design_gigantic/portfolio/card/1.jpg"} lqip={{active:true, quality:20}}/>
 	                                                    <div class="content-details fadeIn-top">
 	                                                       <i class="fa fa-search" aria-hidden="true"></i>
 	                                                      </div>
 													</a>
 												</div>
     											<div class="mlr--15 content">
-    												<a data-fancybox="images" href={`${IMAGE_SERVER_ADDRESS}/images/portfolio/card/2_XXnvyTkYbV.jpg`} class="portfolio-img">
-													<ImageOptimizer path={"/images/portfolio/card/2_XXnvyTkYbV.jpg"} lqip={{active:true, quality:20}}/>
+    												<a data-fancybox="images" href={`${IMAGE_SERVER_ADDRESS}/design_gigantic/portfolio/card/2.jpg`} class="portfolio-img">
+													<ImageOptimizer path={"/design_gigantic/portfolio/card/2.jpg"} lqip={{active:true, quality:20}}/>
 														<div class="content-details fadeIn-top">
                                                            <i class="fa fa-search" aria-hidden="true"></i>
                                                           </div>
@@ -28,24 +28,24 @@ class BusinessCard extends Component{
     										</div>
     										<div class="col-md-4">
     											<div class="mlr--15 content">
-    												<a data-fancybox="images" href={`${IMAGE_SERVER_ADDRESS}/images/portfolio/card/5_2YAkoM6-Nj.jpg`} class="portfolio-img">
-													<ImageOptimizer path={"/images/portfolio/card/5_2YAkoM6-Nj.jpg"} lqip={{active:true, quality:20}}/>
+    												<a data-fancybox="images" href={`${IMAGE_SERVER_ADDRESS}/design_gigantic/portfolio/card/5.jpg`} class="portfolio-img">
+													<ImageOptimizer path={"/design_gigantic/portfolio/card/5.jpg"} lqip={{active:true, quality:20}}/>
                                                         <div class="content-details fadeIn-top">
                                                            <i class="fa fa-search" aria-hidden="true"></i>
                                                           </div>
     												</a>
     											</div>
     											<div class="mlr--15 content">
-    												<a data-fancybox="images" href={`${IMAGE_SERVER_ADDRESS}/images/portfolio/card/6_ACZqHMefMR.jpg`} class="portfolio-img">
-													<ImageOptimizer path={"/images/portfolio/card/6_ACZqHMefMR.jpg"} lqip={{active:true, quality:20}}/>
+    												<a data-fancybox="images" href={`${IMAGE_SERVER_ADDRESS}/design_gigantic/portfolio/card/6.jpg`} class="portfolio-img">
+													<ImageOptimizer path={"/design_gigantic/portfolio/card/6.jpg"} lqip={{active:true, quality:20}}/>
 														<div class="content-details fadeIn-top">
                                                            <i class="fa fa-search" aria-hidden="true"></i>
                                                           </div>
     												</a>
     											</div>
     											<div class="mlr--15 content">
-    												<a data-fancybox="images" href={`${IMAGE_SERVER_ADDRESS}/images/portfolio/card/3_U_RJuv323w.jpg`} class="portfolio-img">
-													<ImageOptimizer path={"/images/portfolio/card/3_U_RJuv323w.jpg"} lqip={{active:true, quality:20}}/>
+    												<a data-fancybox="images" href={`${IMAGE_SERVER_ADDRESS}/design_gigantic/portfolio/card/3.jpg`} class="portfolio-img">
+													<ImageOptimizer path={"/design_gigantic/portfolio/card/3.jpg"} lqip={{active:true, quality:20}}/>
 														<div class="content-details fadeIn-top">
                                                            <i class="fa fa-search" aria-hidden="true"></i>
                                                           </div>
@@ -54,16 +54,16 @@ class BusinessCard extends Component{
     										</div>
     										<div class="col-md-4">
     											<div class="mlr--15 content">
-    												<a data-fancybox="images" href={`${IMAGE_SERVER_ADDRESS}/images/portfolio/card/7_m0NdnTfBjX.jpg`} class="portfolio-img">
-													<ImageOptimizer path={"/images/portfolio/card/7_m0NdnTfBjX.jpg"} lqip={{active:true, quality:20}}/>
+    												<a data-fancybox="images" href={`${IMAGE_SERVER_ADDRESS}/design_gigantic/portfolio/card/7.jpg`} class="portfolio-img">
+													<ImageOptimizer path={"/design_gigantic/portfolio/card/7.jpg"} lqip={{active:true, quality:20}}/>
     													<div class="content-details fadeIn-top">
                                                            <i class="fa fa-search" aria-hidden="true"></i>
                                                           </div>
     												</a>
     											</div>
     											<div class="mlr--15 content">
-    												<a data-fancybox="images" href="/images/portfolio/card/9_dqJ7g_nz2S.jpg" class="portfolio-img">
-													<ImageOptimizer path={"/images/portfolio/card/9_dqJ7g_nz2S.jpg"} lqip={{active:true, quality:20}}/>
+    												<a data-fancybox="images" href="/design_gigantic/portfolio/card/9.jpg" class="portfolio-img">
+													<ImageOptimizer path={"/design_gigantic/portfolio/card/9.jpg"} lqip={{active:true, quality:20}}/>
     													  <div class="content-details fadeIn-top">
                                                            <i class="fa fa-search" aria-hidden="true"></i>
                                                           </div>

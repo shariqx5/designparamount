@@ -10,8 +10,8 @@ class TShirtPortfolio extends Component{
     									<div className="row">
     										<div className="col-md-4">
     											<div className="mlr--15 content">
-    												<a data-fancybox="images" href={`${IMAGE_SERVER_ADDRESS}/images/portfolio/shirt/1_fAvCOFHEkk.jpg`} className="portfolio-img">
-													<ImageOptimizer path={"/images/portfolio/shirt/1_fAvCOFHEkk.jpg"} lqip={{active:true, quality:20}}/>
+    												<a data-fancybox="images" href={`${IMAGE_SERVER_ADDRESS}/design_gigantic/portfolio/shirt/1.jpg`} className="portfolio-img">
+													<ImageOptimizer path={"/design_gigantic/portfolio/shirt/1.jpg"} lqip={{active:true, quality:20}}/>
 														<div className="content-details fadeIn-top">
                                                            <i className="fa fa-search" aria-hidden="true"></i>
                                                           </div>
@@ -20,16 +20,16 @@ class TShirtPortfolio extends Component{
     										</div>
     										<div className="col-md-4">
     											<div className="mlr--15 content">
-    												<a data-fancybox="images" href={`${IMAGE_SERVER_ADDRESS}/images/portfolio/shirt/5_poNRGXuDd2.jpg`} className="portfolio-img">
-													<ImageOptimizer path={"/images/portfolio/shirt/5_poNRGXuDd2.jpg"} lqip={{active:true, quality:20}}/>
+    												<a data-fancybox="images" href={`${IMAGE_SERVER_ADDRESS}/design_gigantic/portfolio/shirt/5.jpg`} className="portfolio-img">
+													<ImageOptimizer path={"/design_gigantic/portfolio/shirt/5.jpg"} lqip={{active:true, quality:20}}/>
     													<div className="content-details fadeIn-top">
                                                            <i className="fa fa-search" aria-hidden="true"></i>
                                                           </div>
     												</a>
     											</div>
     											<div className="mlr--15 content">
-    												<a data-fancybox="images" href={`${IMAGE_SERVER_ADDRESS}/images/portfolio/shirt/2_Aw4RQG_bP.jpg`} className="portfolio-img">
-													<ImageOptimizer path={"/images/portfolio/shirt/2_Aw4RQG_bP.jpg"} lqip={{active:true, quality:20}}/>
+    												<a data-fancybox="images" href={`${IMAGE_SERVER_ADDRESS}/design_gigantic/portfolio/shirt/2.jpg`} className="portfolio-img">
+													<ImageOptimizer path={"/design_gigantic/portfolio/shirt/2.jpg"} lqip={{active:true, quality:20}}/>
     													<div className="content-details fadeIn-top">
                                                            <i className="fa fa-search" aria-hidden="true"></i>
                                                           </div>
@@ -38,8 +38,8 @@ class TShirtPortfolio extends Component{
     										</div>
     										<div className="col-md-4">
     											<div className="mlr--15 content">
-    												<a data-fancybox="images" href={`${IMAGE_SERVER_ADDRESS}/images/portfolio/shirt/6_AI8EZE5GSY.jpg`} className="portfolio-img">
-													<ImageOptimizer path={"/images/portfolio/shirt/6_AI8EZE5GSY.jpg"} lqip={{active:true, quality:20}}/>
+    												<a data-fancybox="images" href={`${IMAGE_SERVER_ADDRESS}/design_gigantic/portfolio/shirt/6.jpg`} className="portfolio-img">
+													<ImageOptimizer path={"/design_gigantic/portfolio/shirt/6.jpg"} lqip={{active:true, quality:20}}/>
                                                          <div className="content-details fadeIn-top">
                                                            <i className="fa fa-search" aria-hidden="true"></i>
                                                           </div>

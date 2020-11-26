@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import ImageOptimizer from '../imageOptimizer';
 import {Link} from 'react-router-dom';
 
 class UltimateJumbotron extends Component{
@@ -15,13 +16,12 @@ class UltimateJumbotron extends Component{
         <img src="images/standard/orange.png" alt="" className="position-absolute" style={{width:"100%",left:"-30%",zIndex:"2",maxWidth:"85px",top:"130px"}}/>
         <img src="images/standard/purple-zigzag.png" alt="" className="position-absolute"  style={{width:"100%",left:"68px",zIndex:"2",maxWidth:"130px",bottom:"-58px"}}/>
         <img src="images/standard/yellow.png" alt="" className="position-absolute" style={{width:"100%",right:"-30px",zIndex:"2",maxWidth:"102px",bottom:"200px"}}/>
-        
-		<div className="container banner-center">
+        <div className="container banner-center">
 			<div className="row">
 				<div className="col-md-5 promaincoldiv">
 					<div className="banner-heading standardbannerheadingdiv propageheadingdiv">
-                        <h5 style={{position:"relative"}}><img src="images/pricing/service/2.png" alt="" className="position-absolute" style={{left:"-5px",zIndex:"2",maxWidth:"50px",top:"-13px"}}/> Pro</h5>
-						<h1 style={{color:"#5e42d3"}}>A New Approach to Graphic Design.</h1>
+                        <h5 style={{position:"relative"}}><img src="images/pricing/service/2.png" alt="" className="position-absolute" style={{left:"-5px",zIndex:"2",maxWidth:"50px",top:"-13px"}}/> Logo Design</h5>
+						<h1 style={{color:"#5e42d3"}}>Logo Designs with Ravishing Pixels.</h1>
                         <h1><span>Simple. Scalable. Reliable.</span></h1>
 						<p>No HR. No interviews. No drama. In a few clicks you’ll have access to a professional designer ready to jump into your creative ecosystem.</p>
 					</div>
@@ -31,7 +31,7 @@ class UltimateJumbotron extends Component{
 					</div>
 				</div>
                 <div className="col-md-7 propagebannerimg">
-                    <img src="images/pro/main-banner.png" />
+					<ImageOptimizer path={"design_gigantic/banners/logo_banner.png"} lqip={{active:true, quality:20}}/>
                 </div>
 			</div>
 		</div>

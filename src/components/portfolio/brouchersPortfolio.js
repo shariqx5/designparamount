@@ -10,16 +10,16 @@ class BroucherPortfolio extends Component{
     									<div className="row">
     										<div className="col-md-4">
     											<div className="mlr--15 content">
-    												<a data-fancybox="images" href={`${IMAGE_SERVER_ADDRESS}/images/portfolio/brochure/1_owgJn_n_fj.jpg`} className="portfolio-img">
-													<ImageOptimizer path={"/images/portfolio/brochure/1_owgJn_n_fj.jpg"} lqip={{active:true, quality:20}}/>
+    												<a data-fancybox="images" href={`${IMAGE_SERVER_ADDRESS}/design_gigantic/portfolio/broucher/1.jpg`} className="portfolio-img">
+													<ImageOptimizer path={"/design_gigantic/portfolio/broucher/1.jpg"} lqip={{active:true, quality:20}}/>
 														<div className="content-details fadeIn-top">
                                                            <i className="fa fa-search" aria-hidden="true"></i>
                                                           </div>
     												</a>
     											</div>
     											<div className="mlr--15 content">
-    												<a data-fancybox="images" href={`${IMAGE_SERVER_ADDRESS}/images/portfolio/brochure/2_xjlf_SnTGQ.jpg`} className="portfolio-img">
-														<ImageOptimizer path={"/images/portfolio/brochure/2_xjlf_SnTGQ.jpg"} lqip={{active:true, quality:20}}/>
+    												<a data-fancybox="images" href={`${IMAGE_SERVER_ADDRESS}/design_gigantic/portfolio/broucher/2.jpg`} className="portfolio-img">
+														<ImageOptimizer path={"/design_gigantic/portfolio/broucher/2.jpg"} lqip={{active:true, quality:20}}/>
                                                         <div className="content-details fadeIn-top">
                                                            <i className="fa fa-search" aria-hidden="true"></i>
                                                           </div>
@@ -28,24 +28,24 @@ class BroucherPortfolio extends Component{
     										</div>
     										<div className="col-md-4">
     											<div className="mlr--15 content">
-    												<a data-fancybox="images" href={`${IMAGE_SERVER_ADDRESS}/images/portfolio/brochure/3_I9wSAA1yoi.jpg`} className="portfolio-img">
-													<ImageOptimizer path={"/images/portfolio/brochure/3_I9wSAA1yoi.jpg"} lqip={{active:true, quality:20}}/>
+    												<a data-fancybox="images" href={`${IMAGE_SERVER_ADDRESS}/design_gigantic/portfolio/broucher/3.jpg`} className="portfolio-img">
+													<ImageOptimizer path={"/design_gigantic/portfolio/broucher/3.jpg"} lqip={{active:true, quality:20}}/>
 														<div className="content-details fadeIn-top">
                                                            <i className="fa fa-search" aria-hidden="true"></i>
                                                           </div>
     												</a>
     											</div>
     											<div className="mlr--15 content">
-    												<a data-fancybox="images" href={`${IMAGE_SERVER_ADDRESS}/images/portfolio/brochure/4_7CWC4iw24o.jpg`} className="portfolio-img">
-													<ImageOptimizer path={"/images/portfolio/brochure/4_7CWC4iw24o.jpg"} lqip={{active:true, quality:20}}/>
+    												<a data-fancybox="images" href={`${IMAGE_SERVER_ADDRESS}/design_gigantic/portfolio/broucher/4.jpg`} className="portfolio-img">
+													<ImageOptimizer path={"/design_gigantic/portfolio/broucher/4.jpg"} lqip={{active:true, quality:20}}/>
 														<div className="content-details fadeIn-top">
                                                            <i className="fa fa-search" aria-hidden="true"></i>
                                                           </div>
     												</a>
     											</div>
     											<div className="mlr--15 content">
-    												<a data-fancybox="images" href={`${IMAGE_SERVER_ADDRESS}/images/portfolio/brochure/5_uqvn4IGrZ6.jpg`} className="portfolio-img">
-													<ImageOptimizer path={"/images/portfolio/brochure/5_uqvn4IGrZ6.jpg"} lqip={{active:true, quality:20}}/>
+    												<a data-fancybox="images" href={`${IMAGE_SERVER_ADDRESS}/design_gigantic/portfolio/broucher/5.jpg`} className="portfolio-img">
+													<ImageOptimizer path={"/design_gigantic/portfolio/broucher/5.jpg"} lqip={{active:true, quality:20}}/>
 														<div className="content-details fadeIn-top">
                                                            <i className="fa fa-search" aria-hidden="true"></i>
                                                           </div>
@@ -54,16 +54,16 @@ class BroucherPortfolio extends Component{
     										</div>
     										<div className="col-md-4">
     											<div className="mlr--15 content">
-    												<a data-fancybox="images" href={`${IMAGE_SERVER_ADDRESS}/images/portfolio/brochure/6_V5wz3YLXw.jpg`} className="portfolio-img">
-													<ImageOptimizer path={"/images/portfolio/brochure/6_V5wz3YLXw.jpg"} lqip={{active:true, quality:20}}/>
+    												<a data-fancybox="images" href={`${IMAGE_SERVER_ADDRESS}/design_gigantic/portfolio/broucher/6.jpg`} className="portfolio-img">
+													<ImageOptimizer path={"/design_gigantic/portfolio/broucher/6.jpg"} lqip={{active:true, quality:20}}/>
     													 <div className="content-details fadeIn-top">
                                                            <i className="fa fa-search" aria-hidden="true"></i>
                                                           </div>
     												</a>
     											</div>
     											<div className="mlr--15 content">
-    												<a data-fancybox="images" href={`${IMAGE_SERVER_ADDRESS}/images/portfolio/brochure/7_Z1mwOn1ucn.jpg`} className="portfolio-img">
-													<ImageOptimizer path={"/images/portfolio/brochure/7_Z1mwOn1ucn.jpg"} lqip={{active:true, quality:20}}/>
+    												<a data-fancybox="images" href={`${IMAGE_SERVER_ADDRESS}/design_gigantic/portfolio/broucher/7.jpg`} className="portfolio-img">
+													<ImageOptimizer path={"/design_gigantic/portfolio/broucher/7.jpg"} lqip={{active:true, quality:20}}/>
                                                          <div className="content-details fadeIn-top">
                                                            <i className="fa fa-search" aria-hidden="true"></i>
                                                           </div>

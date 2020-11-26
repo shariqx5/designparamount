@@ -6,6 +6,7 @@ import Stripe from './stripe';
 import Braintree from './braintree';
 import BrainTreeMark from './braintree/braintreeMark';
 import Redeem from './redeem';
+import $ from 'jquery';
 import 'react-intl-tel-input/dist/main.css';
 
 class PaymentContainer extends Component{
@@ -106,6 +107,13 @@ class PaymentContainer extends Component{
                 }}
                 inputClassName="form-control"
                 fieldName = "phone"
+                geoIpLookup = {(callback)=>{
+                  $.get('https://ipinfo.io', function() {}, "jsonp").always(function(resp) {
+                    console.log(resp);
+                    var countryCode = (resp && resp.country) ? resp.country : "us";
+                    callback(countryCode);
+                  });
+                }}
                 />
                 
                 </div>

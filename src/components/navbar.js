@@ -1,6 +1,5 @@
 import React,{Component} from 'react';
 import {CookiesHelper, URLHelper} from '../helpers';
-import Popup from './popup';
 import {Link} from 'react-router-dom';
 
 const urlHelper = new URLHelper();
@@ -56,7 +55,7 @@ class Navbar extends Component{
                         <div className="col-lg-6 col-md-6 col-sm-12 position-initial">
                             <ul className="menu">
                                 <li className="dropdown">
-                                    <a href="javascript:void(0)" className="black-color">Product</a>
+                                    <a href="javascript:void(0)" className="black-color">Services</a>
                                     <div className="dropdown-content">
                                         <div className="proheaderdiv headerdropdowndiv1">
                                             <div>
@@ -101,7 +100,7 @@ class Navbar extends Component{
                         </div>
                         <div className="col-md-3 d-none d-lg-block">
                             <ul className="menu menu-right">
-                                <li><a href="#">{this.state.showLogin?(<Link className="black-color" to={urlHelper.getURL('login')}>Login</Link>):(<Link className="black-color" to={urlHelper.getURL('client-orders')}>Client Area</Link>)}</a></li>
+                                {/* <li><a href="#">{this.state.showLogin?(<Link className="black-color" to={urlHelper.getURL('login')}>Login</Link>):(<Link className="black-color" to={urlHelper.getURL('client-orders')}>Client Area</Link>)}</a></li> */}
                                 <li><a href="#" className="get-a-demo-link" onClick={this.props.togglePopup}>Request a Quote</a></li>
                             </ul>
                         </div>
@@ -119,14 +118,13 @@ class Navbar extends Component{
                             <img alt="Logo-Header" src="/images/logo-header.svg" />
                         </Link>
                         <div id="myLinks">
-                            <Link to="/standard">Standard</Link>
-                            <Link to="/pro">Pro</Link>
-                            <Link to="/portfolio">Our Work</Link>
+                            <Link to="/standard">Logo Design</Link>
+                            <Link to="/pro">Brand Design</Link>
+                            <Link to="/portfolio">Web Design</Link>
                             <Link to="/pricing">Pricing</Link>
                             <Link to="/about">About</Link>
                             <Link to="/contact">Contact</Link>
-                            <Link to="/request">Get a Demo</Link>
-                            <Link to="/login">Login</Link>
+                            <a onClick={this.props.togglePopup}>Request a Quote</a>
                         </div>
                         <a href="javascript:void(0);" className="icon" onClick={this.changeNavbar}>
                             <i className="fa fa-bars"></i>
