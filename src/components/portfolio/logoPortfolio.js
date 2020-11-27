@@ -10,8 +10,8 @@ class LogoPortfolio extends Component{
 										<div className="row">
 											<div className="col-md-4">
 												<div className="mlr--15 content">
-													<a data-fancybox="images" href={`${IMAGE_SERVER_ADDRESS}/portfolio/logos/2.jpg`} className="portfolio-img">
-														<ImageOptimizer path={"/images/portfolio/logos/2.jpg"} lqip={{active:true, quality:20}}/>
+													<a data-fancybox="images" href={`${IMAGE_SERVER_ADDRESS}/portfolio/logos/2_Tx1L73pziX.jpg`} className="portfolio-img">
+														<ImageOptimizer path={"/design_gigantic/portfolio/logos/2_Tx1L73pziX.jpg"} lqip={{active:true, quality:20}}/>
 	                                                    <div className="content-details fadeIn-top">
 	                                                       <i className="fa fa-search" aria-hidden="true"></i>
 	                                                    </div>

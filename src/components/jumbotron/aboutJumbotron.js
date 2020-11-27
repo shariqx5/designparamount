@@ -10,15 +10,15 @@ class AboutJumbotron extends Component{
                 <img src="images/aboutus/10.png" alt="" className="position-absolute" style={{width:"100%",right:"-5px",bottom:"35px",zIndex:"2",maxWidth:"65px"}}/>
                 <div className="container banner-center">
                     <div className="row">
-                        <div className="col-md-5 aboutmainbannercontentdiv">
-                            <div className="banner-heading">
-                                <h1>About <span>Design Gauge</span></h1>
+                        <div className="col-md-12 aboutmainbannercontentdiv">
+                            <div className="banner-heading about-1">
+                                <h1>About <span>Design Gigantic</span></h1>
                                 <p>We are a 360-digital solutions company that provides cutting edge graphic designing, animation, digital marketing, SEO content, and all other services your business may need.</p>
                             </div>
                         </div>
-                        <div className="col-md-7 aboutmainbannersideimgdiv text-center">
+                        {/* <div className="col-md-7 aboutmainbannersideimgdiv text-center">
                             <img src="images/aboutus/aboutbannersideimg.png" />
-                        </div>
+                        </div> */}
                     </div>
                 </div>
     

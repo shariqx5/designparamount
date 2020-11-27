@@ -15,7 +15,7 @@ const options = {
         items:3
     },
     1000:{
-        items:3
+        items:5
     }
 };
 class Client extends Component{
@@ -38,27 +38,30 @@ class Client extends Component{
                     </div> */}
                     <OwlCarousel
                     className={this.props.showBlack?"owl-theme companies-carousel afterbannercarousel":"owl-theme companies-carousel"}
-                    items={3}
+                    items={5}
                     loop={true}
+                    rewind={false}
                     autoplay={true}
+                    autoplayTimeout={3000}
                     responsiveClass={true}
                     responsive={options}
                     >
                         <div className="item">
-                            <ImageOptimizer path={"/design_gigantic/clientle/Grey_Logos-01.svg"} lqip={{active:true, quality:20}}/>
+                            <ImageOptimizer path={"/design_gigantic/clientle/Grey_Logos-01.svg"} />
                         </div>
                         <div className="item">
-                            <ImageOptimizer path={"/design_gigantic/clientle/Grey_Logos-02.svg"} lqip={{active:true, quality:20}}/>
+                            <ImageOptimizer path={"/design_gigantic/clientle/Grey_Logos-02.svg"} />
                         </div>
                         <div className="item">
-                            <ImageOptimizer path={"/design_gigantic/clientle/Grey_Logos-03.svg"} lqip={{active:true, quality:20}}/>
+                            <ImageOptimizer path={"/design_gigantic/clientle/Grey_Logos-03.svg"} />
                         </div>
                         <div className="item">
-                            <ImageOptimizer path={"/design_gigantic/clientle/Grey_Logos-04.svg"} lqip={{active:true, quality:20}}/>
+                            <ImageOptimizer path={"/design_gigantic/clientle/Grey_Logos-04.svg"} />
                         </div>
                         <div className="item">
-                        <ImageOptimizer path={"/design_gigantic/clientle/Grey_Logos-05.svg"} lqip={{active:true, quality:20}}/>
+                            <ImageOptimizer path={"/design_gigantic/clientle/Grey_Logos-05.svg"} />
                         </div>
+                        
                     </OwlCarousel>
                 </div>
 		</section>
